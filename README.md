@@ -1,1 +1,1 @@
-# Herd-Manager
+# Herd Manager
