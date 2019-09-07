@@ -1,0 +1,42 @@
+{
+  "user": [
+    {
+      "firstName": "Carl",
+      "lastName": "Barringer",
+      "email": "carl@gmail.com",
+      "password": "1",
+      "id": 1
+    }
+  ],
+  "herd": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "number": "4789568",
+      "name": "Goat Feather Farm",
+      "tattoo": "GFF"
+    }
+  ],
+  "animal": [
+      {
+        "id": 1,
+        "herdId": 1,
+        "status": 1,
+        "name": "sample name",
+        "number": "123456",
+        "breed": "American Lamancha",
+        "sire": "147852",
+        "dam": "325698",
+        "description": "brown, with white legs",
+        "gender": "female",
+        "dateOfBirth": "20170301"
+      }
+  ],
+  "status": [
+      {
+        "id": 1,
+        "animalId": 1,
+        "status": "Current Stock"
+      }
+  ]
+}
