@@ -1,6 +1,8 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home"
+import LoginForm from "./auth/LoginForm"
+import RegistrationForm from "./auth/RegistrationForm"
 
 
 class ApplicationViews extends Component{
@@ -20,6 +22,20 @@ class ApplicationViews extends Component{
                             <Redirect to="/login" />
                           );
                       }}
+                />
+                <Route
+                    exact
+                    path="/login"
+                    render={props => {
+                        return <LoginForm {...props} loadData={this.loadData} />;
+                    }}
+                />
+                <Route
+                    exact
+                    path="/register"
+                    render={props => {
+                        return <RegistrationForm {...props} loadData={this.loadData} />;
+                    }}
                 />
 
             </React.Fragment>
