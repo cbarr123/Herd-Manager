@@ -23,6 +23,7 @@ class AnimalDetail extends Component {
         AnimalManager.get(this.props.animalId)
         .then((animal) => {
             this.setState({
+                id: animal.id,
                 herdId: animal.herdId,
                 status: animal.status,
                 name: animal.name,
@@ -41,27 +42,27 @@ class AnimalDetail extends Component {
     render () {
         return (
             <React.Fragment>
-                <h3>Inside Animal Detail</h3>
+                <h2>Animal Detail</h2>
                 <div>
-                    <h2>Name: <span>{this.state.name}</span></h2>
-                    <h2>Breed: <span>{this.state.breed}</span></h2>
-                    <h2>ADGA Number: <span>{this.state.number}</span></h2>
-                    <h2>Gender: <span>{this.state.gender}</span></h2>
-                    <h2>DOB: <span>{this.state.dateOfBirth}</span></h2>
-                    <h2>Age: <span></span></h2>
-                    <h2>Description: <span>{this.state.description}</span></h2>
-                    <h2>Sire: <span>{this.state.sire}</span></h2>
-                    <h2>Dam: <span>{this.state.dam}</span></h2>
+                    <h3>Name: <span>{this.state.name}</span></h3>
+                    <h3>Breed: <span>{this.state.breed}</span></h3>
+                    <h3>ADGA Number: <span>{this.state.number}</span></h3>
+                    <h3>Gender: <span>{this.state.gender}</span></h3>
+                    <h3>DOB: <span>{this.state.dateOfBirth}</span></h3>
+                    <h3>Age: <span></span></h3>
+                    <h3>Description: <span>{this.state.description}</span></h3>
+                    <h3>Sire: <span>{this.state.sire}</span></h3>
+                    <h3>Dam: <span>{this.state.dam}</span></h3>
                 </div>
                 <section className="AnimalDetailButton">
                     <button type="button"
                     className="EditButton"
-                    onClick = {() => {}}>
+                    onClick = {() => {this.props.history.push(`animals/${this.props.animal.id}/edit`)}}>
                     Edit
                     </button>
                     <button type="button"
                     className="BackToDashboardButton"
-                    onClick = {() => {}}>
+                    onClick = {() => {"/dashboard"}}>
                     Dashboard
                     </button>
                 </section>
