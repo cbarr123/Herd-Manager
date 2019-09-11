@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
+import { Link } from "react-router-dom";
 
 class AnimalDetail extends Component {
     state = {
@@ -13,7 +14,8 @@ class AnimalDetail extends Component {
         dam: "",
         description: "",
         gender: "",
-        dateOfBirth: ""
+        dateOfBirth: "",
+        loadingStatus: false
     }
     
     componentDidMount() {
@@ -60,11 +62,11 @@ class AnimalDetail extends Component {
                     onClick = {() => {this.props.history.push(`animals/${this.props.animal.id}/edit`)}}>
                     Edit
                     </button>
-                    <button type="button"
-                    className="BackToDashboardButton"
-                    onClick = {() => {"/dashboard"}}>
-                    Dashboard
-                    </button>
+                    <Link to={`/dashboard`}>
+                        <button type="button"
+                        className="DashboardButton"
+                        >Dashboard</button>
+                    </Link>
                 </section>
             </React.Fragment>
         )
