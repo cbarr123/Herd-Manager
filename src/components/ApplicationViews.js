@@ -68,9 +68,16 @@ class ApplicationViews extends Component{
                     }}
                 />
                 <Route
+                    exact
                     path="/animals/:animalId(\d+)/edit"
                     render={props => {
-                    return <AnimalEdit {...props} />;
+                        // Pass the AnimalID to the AnimalEdit Component
+                    return (
+                    <AnimalEdit 
+                        animalID={parseInt(props.match.params.animalID)}
+                        {...props} 
+                    />
+                    )
                     }}
                 />
 

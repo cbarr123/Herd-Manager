@@ -25,7 +25,6 @@ class AnimalDetail extends Component {
         AnimalManager.get(this.props.animalId)
         .then((animal) => {
             this.setState({
-                id: animal.id,
                 herdId: animal.herdId,
                 status: animal.status,
                 name: animal.name,
