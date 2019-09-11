@@ -8,14 +8,14 @@ class Dashboard extends Component {
     };
     componentDidMount() {
         console.log("CDM in dashboard");
-        console.log("prior to fetch", this.state)
+        console.log("prior to fetch in dashboard", this.state)
         AnimalManager.getAll()
         .then((animals) => {
             this.setState({
                 animals: animals
             });
-            console.log(animals)
-            console.log("from inside the loop",this.state)
+            console.log("in dashboard", animals)
+            console.log("from inside the loop dashboard",this.state)
         });
     }
     
