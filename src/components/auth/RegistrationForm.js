@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 
 class RegistrationForm extends Component {
@@ -21,11 +21,13 @@ class RegistrationForm extends Component {
             JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
                 id: this.state.activeUserId
             })
         )
-        this.props.loadData(this.state.activeUserId);
-        this.props.history.push("/");
+        // this.props.loadData(this.state.activeUserId);
+        this.props.history.push("/Dashboard");
     }
     //* this will be a method to check for empty fields, invoke the usewrmanager.getAll function, 
     //* iterate though the user information, and POST new user credentials and login
@@ -38,7 +40,9 @@ class RegistrationForm extends Component {
             this.setState({loadingStatus: true});
             const user = {
                 email: this.state.email,
-                password: this.state.password
+                password: this.state.password,
+                firstName: this.state.firstName,
+                lastName: this.state.lastName
             };
             UserManager.getAll()
             .then(users => {
@@ -94,6 +98,20 @@ class RegistrationForm extends Component {
                                 placeholder="Confirm Password"
                             />
                             {/* <label htmlFor="confirmPassword">Password</label> */}
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="firstName"
+                                placeholder="firstName"
+                            />
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="lastName"
+                                placeholder="lastName"
+                            />
                         </div>
                         <div>
                             <button

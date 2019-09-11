@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import Home from "./home/Home"
 import LoginForm from "./auth/LoginForm"
 import RegistrationForm from "./auth/RegistrationForm"
+import Dashboard from "./animal/Dashboard"
+import AnimalDetail from "./animal/AnimalDetail"
+import AnimalEdit from "./animal/AnimalEdit"
 
 
 class ApplicationViews extends Component{
@@ -35,6 +38,39 @@ class ApplicationViews extends Component{
                     path="/register"
                     render={props => {
                         return <RegistrationForm {...props} loadData={this.loadData} />;
+                    }}
+                />
+                <Route
+                    exact
+                    path="/dashboard"
+                    render={props => {
+                        return <Dashboard {...props} loadData={this.loadData} />;
+                    }}
+                />
+                {/* <Route   ------this is not needed, dont think
+                    exact
+                    path="animals/AnimalDetail/:animalId(\d+)/"
+                    render={props => {
+                        return <AnimalDetail {...props} loadData={this.loadData} />;
+                    }}
+                /> */}
+                <Route
+                    exact
+                    path="/animals/:animalId(\d+)"
+                    render={props => {
+                        // Pass the animalId to the AnimalDetailComponent
+                        return (
+                        <AnimalDetail
+                            animalId={parseInt(props.match.params.animalId)}
+                            {...props}
+                        />
+                        );
+                    }}
+                />
+                <Route
+                    path="/animals/:animalId(\d+)/edit"
+                    render={props => {
+                    return <AnimalEdit {...props} />;
                     }}
                 />
 
