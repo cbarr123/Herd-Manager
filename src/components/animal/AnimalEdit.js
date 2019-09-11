@@ -69,7 +69,7 @@ class AnimalEdit extends Component {
                         onChange={this.handleFieldChange}
                         id="name"
                         value={this.state.name}/>
-                        <label htmlFor="number">Name</label>
+                        <label htmlFor="number">Number</label>
                         <input
                         type="text"
                         onChange={this.handleFieldChange}

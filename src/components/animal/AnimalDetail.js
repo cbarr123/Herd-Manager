@@ -58,7 +58,7 @@ class AnimalDetail extends Component {
                 <section className="AnimalDetailButton">
                     <button type="button"
                     className="EditButton"
-                    onClick = {() => {this.props.history.push(`animals/${this.props.animal.id}/edit`)}}>
+                    onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
                     Edit
                     </button>
                     <Link to={`/dashboard`}>

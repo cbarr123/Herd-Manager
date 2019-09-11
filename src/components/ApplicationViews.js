@@ -74,7 +74,7 @@ class ApplicationViews extends Component{
                         // Pass the AnimalID to the AnimalEdit Component
                     return (
                     <AnimalEdit 
-                        animalID={parseInt(props.match.params.animalID)}
+                        animalID={parseInt(props.match.params.animalId)}
                         {...props} 
                     />
                     )
