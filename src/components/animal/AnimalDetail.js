@@ -19,9 +19,7 @@ class AnimalDetail extends Component {
     }
     
     componentDidMount() {
-        console.log("CDM in AnimalDetail");
-        console.log(this.props);
-        //retrieve animal information based upon animal.id using get     this.props.id
+        //retrieve animal information based upon animalId
         AnimalManager.get(this.props.animalId)
         .then((animal) => {
             this.setState({
@@ -38,7 +36,6 @@ class AnimalDetail extends Component {
             })
         })
     }
-
 
     render () {
         return (
@@ -71,5 +68,4 @@ class AnimalDetail extends Component {
         )
     }
 }
-
 export default AnimalDetail

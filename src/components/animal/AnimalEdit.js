@@ -111,7 +111,6 @@ class AnimalEdit extends Component {
                         onChange={this.handleFieldChange}
                         id="dob"
                         value={this.state.dateOfBirth}/>
-
                     </div>
                     <div>
                         <button
@@ -120,13 +119,10 @@ class AnimalEdit extends Component {
                         onClick={this.updateExistingAnimal}>
                         Submit
                         </button>
-
-
                     </div>
                 </fieldset>
             </form>          
         )
     };
-
-}
+};
 export default AnimalEdit

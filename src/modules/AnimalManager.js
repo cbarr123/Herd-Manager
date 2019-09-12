@@ -17,6 +17,5 @@ export default {
           body: JSON.stringify(editedAnimal)
         }).then(data => data.json());
     }
-
 }
 

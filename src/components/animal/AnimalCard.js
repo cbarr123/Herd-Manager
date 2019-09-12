@@ -10,16 +10,7 @@ class AnimalCard extends Component {
                 <h3>Age:<span>{this.props.animal.age}</span></h3>
             </div>            
         )
-
     }
-
-
-
-
-
-
-
-
 }
 
 export default AnimalCard
