@@ -108,11 +108,11 @@ class AnimalEdit extends Component {
                             onChange={this.handleFieldChange}
                             id="gender"
                             value={this.state.gender}/>
-                            <label htmlFor="dob">DOB</label>
+                            <label htmlFor="dateOfBirth">Date Of Birth</label>
                             <input
                             type="text"
                             onChange={this.handleFieldChange}
-                            id="dob"
+                            id="dateOfBirth"
                             value={this.state.dateOfBirth}/>
                         </div>
                         <div>
@@ -120,7 +120,7 @@ class AnimalEdit extends Component {
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.updateExistingAnimal}>
-                            Submit
+                            Submit Edit
                             </button>
                         </div>
                     </fieldset>
