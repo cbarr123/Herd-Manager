@@ -6,7 +6,9 @@ import RegistrationForm from "./auth/RegistrationForm"
 import Dashboard from "./animal/Dashboard"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
+import AnimalAdd from "./animal/AnimalAdd"
 import Manager from "./animal/Manager"
+import UserAdd from "./user/UserAdd"
 
 
 class ApplicationViews extends Component{
@@ -53,6 +55,7 @@ class ApplicationViews extends Component{
                         return <Manager {...props} loadData={this.loadData} />;
                     }}
                 />
+                {/* Animal Routes */}
                 <Route
                     exact
                     path="/animals/:animalId(\d+)"
@@ -77,6 +80,21 @@ class ApplicationViews extends Component{
                         {...props} 
                     />
                     )
+                    }}
+                />
+                <Route
+                    exact
+                    path="/animals/new"
+                    render={props => {
+                        return <AnimalAdd {...props} loadData={this.loadData} />;
+                    }}
+                />
+                {/* User Routes */}
+                <Route
+                    exact
+                    path="/user/new"
+                    render={props => {
+                        return <UserAdd {...props} loadData={this.loadData} />;
                     }}
                 />
 
