@@ -40,7 +40,6 @@ class AnimalEdit extends Component {
         AnimalManager.update(editedAnimal)
         // .then(() => {this.props.history.push(`${this.props.animalId}`)});
         .then(() => {this.props.history.push(`/dashboard`)});
-        console.log(this.state)
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
+import { Link } from "react-router-dom";
 
 class AnimalAdd extends Component {
     state = {
@@ -54,7 +55,7 @@ class AnimalAdd extends Component {
                 <form>
                     <fieldset>
                         <div>
-                        <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Name</label>
                             <input
                             type="text"
                             onChange={this.handleFieldChange}
@@ -110,6 +111,11 @@ class AnimalAdd extends Component {
                             onClick={this.createNewAnimal}>
                             Create Animal
                             </button>
+                            <Link to={`/manager`}>
+                                <button type="button"
+                                className="ManagerButton"
+                                >Cancel</button>
+                            </Link>
                         </div>
                     </fieldset>
                 </form>

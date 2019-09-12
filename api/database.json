@@ -20,6 +20,13 @@
       "firstName": "Tom",
       "lastName": "Dill",
       "id": 7
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Steve",
+      "email": "steve@gmail.com",
+      "password": "1",
+      "id": 8
     }
   ],
   "herd": [

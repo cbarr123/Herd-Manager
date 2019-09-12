@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import UserManager from "../../user/UserManager";
+import UserManager from "../../modules/UserManager";
+import { Link } from "react-router-dom";
 
 class UserAdd extends Component {
     state = {
@@ -30,23 +31,59 @@ class UserAdd extends Component {
                 password: this.state.password
             }
             UserManager.post(newUser)
-
-
-
         }
+    };
 
-    }
-
-    render () {
-    
-        
-        
-        
+    render () {        
         return (
             <React.Fragment>
-                <h2>inside add user</h2>
+                <h2>Adding User</h2>
+                <form>
+                    <fieldset>
+                        <div>
+                            <label htmlFor="email">Email</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="email"
+                            value={this.state.email}/>
 
+                            <label htmlFor="password">Password</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="password"
+                            value={this.state.password}/>
+                           
+                            <label htmlFor="firstName">First Name</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="firstName"
+                            value={this.state.firstName}/>
 
+                            <label htmlFor="lastName">Last Name</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="lastName"
+                            value={this.state.lastName}/>
+                        </div>
+                        <div>
+                            <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.createNewUser}>
+                            Create User
+                            </button>
+                            <Link to={`/manager`}>
+                                <button type="button"
+                                className="ManagerButton"
+                                >Cancel</button>
+                            </Link>
+                        </div>
+                    </fieldset>
+                </form>
             </React.Fragment>
         )
     }

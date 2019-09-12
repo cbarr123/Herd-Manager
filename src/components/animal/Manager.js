@@ -6,7 +6,7 @@ class Manager extends Component {
         return(
             <React.Fragment>
                 <h3>Manage Herd</h3>
-                <Link to={`/AnimalAdd`}>    
+                <Link to={`/animals/new`}>    
                     <button
                     type="button">
                     Add Animal
@@ -19,17 +19,19 @@ class Manager extends Component {
                     </button>
 
                 <h3>Manage User</h3>
-                    {/* <Link to={`/UserAdd`}>    
+                    <Link to={`/user/new`}>    
                         <button
                         type="button">
                         Add User
                         </button>
-                    </Link> */}
-                    <button
-                    type="button"
-                    onClick={this.editUser}>
-                    Edit User
-                    </button>
+                    </Link>
+                    <Link to={`/user/edit`}>
+                        <button
+                        type="button"
+                        onClick={this.editUser}>
+                        Edit User
+                        </button>
+                    </Link>
                     <button
                     type="button"
                     onClick={this.deleteUser}>

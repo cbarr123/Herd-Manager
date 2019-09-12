@@ -17,4 +17,13 @@ export default {
             body: JSON.stringify(newUser)
         }).then(data => data.json())
     },
+    update(editedUser) {
+        return fetch(`${remoteURL}/user/${editedUser.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(editedUser)
+        }).then(data => data.json());
+    }
 }
