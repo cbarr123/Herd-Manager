@@ -25,5 +25,11 @@ export default {
           },
           body: JSON.stringify(editedUser)
         }).then(data => data.json());
-    }
+    },
+    delete(id) {
+        return fetch(`${remoteURL}/user/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
+      },
 }

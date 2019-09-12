@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
+import { Link } from "react-router-dom";
 
 class AnimalEdit extends Component {
     state = {
@@ -121,6 +122,11 @@ class AnimalEdit extends Component {
                             onClick={this.updateExistingAnimal}>
                             Submit Edit
                             </button>
+                            <Link to={`/dashboard`}>
+                                <button type="button"
+                                className="DashboardButton"
+                                >Manager</button>
+                            </Link>
                         </div>
                     </fieldset>
                 </form>
