@@ -19,13 +19,10 @@ class AnimalDetail extends Component {
     }
     
     componentDidMount() {
-        console.log("CDM in AnimalDetail");
-        console.log(this.props);
-        //retrieve animal information based upon animal.id using get     this.props.id
+        //retrieve animal information based upon animalId
         AnimalManager.get(this.props.animalId)
         .then((animal) => {
             this.setState({
-                id: animal.id,
                 herdId: animal.herdId,
                 status: animal.status,
                 name: animal.name,
@@ -39,7 +36,6 @@ class AnimalDetail extends Component {
             })
         })
     }
-
 
     render () {
         return (
@@ -59,7 +55,7 @@ class AnimalDetail extends Component {
                 <section className="AnimalDetailButton">
                     <button type="button"
                     className="EditButton"
-                    onClick = {() => {this.props.history.push(`animals/${this.props.animal.id}/edit`)}}>
+                    onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
                     Edit
                     </button>
                     <Link to={`/dashboard`}>
@@ -72,5 +68,4 @@ class AnimalDetail extends Component {
         )
     }
 }
-
 export default AnimalDetail

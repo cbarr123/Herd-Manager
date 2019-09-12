@@ -6,6 +6,20 @@
       "email": "carl@gmail.com",
       "password": "1",
       "id": 1
+    },
+    {
+      "email": "cb@cb.com",
+      "password": "1",
+      "firstName": "Carl",
+      "lastName": "Barringer",
+      "id": 6
+    },
+    {
+      "email": "tom@tom",
+      "password": "1",
+      "firstName": "Tom",
+      "lastName": "Dill",
+      "id": 7
     }
   ],
   "herd": [
@@ -17,26 +31,51 @@
       "tattoo": "GFF"
     }
   ],
-  "animal": [
-      {
-        "id": 1,
-        "herdId": 1,
-        "status": 1,
-        "name": "sample name",
-        "number": "123456",
-        "breed": "American Lamancha",
-        "sire": "147852",
-        "dam": "325698",
-        "description": "brown, with white legs",
-        "gender": "female",
-        "dateOfBirth": "20170301"
-      }
+  "animals": [
+    {
+      "id": 1,
+      "herdId": 1,
+      "status": 1,
+      "name": "sample name",
+      "number": "1234564",
+      "breed": "American Lamancha",
+      "sire": "147852",
+      "dam": "325698",
+      "description": "brown, with white legs",
+      "gender": "female",
+      "dateOfBirth": "20170301"
+    },
+    {
+      "id": 2,
+      "herdId": 1,
+      "status": 1,
+      "name": "Agoat",
+      "number": "23457833",
+      "breed": "American Lamancha",
+      "sire": "569569",
+      "dam": "458458",
+      "description": "Crazy Goat",
+      "gender": "Female",
+      "dateOfBirth": "20150104"
+    },
+    {
+      "id": 3,
+      "herdId": 1,
+      "status": 1,
+      "name": "a real Goat name",
+      "number": "123456",
+      "breed": "American Lamancha",
+      "sire": "147853",
+      "dam": "325698",
+      "description": "brown, with white legs",
+      "gender": "female",
+      "dateOfBirth": "20180301"
+    }
   ],
   "status": [
-      {
-        "id": 1,
-        "animalId": 1,
-        "status": "Current Stock"
-      }
+    {
+      "id": 1,
+      "status": "Current Stock"
+    }
   ]
 }
