@@ -19,11 +19,12 @@ class Manager extends Component {
                     </button>
 
                 <h3>Manage User</h3>
-                    <button
-                    type="button"
-                    onClick={this.addUser}>
-                    Add User
-                    </button>
+                    {/* <Link to={`/UserAdd`}>    
+                        <button
+                        type="button">
+                        Add User
+                        </button>
+                    </Link> */}
                     <button
                     type="button"
                     onClick={this.editUser}>

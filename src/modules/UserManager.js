@@ -5,6 +5,9 @@ export default {
     getAll() {
         return fetch(`${remoteURL}/user`).then(result => result.json())
     },
+    get(id) {
+        return fetch(`${remoteURL}/user/${id}`).then(result => result.json())
+      },
     post(newUser) {
         return fetch(`${remoteURL}/user`, {
             method: "POST",
