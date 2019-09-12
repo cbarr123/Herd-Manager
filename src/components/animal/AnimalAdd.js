@@ -96,12 +96,20 @@ class AnimalAdd extends Component {
                             onChange={this.handleFieldChange}
                             id="gender"
                             value={this.state.gender}/>
-                            <label htmlFor="dob">DOB</label>
+                            <label htmlFor="dateOfBirth">DOB</label>
                             <input
                             type="text"
                             onChange={this.handleFieldChange}
-                            id="dob"
+                            id="dateOfBirth"
                             value={this.state.dateOfBirth}/>
+                        </div>
+                        <div>
+                            <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.createNewAnimal}>
+                            Create Animal
+                            </button>
                         </div>
                     </fieldset>
                 </form>

@@ -29,6 +29,11 @@ class Manager extends Component {
                     onClick={this.editUser}>
                     Edit User
                     </button>
+                    <button
+                    type="button"
+                    onClick={this.deleteUser}>
+                    Delete User
+                    </button>
                 
                 <h3>Return to Dashboard</h3>
                 <Link to={`/dashboard`}>

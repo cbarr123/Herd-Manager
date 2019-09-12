@@ -30,19 +30,18 @@ class Dashboard extends Component {
                 )                    
              )}
             </div>
-            <section className="DashboardButton">
-                {/* <link to={`/manager`}> */}
+            <div className="DashboardButton">
+                <Link to={`/manager`}>
                     <button type="button"
-                    className="ManageButton">
-                    Manage
-                    </button>
-                {/* </link> */}
+                    className="ManagerButton"
+                    >Manager</button>
+                </Link>
                 <button type="button"
                 className="FilterButton"
                 onClick = {() => {}}>
                 Filter
                 </button>
-            </section>
+            </div>
             </React.Fragment>
         )
     }
