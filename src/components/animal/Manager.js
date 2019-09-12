@@ -6,12 +6,12 @@ class Manager extends Component {
         return(
             <React.Fragment>
                 <h3>Manage Herd</h3>
+                <Link to={`/AnimalAdd`}>    
                     <button
-                    type="button"
-                    onClick={this.addAnimal}>
+                    type="button">
                     Add Animal
                     </button>
-
+                </Link>
                     <button
                     type="button"
                     onClick={this.editHerd}>
