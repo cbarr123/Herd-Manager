@@ -38,7 +38,9 @@ class AnimalEdit extends Component {
             dateOfBirth: this.state.dateOfBirth
         };
         AnimalManager.update(editedAnimal)
-        .then(() => {this.props.history.push("/animals")})
+        // .then(() => {this.props.history.push(`${this.props.animalId}`)});
+        .then(() => {this.props.history.push(`/dashboard`)});
+        console.log(this.state)
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)
@@ -60,68 +62,70 @@ class AnimalEdit extends Component {
     };
     render () {
         return (
-            <form>
-                <fieldset>
-                    <div className="AnimalEdit">
-                        <label htmlFor="name">Name</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="name"
-                        value={this.state.name}/>
-                        <label htmlFor="number">Number</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="number"
-                        value={this.state.number}/>
-                        <label htmlFor="breed">Breed</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="breed"
-                        value={this.state.breed}/>
-                        <label htmlFor="sire">Sire</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="sire"
-                        value={this.state.sire}/>
-                        <label htmlFor="dam">Dam</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="dam"
-                        value={this.state.dam}/>
-                        <label htmlFor="description">Description</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="description"
-                        value={this.state.description}/>
-                        <label htmlFor="gender">Gender</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="gender"
-                        value={this.state.gender}/>
-                        <label htmlFor="dob">DOB</label>
-                        <input
-                        type="text"
-                        onChange={this.handleFieldChange}
-                        id="dob"
-                        value={this.state.dateOfBirth}/>
-                    </div>
-                    <div>
-                        <button
-                        type="button"
-                        disabled={this.state.loadingStatus}
-                        onClick={this.updateExistingAnimal}>
-                        Submit
-                        </button>
-                    </div>
-                </fieldset>
-            </form>          
+            <React.Fragment>
+                <form>
+                    <fieldset>
+                        <div className="AnimalEdit">
+                            <label htmlFor="name">Name</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="name"
+                            value={this.state.name}/>
+                            <label htmlFor="number">Number</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="number"
+                            value={this.state.number}/>
+                            <label htmlFor="breed">Breed</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="breed"
+                            value={this.state.breed}/>
+                            <label htmlFor="sire">Sire</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="sire"
+                            value={this.state.sire}/>
+                            <label htmlFor="dam">Dam</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="dam"
+                            value={this.state.dam}/>
+                            <label htmlFor="description">Description</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="description"
+                            value={this.state.description}/>
+                            <label htmlFor="gender">Gender</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="gender"
+                            value={this.state.gender}/>
+                            <label htmlFor="dob">DOB</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="dob"
+                            value={this.state.dateOfBirth}/>
+                        </div>
+                        <div>
+                            <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.updateExistingAnimal}>
+                            Submit
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </React.Fragment>
         )
     };
 };

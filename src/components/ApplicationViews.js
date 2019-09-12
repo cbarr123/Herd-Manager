@@ -6,14 +6,13 @@ import RegistrationForm from "./auth/RegistrationForm"
 import Dashboard from "./animal/Dashboard"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
+import Manager from "./animal/Manager"
 
 
 class ApplicationViews extends Component{
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
-
     render() {
-        console.log("from ApplicationsViews")
         return (
             <React.Fragment>
                 <Route
@@ -47,13 +46,13 @@ class ApplicationViews extends Component{
                         return <Dashboard {...props} loadData={this.loadData} />;
                     }}
                 />
-                {/* <Route   ------this is not needed, dont think
+                <Route
                     exact
-                    path="animals/AnimalDetail/:animalId(\d+)/"
+                    path="/manager"
                     render={props => {
-                        return <AnimalDetail {...props} loadData={this.loadData} />;
+                        return <Manager {...props} loadData={this.loadData} />;
                     }}
-                /> */}
+                />
                 <Route
                     exact
                     path="/animals/:animalId(\d+)"
