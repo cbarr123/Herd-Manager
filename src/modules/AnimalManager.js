@@ -23,5 +23,8 @@ export default {
         })
         .then(result => result.json())
       },
+    getAnimalStatus() {
+      return fetch(`${remoteURL}/status`).then(result => result.json())
+    }
 }
 

@@ -62,12 +62,13 @@ class AnimalAdd extends Component {
                             id="name"
                             value={this.state.name}/>
 
-                            <select>
+                            <select onChange={this.handleFieldChange}>
                                 {this.state.status.map(opt => {
                                     return (
                                         <option
-                                        key={opt.status}
-                                        value={opt.status}></option>
+                                        key={opt.id}
+                                        value={opt.id}
+                                        >{opt.status}</option>
                                     );
                                 })
                                 }                             
