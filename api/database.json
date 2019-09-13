@@ -15,11 +15,11 @@
       "id": 6
     },
     {
-      "email": "tom@tom",
-      "password": "1",
+      "id": 7,
       "firstName": "Tom",
-      "lastName": "Dill",
-      "id": 7
+      "lastName": "Dillingham",
+      "email": "tom@tom",
+      "password": "1"
     },
     {
       "firstName": "Steve",

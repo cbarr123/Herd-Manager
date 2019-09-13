@@ -56,6 +56,8 @@ class ApplicationViews extends Component{
                         return <Manager {...props} loadData={this.loadData} />;
                     }}
                 />
+                
+
                 {/* Animal Routes */}
                 <Route
                     exact

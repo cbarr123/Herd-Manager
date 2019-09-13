@@ -26,7 +26,7 @@ class UserCard extends Component {
                 
                 <button
                     type="button"
-                    onClick = {() => {this.props.history.push(`${this.props.userId}/edit`)}}>
+                    onClick = {() => {this.props.history.push(`user/${this.props.match.params.userId}/edit`)}}>
                     Edit User
                 </button>
                 
