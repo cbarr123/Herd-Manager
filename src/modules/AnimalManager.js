@@ -16,6 +16,12 @@ export default {
           },
           body: JSON.stringify(editedAnimal)
         }).then(data => data.json());
-    }
+    },
+    delete(id) {
+        return fetch(`${remoteURL}/animals/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
+      },
 }
 

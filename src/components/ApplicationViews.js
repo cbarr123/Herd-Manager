@@ -9,6 +9,7 @@ import AnimalEdit from "./animal/AnimalEdit"
 import AnimalAdd from "./animal/AnimalAdd"
 import Manager from "./animal/Manager"
 import UserAdd from "./user/UserAdd"
+import UserEdit from "./user/UserEdit"
 
 
 class ApplicationViews extends Component{
@@ -97,7 +98,19 @@ class ApplicationViews extends Component{
                         return <UserAdd {...props} loadData={this.loadData} />;
                     }}
                 />
-
+                <Route
+                    exact
+                    path="/user/:userId(\d+)/edit"
+                    render={props => {
+                        // Pass the UserID to the UserEdit Component
+                    return (
+                    <UserEdit 
+                        userID={parseInt(props.match.params.userId)}
+                        {...props} 
+                    />
+                    )
+                    }}
+                />
             </React.Fragment>
         )
     }

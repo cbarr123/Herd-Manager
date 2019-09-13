@@ -30,17 +30,12 @@ class UserEdit extends Component {
         }
         UserManager.update(editedUser)
         .then(() => {this.props.history.push(`/manager`)});
-
-
-
     }
-    
-    
-    
+   
     render () {
         return (
             <React.Fragment>
-
+                <h4>User Edit</h4>
             </React.Fragment>
         )
     }

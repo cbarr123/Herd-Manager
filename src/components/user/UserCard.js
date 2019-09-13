@@ -23,13 +23,13 @@ class UserCard extends Component {
                     onClick={this.handleDelete}>
                     Delete User
                 </button>
-                <Link to={`/user/edit`}>
-                    <button
+                
+                <button
                     type="button"
-                    onClick={this.editUser}>
+                    onClick = {() => {this.props.history.push(`${this.props.userId}/edit`)}}>
                     Edit User
-                    </button>
-                </Link>
+                </button>
+                
                 
             </div>
             </React.Fragment>            
