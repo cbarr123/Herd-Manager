@@ -125,7 +125,7 @@ class AnimalEdit extends Component {
                             <Link to={`/dashboard`}>
                                 <button type="button"
                                 className="DashboardButton"
-                                >Manager</button>
+                                >Dashboard</button>
                             </Link>
                         </div>
                     </fieldset>

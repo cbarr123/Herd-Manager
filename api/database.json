@@ -1,32 +1,25 @@
 {
   "user": [
     {
+      "id": 1,
       "firstName": "Carl",
-      "lastName": "Barringer",
-      "email": "carl@gmail.com",
-      "password": "1",
-      "id": 1
-    },
-    {
+      "lastName": "Barringer2",
       "email": "cb@cb.com",
-      "password": "1",
-      "firstName": "Rob",
-      "lastName": "Barringer",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "firstName": "Tom",
-      "lastName": "Dillingham",
-      "email": "tom@tom",
       "password": "1"
     },
     {
-      "firstName": "Steve",
-      "lastName": "Steve",
-      "email": "steve@gmail.com",
-      "password": "1",
-      "id": 8
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test",
+      "password": "test@test.com",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Honey Bear",
+      "lastName": "Dog",
+      "email": "dog@dog.com",
+      "password": "1"
     }
   ],
   "herd": [
@@ -51,19 +44,6 @@
       "description": "brown, with white legs",
       "gender": "female",
       "dateOfBirth": "20170301"
-    },
-    {
-      "id": 2,
-      "herdId": 1,
-      "status": 1,
-      "name": "Agoat",
-      "number": "23457833",
-      "breed": "American Lamancha",
-      "sire": "569569",
-      "dam": "458458",
-      "description": "Crazy Goat",
-      "gender": "Female",
-      "dateOfBirth": "20150104"
     },
     {
       "id": 3,
@@ -122,6 +102,14 @@
     {
       "id": 1,
       "status": "Current Stock"
+    },
+    {
+      "id": 2,
+      "status": "Deceased"
+    },
+    {
+      "id": 3,
+      "status": "External Herd"
     }
   ]
 }

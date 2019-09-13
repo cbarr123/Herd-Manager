@@ -6,7 +6,7 @@ class AnimalAdd extends Component {
     state = {
         id: "",
         herdId: 1,
-        status: "",
+        status: [],
         name: "",
         number: "",
         breed: "",
@@ -61,6 +61,19 @@ class AnimalAdd extends Component {
                             onChange={this.handleFieldChange}
                             id="name"
                             value={this.state.name}/>
+
+                            <select>
+                                {this.state.status.map(opt => {
+                                    return (
+                                        <option
+                                        key={opt.status}
+                                        value={opt.status}></option>
+                                    );
+                                })
+                                }                             
+                            </select>
+
+
                             <label htmlFor="number">Number</label>
                             <input
                             type="text"

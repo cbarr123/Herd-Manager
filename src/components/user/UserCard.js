@@ -6,7 +6,7 @@ class UserCard extends Component {
     handleDelete = () => {
         //invoke the delete function in UserManger.
         this.setState({loadingStatus: true})
-        UserManager.delete(this.props.userId)
+        UserManager.delete(this.props.user.id)
         .then(() => this.props.history.push("/manager"))
     } 
     
@@ -26,7 +26,7 @@ class UserCard extends Component {
                 
                 <button
                     type="button"
-                    onClick = {() => {this.props.history.push(`user/${this.props.match.params.userId}/edit`)}}>
+                    onClick = {() => {this.props.history.push(`user/${this.props.user.id}/edit`)}}>
                     Edit User
                 </button>
                 

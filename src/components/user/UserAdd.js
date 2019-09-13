@@ -31,6 +31,7 @@ class UserAdd extends Component {
                 password: this.state.password
             }
             UserManager.post(newUser)
+            .then(() => this.props.history.push("/manager"))
         }
     };
 
