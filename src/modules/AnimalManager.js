@@ -8,6 +8,15 @@ export default {
     get(id) {
         return fetch(`${remoteURL}/animals/${id}`).then(result => result.json())
     },
+    post(newAnimal) {
+      return fetch(`${remoteURL}/animals`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newAnimal)
+      }).then(data => data.json())
+  },
     update(editedAnimal) {
         return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
           method: "PUT",

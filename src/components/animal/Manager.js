@@ -14,7 +14,6 @@ class Manager extends Component {
       this.setState({
         users: users
       });
-      console.log(users);
     });
   }
 

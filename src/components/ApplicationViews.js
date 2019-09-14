@@ -76,10 +76,10 @@ class ApplicationViews extends Component{
                     exact
                     path="/animals/:animalId(\d+)/edit"
                     render={props => {
-                        // Pass the AnimalID to the AnimalEdit Component
+                        // Pass the AnimalId to the AnimalEdit Component
                     return (
                     <AnimalEdit 
-                        animalID={parseInt(props.match.params.animalId)}
+                        animalId={parseInt(props.match.params.animalId)}
                         {...props} 
                     />
                     )
@@ -104,7 +104,7 @@ class ApplicationViews extends Component{
                     exact
                     path="/user/:userId(\d+)/edit"
                     render={props => {
-                        // Pass the UserID to the UserEdit Component
+                        // Pass the UserId to the UserEdit Component
                     return (
                     <UserEdit 
                         userID={parseInt(props.match.params.userId)}

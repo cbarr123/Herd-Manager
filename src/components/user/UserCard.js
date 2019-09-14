@@ -19,7 +19,6 @@ class UserCard extends Component {
                 <h5>Name: {`${this.props.user.firstName} ${this.props.user.lastName} `}</h5>
                 <button 
                     type="button" 
-                    // disabled={this.state.loadingStatus} 
                     onClick={this.handleDelete}>
                     Delete User
                 </button>

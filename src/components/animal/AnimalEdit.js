@@ -6,7 +6,8 @@ class AnimalEdit extends Component {
     state = {
         id: "",
         herdId: "",
-        status: "",
+        status: [],
+        selectedStatus: "",
         name: "",
         number: "",
         breed: "",
@@ -39,15 +40,14 @@ class AnimalEdit extends Component {
             dateOfBirth: this.state.dateOfBirth
         };
         AnimalManager.update(editedAnimal)
-        // .then(() => {this.props.history.push(`${this.props.animalId}`)});
-        .then(() => {this.props.history.push(`/dashboard`)});
+        .then(() => {this.props.history.push(`/animals/${this.props.animalId}`)});
+        // .then(() => {this.props.history.push(`/dashboard`)});
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)
         .then(animal => {
             this.setState({
                 herdId: animal.herdId,
-                status: animal.status,
                 name: animal.name,
                 number: animal.number,
                 breed: animal.breed,
@@ -57,8 +57,14 @@ class AnimalEdit extends Component {
                 gender: animal.gender,
                 dateOfBirth: animal.dateOfBirth,
                 loadingStatus: false
-            })
-        })
+            });
+        });
+        AnimalManager.getAnimalStatus()
+        .then((status) => {
+            this.setState({
+                status: status
+            });
+        });
     };
     render () {
         return (
@@ -72,6 +78,13 @@ class AnimalEdit extends Component {
                             onChange={this.handleFieldChange}
                             id="name"
                             value={this.state.name}/>
+
+                            <select value={this.state.selectedStatus}
+                                onChange={(event)=>this.setState({selectedStatus: event.target.value})}>
+                                {this.state.status.map((opt) => <option 
+                                key={opt.status} value={opt.status}>{opt.status}</option>)}
+                            </select >
+
                             <label htmlFor="number">Number</label>
                             <input
                             type="text"

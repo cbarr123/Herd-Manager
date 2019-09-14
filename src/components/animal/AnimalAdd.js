@@ -47,6 +47,16 @@ class AnimalAdd extends Component {
             .then(()=>{this.props.history.push("/dashboard")});
         }
     }
+
+    componentDidMount() {
+        AnimalManager.getAnimalStatus()
+        .then((status) => {
+            this.setState({
+                status: status
+            });
+        });
+    }
+
         
     render () {
         return(
@@ -61,20 +71,9 @@ class AnimalAdd extends Component {
                             onChange={this.handleFieldChange}
                             id="name"
                             value={this.state.name}/>
-
-                            <select onChange={this.handleFieldChange}>
-                                {this.state.status.map(opt => {
-                                    return (
-                                        <option
-                                        key={opt.id}
-                                        value={opt.id}
-                                        >{opt.status}</option>
-                                    );
-                                })
-                                }                             
+                            <select>
+                                {this.state.status.map((opt) => <option key={opt.status} value={opt.status}>{opt.status}</option>)}
                             </select>
-
-
                             <label htmlFor="number">Number</label>
                             <input
                             type="text"
