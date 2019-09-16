@@ -7,6 +7,7 @@ class AnimalAdd extends Component {
         id: "",
         herdId: 1,
         status: "",
+        statusOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -47,6 +48,17 @@ class AnimalAdd extends Component {
             .then(()=>{this.props.history.push("/dashboard")});
         }
     }
+
+    componentDidMount() {
+        AnimalManager.getStatusOptions()
+        .then(data => {
+            let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
+            console.log(statusOptions)
+            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });
+            
+        })
+    }
+
         
     render () {
         return(
@@ -61,6 +73,10 @@ class AnimalAdd extends Component {
                             onChange={this.handleFieldChange}
                             id="name"
                             value={this.state.name}/>
+                            <select value={this.state.status}
+                                onChange={(event)=>this.setState({status: event.target.value})}>
+                                {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                            </select >
                             <label htmlFor="number">Number</label>
                             <input
                             type="text"

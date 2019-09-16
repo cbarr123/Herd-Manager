@@ -7,6 +7,7 @@ class AnimalEdit extends Component {
         id: "",
         herdId: "",
         status: "",
+        statusOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -39,15 +40,14 @@ class AnimalEdit extends Component {
             dateOfBirth: this.state.dateOfBirth
         };
         AnimalManager.update(editedAnimal)
-        // .then(() => {this.props.history.push(`${this.props.animalId}`)});
-        .then(() => {this.props.history.push(`/dashboard`)});
+        .then(() => {this.props.history.push(`/animals/${this.props.animalId}`)});
+        // .then(() => {this.props.history.push(`/dashboard`)});
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)
         .then(animal => {
             this.setState({
                 herdId: animal.herdId,
-                status: animal.status,
                 name: animal.name,
                 number: animal.number,
                 breed: animal.breed,
@@ -57,9 +57,18 @@ class AnimalEdit extends Component {
                 gender: animal.gender,
                 dateOfBirth: animal.dateOfBirth,
                 loadingStatus: false
-            })
-        })
+            });
+        });
+
+        AnimalManager.getStatusOptions()
+        .then(data => {
+            let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
+            console.log(statusOptions)
+            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });
+            
+        })      
     };
+    
     render () {
         return (
             <React.Fragment>
@@ -72,6 +81,12 @@ class AnimalEdit extends Component {
                             onChange={this.handleFieldChange}
                             id="name"
                             value={this.state.name}/>
+
+                            <select value={this.state.status}
+                                onChange={(event)=>this.setState({status: event.target.value})}>
+                                {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                            </select >
+
                             <label htmlFor="number">Number</label>
                             <input
                             type="text"
@@ -125,7 +140,7 @@ class AnimalEdit extends Component {
                             <Link to={`/dashboard`}>
                                 <button type="button"
                                 className="DashboardButton"
-                                >Manager</button>
+                                >Dashboard</button>
                             </Link>
                         </div>
                     </fieldset>

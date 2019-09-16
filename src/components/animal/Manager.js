@@ -14,7 +14,6 @@ class Manager extends Component {
       this.setState({
         users: users
       });
-      console.log(users);
     });
   }
 
@@ -32,9 +31,13 @@ class Manager extends Component {
         </section>
         <section>
           <h3>Manage User</h3>
-          <div className="User-Cards">
+
+            <div className="User-Cards">
             {this.state.users.map(user => (
-              <UserCard key={user.id} user={user} {...this.props} />
+              <UserCard 
+              key={user.id} 
+              user={user} 
+              {...this.props} />
             ))}
           </div>
 

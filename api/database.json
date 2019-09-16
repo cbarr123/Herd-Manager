@@ -1,32 +1,18 @@
 {
   "user": [
     {
+      "id": 1,
       "firstName": "Carl",
-      "lastName": "Barringer",
-      "email": "carl@gmail.com",
-      "password": "1",
-      "id": 1
-    },
-    {
+      "lastName": "Barringer23",
       "email": "cb@cb.com",
-      "password": "1",
-      "firstName": "Rob",
-      "lastName": "Barringer",
-      "id": 6
+      "password": "1"
     },
     {
-      "email": "tom@tom",
-      "password": "1",
-      "firstName": "Tom",
-      "lastName": "Dill",
-      "id": 7
-    },
-    {
-      "firstName": "Steve",
-      "lastName": "Steve",
-      "email": "steve@gmail.com",
-      "password": "1",
-      "id": 8
+      "id": 3,
+      "firstName": "Honey Bear",
+      "lastName": "Dog",
+      "email": "dog@dog.com",
+      "password": "1"
     }
   ],
   "herd": [
@@ -40,73 +26,9 @@
   ],
   "animals": [
     {
-      "id": 1,
+      "id": 6,
       "herdId": 1,
-      "status": 1,
-      "name": "sample name",
-      "number": "1234564",
-      "breed": "American Lamancha",
-      "sire": "147852",
-      "dam": "325698",
-      "description": "brown, with white legs",
-      "gender": "female",
-      "dateOfBirth": "20170301"
-    },
-    {
-      "id": 2,
-      "herdId": 1,
-      "status": 1,
-      "name": "Agoat",
-      "number": "23457833",
-      "breed": "American Lamancha",
-      "sire": "569569",
-      "dam": "458458",
-      "description": "Crazy Goat",
-      "gender": "Female",
-      "dateOfBirth": "20150104"
-    },
-    {
-      "id": 3,
-      "herdId": 1,
-      "status": 1,
-      "name": "a real Goat name",
-      "number": "12345656",
-      "breed": "American Lamancha",
-      "sire": "14785",
-      "dam": "32569889",
-      "description": "brown, with white legs",
-      "gender": "femalr",
-      "dateOfBirth": "20180301"
-    },
-    {
-      "id": 4,
-      "herdId": 1,
-      "status": "",
-      "name": "MissChief",
-      "number": "12345690",
-      "breed": "American Lamancha",
-      "sire": "1345",
-      "dam": "1457",
-      "description": "Old Goat",
-      "gender": "Female",
-      "dateOfBirth": "20121021"
-    },
-    {
-      "id": 5,
-      "herdId": 1,
-      "status": "",
-      "name": "Fake Goat",
-      "number": "678678678",
-      "breed": "Nubian",
-      "sire": "089709",
-      "dam": "098098",
-      "description": "Fake Goatr",
-      "gender": "Femalke",
-      "dateOfBirth": "20160907"
-    },
-    {
-      "herdId": 1,
-      "status": "",
+      "status": "Current Stock",
       "name": "Another Goat",
       "number": "12378",
       "breed": "Nubian",
@@ -114,14 +36,47 @@
       "dam": "8765",
       "description": "Crazy Goart",
       "gender": "Male",
-      "dateOfBirth": "20197006",
-      "id": 6
+      "dateOfBirth": "20197006"
+    },
+    {
+      "id": 7,
+      "herdId": 1,
+      "status": "External Herd",
+      "name": "Tommy",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": ""
+    },
+    {
+      "id": 8,
+      "herdId": 1,
+      "status": "",
+      "name": "MissChief",
+      "number": "12345",
+      "breed": "lamanchqa",
+      "sire": "123434",
+      "dam": "1344134",
+      "description": "Brown",
+      "gender": "Female",
+      "dateOfBirth": "20180203"
     }
   ],
-  "status": [
+  "animalStatus": [
     {
       "id": 1,
       "status": "Current Stock"
+    },
+    {
+      "id": 2,
+      "status": "Deceased"
+    },
+    {
+      "id": 3,
+      "status": "External Herd"
     }
   ]
 }

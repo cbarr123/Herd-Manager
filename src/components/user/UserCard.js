@@ -6,7 +6,7 @@ class UserCard extends Component {
     handleDelete = () => {
         //invoke the delete function in UserManger.
         this.setState({loadingStatus: true})
-        UserManager.delete(this.props.userId)
+        UserManager.delete(this.props.user.id)
         .then(() => this.props.history.push("/manager"))
     } 
     
@@ -19,14 +19,13 @@ class UserCard extends Component {
                 <h5>Name: {`${this.props.user.firstName} ${this.props.user.lastName} `}</h5>
                 <button 
                     type="button" 
-                    // disabled={this.state.loadingStatus} 
                     onClick={this.handleDelete}>
                     Delete User
                 </button>
                 
                 <button
                     type="button"
-                    onClick = {() => {this.props.history.push(`${this.props.userId}/edit`)}}>
+                    onClick = {() => {this.props.history.push(`user/${this.props.user.id}/edit`)}}>
                     Edit User
                 </button>
                 
