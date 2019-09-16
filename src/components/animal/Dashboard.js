@@ -36,11 +36,12 @@ class Dashboard extends Component {
                     className="ManagerButton"
                     >Manager</button>
                 </Link>
-                <button type="button"
-                className="FilterButton"
-                onClick = {() => {}}>
-                Filter
-                </button>
+                <Link to={`/animals/animalfilter`}>
+                    <button type="button"
+                    className="FilterButton"
+                    >Filter
+                    </button>
+                </Link>
             </div>
             </React.Fragment>
         )

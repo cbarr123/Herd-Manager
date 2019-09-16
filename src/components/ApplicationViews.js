@@ -7,6 +7,7 @@ import Dashboard from "./animal/Dashboard"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
 import AnimalAdd from "./animal/AnimalAdd"
+import AnimalFilter from "./animal/AnimalFilter"
 import Manager from "./animal/Manager"
 import UserAdd from "./user/UserAdd"
 import UserEdit from "./user/UserEdit"
@@ -90,6 +91,13 @@ class ApplicationViews extends Component{
                     path="/animals/new"
                     render={props => {
                         return <AnimalAdd {...props} loadData={this.loadData} />;
+                    }}
+                />
+                <Route
+                    exact
+                    path="/animals/animalfilter"
+                    render={props => {
+                        return <AnimalFilter {...props} loadData={this.loadData} />;
                     }}
                 />
                 {/* User Routes */}
