@@ -26,8 +26,9 @@
   ],
   "animals": [
     {
+      "id": 6,
       "herdId": 1,
-      "status": "",
+      "status": "Current Stock",
       "name": "Another Goat",
       "number": "12378",
       "breed": "Nubian",
@@ -35,25 +36,12 @@
       "dam": "8765",
       "description": "Crazy Goart",
       "gender": "Male",
-      "dateOfBirth": "20197006",
-      "id": 6
+      "dateOfBirth": "20197006"
     },
     {
+      "id": 7,
       "herdId": 1,
-      "status": [
-        {
-          "id": 1,
-          "status": "Current Stock"
-        },
-        {
-          "id": 2,
-          "status": "Deceased"
-        },
-        {
-          "id": 3,
-          "status": "External Herd"
-        }
-      ],
+      "status": "External Herd",
       "name": "Tommy",
       "number": "",
       "breed": "",
@@ -61,11 +49,23 @@
       "dam": "",
       "description": "",
       "gender": "",
-      "dateOfBirth": "",
-      "id": 7
+      "dateOfBirth": ""
+    },
+    {
+      "id": 8,
+      "herdId": 1,
+      "status": "",
+      "name": "MissChief",
+      "number": "12345",
+      "breed": "lamanchqa",
+      "sire": "123434",
+      "dam": "1344134",
+      "description": "Brown",
+      "gender": "Female",
+      "dateOfBirth": "20180203"
     }
   ],
-  "status": [
+  "animalStatus": [
     {
       "id": 1,
       "status": "Current Stock"

@@ -44,6 +44,7 @@ class AnimalDetail extends Component {
                 <div>
                     <h3>Name: <span>{this.state.name}</span></h3>
                     <h3>Breed: <span>{this.state.breed}</span></h3>
+                    <h3>Status: <span>{this.state.status}</span></h3>
                     <h3>ADGA Number: <span>{this.state.number}</span></h3>
                     <h3>Gender: <span>{this.state.gender}</span></h3>
                     <h3>DOB: <span>{this.state.dateOfBirth}</span></h3>

@@ -6,8 +6,8 @@ class AnimalEdit extends Component {
     state = {
         id: "",
         herdId: "",
-        status: [],
-        selectedStatus: "",
+        status: "",
+        statusOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -59,13 +59,16 @@ class AnimalEdit extends Component {
                 loadingStatus: false
             });
         });
-        AnimalManager.getAnimalStatus()
-        .then((status) => {
-            this.setState({
-                status: status
-            });
-        });
+
+        AnimalManager.getStatusOptions()
+        .then(data => {
+            let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
+            console.log(statusOptions)
+            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });
+            
+        })      
     };
+    
     render () {
         return (
             <React.Fragment>
@@ -79,10 +82,9 @@ class AnimalEdit extends Component {
                             id="name"
                             value={this.state.name}/>
 
-                            <select value={this.state.selectedStatus}
-                                onChange={(event)=>this.setState({selectedStatus: event.target.value})}>
-                                {this.state.status.map((opt) => <option 
-                                key={opt.status} value={opt.status}>{opt.status}</option>)}
+                            <select value={this.state.status}
+                                onChange={(event)=>this.setState({status: event.target.value})}>
+                                {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                             </select >
 
                             <label htmlFor="number">Number</label>
