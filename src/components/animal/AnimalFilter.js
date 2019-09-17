@@ -12,14 +12,15 @@ class AnimalFilter extends Component {
     
     animalFilter = event => {
         if (this.state.filterGender !== "" && this.state.filterStatus !== "") {
-            console.log("hello world")
+            console.log("both populated")
+            
         } else if (this.state.filterGender === "" && this.state.filterStatus !== "") {
-            console.log("hello world")
+            console.log("status populated")
+            
         } else if (this.state.filterGender !== "" && this.state.filterStatus === "") {
-            console.log("hello world")
+            console.log("gender populated")
+            
         }
-
-
     }
 
 
@@ -30,11 +31,11 @@ class AnimalFilter extends Component {
             this.setState({ statusOptions: [{value: "", display: "Select Status Option"}].concat(statusOptions) });
         })
 
-        AnimalManager.getGenderOptions()
-        .then(data => {
-            let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            this.setState({ genderOptions: [{value: "", display: "Select Gender Option"}].concat(genderOptions) });
-        }) 
+        // AnimalManager.getGenderOptions()
+        // .then(data => {
+        //     let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
+        //     this.setState({ genderOptions: [{value: "", display: "Select Gender Option"}].concat(genderOptions) });
+        // }) 
     }
 
     render () {
