@@ -7,7 +7,10 @@ export default {
     },
     get(id) {
         return fetch(`${remoteURL}/user/${id}`).then(result => result.json())
-      },
+    },
+    getUser(id) {
+        return fetch(`${remoteURL}/user/${id}`).then(result => result.json())
+    },
     post(newUser) {
         return fetch(`${remoteURL}/user`, {
             method: "POST",

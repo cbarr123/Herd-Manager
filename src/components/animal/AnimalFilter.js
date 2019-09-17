@@ -74,22 +74,6 @@ class AnimalFilter extends Component {
                         </div>
                     </fieldset>
                 </form>
-
-                <div>
-                <button
-                    type="button"
-                    // disabled={this.state.loadingStatus}
-                    onClick={this.animalFilter}>
-                    Filter
-                    </button>
-                </div>
-                <section>
-                <Link to={`/dashboard`}>
-                    <button type="button" className="DashboardButton">
-                    Dashboard
-                    </button>
-                </Link>
-                </section>
             </React.Fragment>
         )
     }

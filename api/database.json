@@ -3,15 +3,8 @@
     {
       "id": 1,
       "firstName": "Carl",
-      "lastName": "Barringer23",
+      "lastName": "Barringer",
       "email": "cb@cb.com",
-      "password": "1"
-    },
-    {
-      "id": 3,
-      "firstName": "Honey Bear",
-      "lastName": "Dog",
-      "email": "dog@dog.com",
       "password": "1"
     }
   ],

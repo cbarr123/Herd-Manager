@@ -4,10 +4,13 @@ const remoteURL = "http://localhost:5002"
 export default {
     getAll() {
         return fetch(`${remoteURL}/animals`).then(result => result.json())
-    },
+  },
     get(id) {
         return fetch(`${remoteURL}/animals/${id}`).then(result => result.json())
-    },
+  },
+    getHerd(id) {
+      return fetch(`${remoteURL}/herd/${id}`).then(result => result.json())
+  },
     post(newAnimal) {
       return fetch(`${remoteURL}/animals`, {
           method: "POST",

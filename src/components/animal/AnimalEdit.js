@@ -140,7 +140,7 @@ class AnimalEdit extends Component {
                             <Link to={`/dashboard`}>
                                 <button type="button"
                                 className="DashboardButton"
-                                >Dashboard</button>
+                                >Return</button>
                             </Link>
                         </div>
                     </fieldset>

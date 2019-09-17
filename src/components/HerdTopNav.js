@@ -1,14 +1,29 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
 
 
 class HerdTopNav extends Component {
+    state = {
+        userFirstName: "",
+        userLastName: ""
+    }
+
+    componentDidMount() {
+ 
+
+
+    }
+
+
+
     render() {
         return (
             <React.Fragment>
-            <h1>Herd Manager</h1>
+            <div className="HerdTopNav">
+                <h1>Herd Manager</h1>
+            </div>
+            <div>
 
-
-
+            </div>
             </React.Fragment>
         );
     }
