@@ -7,6 +7,7 @@ class Dashboard extends Component {
     state = {
         animals: [],
     };
+    
     componentDidMount() {
         AnimalManager.getAll()
         .then((animals) => {
@@ -15,7 +16,6 @@ class Dashboard extends Component {
             });
         });
     }
-    
     render () {
         return (
             <React.Fragment>

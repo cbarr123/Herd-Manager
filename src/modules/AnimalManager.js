@@ -31,15 +31,15 @@ export default {
             method: "DELETE"
         })
         .then(result => result.json())
-    },
-     
-      
-      
+    },      
     getStatusOptions() {
-      return fetch(`${remoteURL}/animals/`).then(result => result.json())
+      return fetch(`${remoteURL}/animalStatus/`).then(result => result.json())
     },
-     getGenderOptions() {
-       return fetch(`${remoteURL}/animals/`).then(result => result.json())
-     }
+    getGenderOptions() {
+       return fetch(`${remoteURL}/gender/`).then(result => result.json())
+    },
+    getAnimalByStatus(status) {
+      return fetch(`${remoteURL}/animals?status=${status}`).then(result => result.json())
+  },
   }
 

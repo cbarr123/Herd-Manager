@@ -4,24 +4,33 @@ import AnimalManager from "../../modules/AnimalManager";
 
 class AnimalFilter extends Component {
     state = {
+        animals: [],
         filterStatus: "",
         filterGender: "",
         statusOptions: [],
         genderOptions: [],
     };
     
-    animalFilter = event => {
-        if (this.state.filterGender !== "" && this.state.filterStatus !== "") {
-            console.log("both populated")
-            
-        } else if (this.state.filterGender === "" && this.state.filterStatus !== "") {
-            console.log("status populated")
-            
-        } else if (this.state.filterGender !== "" && this.state.filterStatus === "") {
-            console.log("gender populated")
-            
-        }
-    }
+    testing() {AnimalManager.getAnimalByStatus()
+    .then((animals) => {
+        this.setState({
+            animals: animals
+        });
+    });
+}
+
+
+
+    // animalFilter = event => {
+    //     if (this.state.filterGender !== "" && this.state.filterStatus !== "") {
+    //         console.log("both populated")   
+    //     } else if (this.state.filterGender === "" && this.state.filterStatus !== "") {
+    //         console.log("status populated");
+    //         this.testing()
+    //     } else if (this.state.filterGender !== "" && this.state.filterStatus === "") {
+    //         console.log("gender populated")    
+    //     }
+    // }
 
 
     componentDidMount() {
@@ -31,14 +40,23 @@ class AnimalFilter extends Component {
             this.setState({ statusOptions: [{value: "", display: "Select Status Option"}].concat(statusOptions) });
         })
 
-        // AnimalManager.getGenderOptions()
-        // .then(data => {
-        //     let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-        //     this.setState({ genderOptions: [{value: "", display: "Select Gender Option"}].concat(genderOptions) });
-        // }) 
+        AnimalManager.getGenderOptions()
+        .then(data => {
+            let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
+            this.setState({ genderOptions: [{value: "", display: "Select Gender Option"}].concat(genderOptions) });
+        })
     }
 
     render () {
+        if (this.state.filterGender !== "" && this.state.filterStatus !== "") {
+            console.log("both populated")   
+        } else if (this.state.filterGender === "" && this.state.filterStatus !== "") {
+            console.log("status populated");
+            this.testing()
+        } else if (this.state.filterGender !== "" && this.state.filterStatus === "") {
+            console.log("gender populated")    
+        }
+
         return (
             <React.Fragment>
                 <h1>Filter View</h1>
@@ -60,7 +78,7 @@ class AnimalFilter extends Component {
                 <div>
                 <button
                     type="button"
-                    disabled={this.state.loadingStatus}
+                    // disabled={this.state.loadingStatus}
                     onClick={this.animalFilter}>
                     Filter
                     </button>
