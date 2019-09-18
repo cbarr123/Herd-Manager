@@ -83,12 +83,19 @@ class Dashboard extends Component {
             </div>
 
             <div className=".container-cards">
+                
+                
                 {this.state.animals.filter(animal => {
-                    // return animal.status = this.state.filterStatus
-                }
+                    if(animal.status === ""){
+                        return animal
+                    }
+                    else 
+                        if(animal.status === this.state.filterStatus) {
+                        console.log(animal.status, animal.id)
+                        return animal
+                    }
                                                              
-                )}
-                .{this.state.animals.map(animal => (
+                }).map(animal => (
                     <AnimalCard
                     key={animal.id}
                     animal={animal}
