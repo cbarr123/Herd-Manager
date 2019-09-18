@@ -12,6 +12,7 @@ class Dashboard extends Component {
         genderOptions: [],
         herdName: "",
         herdNumber: "",
+        filteredAnimals: []
     };
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -19,9 +20,28 @@ class Dashboard extends Component {
         this.setState(stateToChange)
     };
     
+    filterAnimals() {
+        let filteredAnimals = this.state.animals.filter(animal => {
+            return animal.status === this.state.filterStatus && animal.gender === this.state.filterGender
+        })
+        this.setState({filteredAnimals: filteredAnimals})
+        console.log("state.filteredAnimals", this.state.animals)
+        console.log("const.filteredAnimals", filteredAnimals)
+    };
+    
+    
 
 
+
+
+    
     componentDidMount() {
+        AnimalManager.getAll()
+        .then((animals) => {
+            this.setState({
+                animals: animals
+            });
+        })
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
@@ -39,22 +59,15 @@ class Dashboard extends Component {
                 herdNumber:  herd.number
             })
         })
-        AnimalManager.getAll()
-        .then((animals) => {
-            this.setState({
-                animals: animals
-            });
-        })
+        this.filterAnimals()
     }
+    //* set state for filteredAnimals
+    //* watch state for filterStatus and FilterGender
+    //* if that state changes render the animals for animal.status === filterStatus and animal.gender === filterGender 
 
+
+    
     render () {
-        let filteredAnimals = this.state.animals.filter(animal =>{
-            return animal.status === this.state.filterStatus && animal.gender === this.state.filterGender
-            // return animal.status === "Current Stock"
-            
-        })
-        console.log("filteredAnimals", filteredAnimals)
-        
         return (
             <React.Fragment>
             <div>
@@ -69,6 +82,7 @@ class Dashboard extends Component {
                     onChange={(event)=>this.setState({filterStatus: event.target.value})}>
                     {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                 </select >
+                
                 <select value={this.state.filterGender}
                     onChange={(event)=>this.setState({filterGender: event.target.value})}>
                     {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
@@ -76,7 +90,7 @@ class Dashboard extends Component {
             </div>
 
             <div className=".container-cards">
-                {this.state.animals.map(animal => (
+                {this.state.filteredAnimals.map(animal => (
                     <AnimalCard
                     key={animal.id}
                     animal={animal}
