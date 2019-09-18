@@ -45,7 +45,7 @@ class AnimalAdd extends Component {
                 dateOfBirth: this.state.dateOfBirth
             }
             AnimalManager.post(newAnimal)
-            .then(()=>{this.props.history.push("/dashboard")});
+            .then(()=>{this.props.history.push("/herdview")});
         }
     }
 
@@ -54,8 +54,7 @@ class AnimalAdd extends Component {
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
             console.log(statusOptions)
-            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });
-            
+            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });  
         })
     }
 

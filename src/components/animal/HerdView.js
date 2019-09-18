@@ -20,7 +20,7 @@ class Dashboard extends Component {
         this.setState(stateToChange)
     };
     
-    filterAnimals() {
+    filterAnimals = () => {
         let animals = this.state.animals.filter(animal => {
             return animal.status === this.state.filterStatus && animal.gender === this.state.filterGender
         })
@@ -40,11 +40,11 @@ class Dashboard extends Component {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
             this.setState({ statusOptions: [{value: "", display: "Select Animal Status"}].concat(statusOptions) });
         })
-        AnimalManager.getGenderOptions()
-        .then(data => {
-            let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            this.setState({ genderOptions: [{value: "", display: "Select Animal Gender"}].concat(genderOptions) });
-        })
+        // AnimalManager.getGenderOptions()
+        // .then(data => {
+        //     let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
+        //     this.setState({ genderOptions: [{value: "", display: "Select Animal Gender"}].concat(genderOptions) });
+        // })
         AnimalManager.getHerd(1)
         .then(herd => {
             this.setState({
@@ -52,7 +52,7 @@ class Dashboard extends Component {
                 herdNumber:  herd.number
             })
         })
-        this.filterAnimals()
+        
     }
     //* set state for filteredAnimals
     //* watch state for filterStatus and FilterGender
@@ -61,8 +61,6 @@ class Dashboard extends Component {
     
     
     render () {
-        console.log("state.Animals in render", this.state.animals)
-        console.log("state.filteredAnimals in render", this.state.filteredAnimals)
         return (
             <React.Fragment>
             <div>
@@ -78,14 +76,19 @@ class Dashboard extends Component {
                     {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                 </select >
                 
-                <select value={this.state.filterGender}
+                {/* <select value={this.state.filterGender}
                     onChange={(event)=>this.setState({filterGender: event.target.value})}>
                     {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                </select >
+                </select > */}
             </div>
 
             <div className=".container-cards">
-                {this.state.filteredAnimals.map(animal => (
+                {this.state.animals.filter(animal => {
+                    // return animal.status = this.state.filterStatus
+                }
+                                                             
+                )}
+                .{this.state.animals.map(animal => (
                     <AnimalCard
                     key={animal.id}
                     animal={animal}

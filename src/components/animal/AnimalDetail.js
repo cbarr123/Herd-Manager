@@ -48,7 +48,6 @@ class AnimalDetail extends Component {
                     <h3>ADGA Number: <span>{this.state.number}</span></h3>
                     <h3>Gender: <span>{this.state.gender}</span></h3>
                     <h3>DOB: <span>{this.state.dateOfBirth}</span></h3>
-                    <h3>Age: <span></span></h3>
                     <h3>Description: <span>{this.state.description}</span></h3>
                     <h3>Sire: <span>{this.state.sire}</span></h3>
                     <h3>Dam: <span>{this.state.dam}</span></h3>
@@ -66,9 +65,9 @@ class AnimalDetail extends Component {
                     >
                     Delete
                     </button>
-                    <Link to={`/dashboard`}>
+                    <Link to={`/herdview`}>
                         <button type="button"
-                        className="DashboardButton"
+                        className="HerdViewButton"
                         >Return</button>
                     </Link>
                 </section>
