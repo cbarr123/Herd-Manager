@@ -21,20 +21,13 @@ class Dashboard extends Component {
     };
     
     filterAnimals() {
-        let filteredAnimals = this.state.animals.filter(animal => {
+        let animals = this.state.animals.filter(animal => {
             return animal.status === this.state.filterStatus && animal.gender === this.state.filterGender
         })
-        this.setState({filteredAnimals: filteredAnimals})
-        console.log("state.filteredAnimals", this.state.animals)
-        console.log("const.filteredAnimals", filteredAnimals)
+        this.setState({filteredAnimals: animals})
+        console.log("const.animals from filterAnimals", animals)
     };
-    
-    
-
-
-
-
-    
+       
     componentDidMount() {
         AnimalManager.getAll()
         .then((animals) => {
@@ -64,10 +57,12 @@ class Dashboard extends Component {
     //* set state for filteredAnimals
     //* watch state for filterStatus and FilterGender
     //* if that state changes render the animals for animal.status === filterStatus and animal.gender === filterGender 
-
-
+    
+    
     
     render () {
+        console.log("state.Animals in render", this.state.animals)
+        console.log("state.filteredAnimals in render", this.state.filteredAnimals)
         return (
             <React.Fragment>
             <div>

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Home from "./home/Home"
 import LoginForm from "./auth/LoginForm"
 import RegistrationForm from "./auth/RegistrationForm"
-import Dashboard from "./animal/Dashboard"
+import HerdView from "./animal/HerdView"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
 import AnimalAdd from "./animal/AnimalAdd"
@@ -45,9 +45,9 @@ class ApplicationViews extends Component{
                 />
                 <Route
                     exact
-                    path="/dashboard"
+                    path="/herdview"
                     render={props => {
-                        return <Dashboard {...props} loadData={this.loadData} />;
+                        return <HerdView {...props} loadData={this.loadData} />;
                     }}
                 />
                 <Route

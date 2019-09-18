@@ -26,8 +26,8 @@ class LoginForm extends Component {
         this.props.history.push("/Dashboard");
     }
     componentDidMount() {
-        console.log(this.state)
-        console.log("from componentDidMount at loginForm")
+        // console.log(this.state)
+        // console.log("from componentDidMount at loginForm")
     }
     handleLogin = (event) => {
         event.preventDefault();
@@ -45,10 +45,10 @@ class LoginForm extends Component {
                 const currentUser = users.find(user => {
                     return user.email === this.state.email && user.password === this.state.password
                 });
-                console.log (currentUser);
+                // console.log (currentUser);
                 if (currentUser !== undefined) {
                     this.setState({activeUserId: currentUser.id});
-                    this.props.history.push("/Dashboard");
+                    this.props.history.push("/herdview");
 
                 } else {
                     window.alert("something is wrong, please try again")
