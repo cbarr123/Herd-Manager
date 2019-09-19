@@ -31,7 +31,7 @@ class UserAdd extends Component {
                 password: this.state.password
             }
             UserManager.post(newUser)
-            .then(() => this.props.history.push("/manager"))
+            .then(() => this.props.history.push("/herdview"))
         }
     };
 
@@ -77,9 +77,9 @@ class UserAdd extends Component {
                             onClick={this.createNewUser}>
                             Create User
                             </button>
-                            <Link to={`/manager`}>
+                            <Link to={`/herdview`}>
                                 <button type="button"
-                                className="ManagerButton"
+                                className="HerdView"
                                 >Cancel</button>
                             </Link>
                         </div>

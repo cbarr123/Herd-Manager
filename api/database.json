@@ -6,6 +6,27 @@
       "lastName": "Barringer",
       "email": "cb@cb.com",
       "password": "1"
+    },
+    {
+      "firstName": "William",
+      "lastName": "Renquist",
+      "email": "wrt@gmail.com",
+      "password": "1",
+      "id": 2
+    },
+    {
+      "firstName": "Tom",
+      "lastName": "Newman",
+      "email": "tom@gmail.com",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "firstName": "Sandy",
+      "lastName": "Wood",
+      "email": "sandy@gmail.com",
+      "password": "1",
+      "id": 4
     }
   ],
   "herd": [
@@ -36,13 +57,13 @@
       "herdId": 1,
       "status": "Current Stock",
       "name": "Tommy",
-      "number": "",
+      "number": "3456",
       "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": ""
+      "dateOfBirth": "20150403"
     },
     {
       "id": 8,
@@ -61,27 +82,27 @@
       "id": 9,
       "herdId": 1,
       "status": "External Herd",
-      "name": "Tina",
+      "name": "Tina the Goat",
       "number": "",
       "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": ""
+      "dateOfBirth": "20130705"
     },
     {
+      "id": 10,
       "herdId": 1,
-      "status": "Current Stock",
-      "name": "A New Goat",
+      "status": "Deceased",
+      "name": "A Dead Goat",
       "number": "134567",
       "breed": "Lamancha",
       "sire": "123",
       "dam": "567",
       "description": "Brown and White",
       "gender": " Male",
-      "dateOfBirth": "20170923",
-      "id": 10
+      "dateOfBirth": "20170923"
     },
     {
       "id": 11,

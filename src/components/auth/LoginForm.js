@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 
 class LoginForm extends Component {
@@ -13,7 +13,7 @@ class LoginForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
-    handleLogin = (user) => {
+    setSessionStorage = (user) => {
         sessionStorage.setItem(
             "credentials",
             JSON.stringify({
@@ -48,6 +48,7 @@ class LoginForm extends Component {
                 // console.log (currentUser);
                 if (currentUser !== undefined) {
                     this.setState({activeUserId: currentUser.id});
+                    this.setSessionStorage();
                     this.props.history.push("/herdview");
 
                 } else {
@@ -84,6 +85,13 @@ class LoginForm extends Component {
                             disabled={this.state.loadingStatus}
                             onClick={this.handleLogin}
                         >Login</button>
+                        </div>
+                        <div>
+                            <h4>Please register if you are not a current user</h4>
+                            <Link className="nav-link"
+                                to="/user/new">
+                                <button type="button">User Registration</button>
+                            </Link> 
                         </div>
                     </fieldset>
                 </form>
