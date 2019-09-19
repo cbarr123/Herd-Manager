@@ -25,9 +25,6 @@ class Manager extends Component {
           <Link to={`/animals/new`}>
             <button type="button">Add Animal</button>
           </Link>
-          {/* <button type="button" onClick={this.editHerd}>
-            Edit Herd
-          </button> */}
         </section>
         <section>
           <h3>Manage User</h3>

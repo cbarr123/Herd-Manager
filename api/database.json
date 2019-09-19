@@ -64,6 +64,32 @@
       "description": "",
       "gender": "Male",
       "dateOfBirth": "20130705"
+    },
+    {
+      "herdId": 1,
+      "status": "Current Stock",
+      "name": "Oreo",
+      "number": "1369",
+      "breed": "American Lamancha",
+      "sire": "345",
+      "dam": "567",
+      "description": "Brown ",
+      "gender": "Female",
+      "dateOfBirth": "20190902",
+      "id": 10
+    },
+    {
+      "herdId": 1,
+      "status": "Deceased",
+      "name": "Trouble the Goat",
+      "number": "23456",
+      "breed": "American Lamancha",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "",
+      "id": 12
     }
   ],
   "animalStatus": [

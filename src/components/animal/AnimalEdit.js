@@ -43,7 +43,6 @@ class AnimalEdit extends Component {
         };
         AnimalManager.update(editedAnimal)
         .then(() => {this.props.history.push(`/animals/${this.props.animalId}`)});
-        // .then(() => {this.props.history.push(`/dashboard`)});
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)
@@ -72,7 +71,7 @@ class AnimalEdit extends Component {
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(gende/rOptions)
+            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()

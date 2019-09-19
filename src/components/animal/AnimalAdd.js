@@ -55,7 +55,6 @@ class AnimalAdd extends Component {
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(statusOptions)
             this.setState({ statusOptions: [{value: "", display: "Select Status"}].concat(statusOptions) });  
         })
         AnimalManager.getGenderOptions()

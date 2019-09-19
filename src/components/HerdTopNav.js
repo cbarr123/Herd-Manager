@@ -31,8 +31,6 @@ class HerdTopNav extends Component {
 
     }
 
-
-
     render() {
         return (
             <React.Fragment>
@@ -41,12 +39,6 @@ class HerdTopNav extends Component {
             </div>
             <div>
                 <h5>User: {this.state.firstName} {this.state.lastName} </h5> 
-                
-                {/* <button type="button"
-                    className="UserEditButton"
-                    onClick={() => {this.props.history.push(`/users/${this.props.user.id}/edit`)}}
-                >Edit User</button> */}
-                
                 <Link className="nav-link"
                 to="/"
                 onClick={this.handleLogout} >
