@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 
 class LoginForm extends Component {
@@ -13,7 +13,7 @@ class LoginForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
-    handleLogin = (user) => {
+    setSessionStorage = (user) => {
         sessionStorage.setItem(
             "credentials",
             JSON.stringify({
@@ -26,8 +26,8 @@ class LoginForm extends Component {
         this.props.history.push("/Dashboard");
     }
     componentDidMount() {
-        console.log(this.state)
-        console.log("from componentDidMount at loginForm")
+        // console.log(this.state)
+        // console.log("from componentDidMount at loginForm")
     }
     handleLogin = (event) => {
         event.preventDefault();
@@ -45,10 +45,11 @@ class LoginForm extends Component {
                 const currentUser = users.find(user => {
                     return user.email === this.state.email && user.password === this.state.password
                 });
-                console.log (currentUser);
+                // console.log (currentUser);
                 if (currentUser !== undefined) {
                     this.setState({activeUserId: currentUser.id});
-                    this.props.history.push("/Dashboard");
+                    this.setSessionStorage();
+                    this.props.history.push("/herdview");
 
                 } else {
                     window.alert("something is wrong, please try again")
@@ -84,6 +85,13 @@ class LoginForm extends Component {
                             disabled={this.state.loadingStatus}
                             onClick={this.handleLogin}
                         >Login</button>
+                        </div>
+                        <div>
+                            <h4>Please register if you are not a current user</h4>
+                            <Link className="nav-link"
+                                to="/user/new">
+                                <button type="button">User Registration</button>
+                            </Link> 
                         </div>
                     </fieldset>
                 </form>

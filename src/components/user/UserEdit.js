@@ -29,7 +29,7 @@ class UserEdit extends Component {
             password: this.state.password
         }
         UserManager.update(editedUser)
-        .then(() => {this.props.history.push(`/manager`)});
+        .then(() => {this.props.history.push(`/herdview`)});
     };
     componentDidMount() {
         UserManager.get(this.props.match.params.userId)
@@ -85,7 +85,7 @@ class UserEdit extends Component {
                             onClick={this.updateExistingUser}>
                             Submit Edit
                             </button>
-                            <Link to={`/manager`}>
+                            <Link to={`/herdview`}>
                                 <button type="button"
                                 className="Button"
                                 >Cancel</button>

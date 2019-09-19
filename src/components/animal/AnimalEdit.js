@@ -8,6 +8,8 @@ class AnimalEdit extends Component {
         herdId: "",
         status: "",
         statusOptions: [],
+        genderOptions: [],
+        breedOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -55,6 +57,7 @@ class AnimalEdit extends Component {
                 dam: animal.dam,
                 description: animal.description,
                 gender: animal.gender,
+                status: animal.status,
                 dateOfBirth: animal.dateOfBirth,
                 loadingStatus: false
             });
@@ -63,10 +66,21 @@ class AnimalEdit extends Component {
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            console.log(statusOptions)
-            this.setState({ statusOptions: [{value: "", display: "Select Option"}].concat(statusOptions) });
-            
-        })      
+            // console.log(statusOptions)
+            this.setState({ statusOptions: [{value: "", display: "Select Status"}].concat(statusOptions) }); 
+        })
+        AnimalManager.getGenderOptions()
+        .then(data => {
+            let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
+            // console.log(gende/rOptions)
+            this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
+        })
+        AnimalManager.getBreedOptions()
+        .then(data => {
+            let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
+            console.log(breedOptions)
+            this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
+        })          
     };
     
     render () {
@@ -86,6 +100,10 @@ class AnimalEdit extends Component {
                                 onChange={(event)=>this.setState({status: event.target.value})}>
                                 {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                             </select >
+                            <select value={this.state.gender}
+                                onChange={(event)=>this.setState({gender: event.target.value})}>
+                                {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                            </select >
 
                             <label htmlFor="number">Number</label>
                             <input
@@ -93,12 +111,12 @@ class AnimalEdit extends Component {
                             onChange={this.handleFieldChange}
                             id="number"
                             value={this.state.number}/>
-                            <label htmlFor="breed">Breed</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="breed"
-                            value={this.state.breed}/>
+
+                            <select value={this.state.breed}
+                                onChange={(event)=>this.setState({breed: event.target.value})}>
+                                {this.state.breedOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                            </select >
+
                             <label htmlFor="sire">Sire</label>
                             <input
                             type="text"
@@ -117,12 +135,6 @@ class AnimalEdit extends Component {
                             onChange={this.handleFieldChange}
                             id="description"
                             value={this.state.description}/>
-                            <label htmlFor="gender">Gender</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="gender"
-                            value={this.state.gender}/>
                             <label htmlFor="dateOfBirth">Date Of Birth</label>
                             <input
                             type="text"
@@ -137,10 +149,10 @@ class AnimalEdit extends Component {
                             onClick={this.updateExistingAnimal}>
                             Submit Edit
                             </button>
-                            <Link to={`/dashboard`}>
+                            <Link to={`/herdview`}>
                                 <button type="button"
-                                className="DashboardButton"
-                                >Dashboard</button>
+                                className="HerdViewButton"
+                                >Return</button>
                             </Link>
                         </div>
                     </fieldset>

@@ -4,10 +4,13 @@ const remoteURL = "http://localhost:5002"
 export default {
     getAll() {
         return fetch(`${remoteURL}/animals`).then(result => result.json())
-    },
+  },
     get(id) {
         return fetch(`${remoteURL}/animals/${id}`).then(result => result.json())
-    },
+  },
+    getHerd(id) {
+      return fetch(`${remoteURL}/herd/${id}`).then(result => result.json())
+  },
     post(newAnimal) {
       return fetch(`${remoteURL}/animals`, {
           method: "POST",
@@ -31,9 +34,18 @@ export default {
             method: "DELETE"
         })
         .then(result => result.json())
-      },
+    },      
     getStatusOptions() {
-      return fetch(`${remoteURL}/animalStatus`).then(result => result.json())
-    }
-}
+      return fetch(`${remoteURL}/animalStatus/`).then(result => result.json())
+    },
+    getGenderOptions() {
+       return fetch(`${remoteURL}/gender/`).then(result => result.json())
+    },
+    getBreedOptions() {
+      return fetch(`${remoteURL}/breed/`).then(result => result.json())
+   },
+    getAnimalByStatus(status) {
+      return fetch(`${remoteURL}/animals?status=${status}`).then(result => result.json())
+    },
+  }
 

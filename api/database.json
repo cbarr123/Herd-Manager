@@ -3,16 +3,30 @@
     {
       "id": 1,
       "firstName": "Carl",
-      "lastName": "Barringer23",
+      "lastName": "Barringer",
       "email": "cb@cb.com",
       "password": "1"
     },
     {
-      "id": 3,
-      "firstName": "Honey Bear",
-      "lastName": "Dog",
-      "email": "dog@dog.com",
-      "password": "1"
+      "firstName": "William",
+      "lastName": "Renquist",
+      "email": "wrt@gmail.com",
+      "password": "1",
+      "id": 2
+    },
+    {
+      "firstName": "Tom",
+      "lastName": "Newman",
+      "email": "tom@gmail.com",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "firstName": "Sandy",
+      "lastName": "Wood",
+      "email": "sandy@gmail.com",
+      "password": "1",
+      "id": 4
     }
   ],
   "herd": [
@@ -34,35 +48,74 @@
       "breed": "Nubian",
       "sire": "987",
       "dam": "8765",
-      "description": "Crazy Goart",
-      "gender": "Male",
+      "description": "Crazy Goat",
+      "gender": "Female",
       "dateOfBirth": "20197006"
     },
     {
       "id": 7,
       "herdId": 1,
-      "status": "External Herd",
+      "status": "Current Stock",
       "name": "Tommy",
-      "number": "",
-      "breed": "",
+      "number": "3456",
+      "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
-      "gender": "",
-      "dateOfBirth": ""
+      "gender": "Male",
+      "dateOfBirth": "20150403"
     },
     {
       "id": 8,
       "herdId": 1,
-      "status": "",
+      "status": "Current Stock",
       "name": "MissChief",
       "number": "12345",
-      "breed": "lamanchqa",
+      "breed": "American Lamancha",
       "sire": "123434",
       "dam": "1344134",
       "description": "Brown",
       "gender": "Female",
       "dateOfBirth": "20180203"
+    },
+    {
+      "id": 9,
+      "herdId": 1,
+      "status": "External Herd",
+      "name": "Tina the Goat",
+      "number": "",
+      "breed": "American Lamancha",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Male",
+      "dateOfBirth": "20130705"
+    },
+    {
+      "id": 10,
+      "herdId": 1,
+      "status": "Deceased",
+      "name": "A Dead Goat",
+      "number": "134567",
+      "breed": "Lamancha",
+      "sire": "123",
+      "dam": "567",
+      "description": "Brown and White",
+      "gender": " Male",
+      "dateOfBirth": "20170923"
+    },
+    {
+      "id": 11,
+      "herdId": 1,
+      "status": "Current Stock",
+      "name": "New Goat",
+      "number": "123",
+      "breed": "Nubian",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": ""
     }
   ],
   "animalStatus": [
@@ -77,6 +130,30 @@
     {
       "id": 3,
       "status": "External Herd"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "status": "Male"
+    },
+    {
+      "id": 2,
+      "status": "Female"
+    }
+  ],
+  "breed": [
+    {
+      "id": 1,
+      "breed": "American Lamancha"
+    },
+    {
+      "id": 2,
+      "breed": "Nubian"
+    },
+    {
+      "id": 3,
+      "breed": "Toggenburg"
     }
   ]
 }

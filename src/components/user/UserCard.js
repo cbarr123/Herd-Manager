@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UserManager from  "../../modules/UserManager";
-import { Link } from "react-router-dom";
 
 class UserCard extends Component {
     handleDelete = () => {
