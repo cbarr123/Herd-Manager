@@ -51,10 +51,7 @@ class Dashboard extends Component {
                 <Link to={`/animals/new`}>
                 <button type="button">Add Animal</button>
                 </Link>
-                {/* <button type="button"
-                    className="UserEditButton"
-                    onClick={() => {this.props.history.push(`/users/${this.props.user.id}/edit`)}}
-                >Edit User</button> */}
+                
             </div> 
             <div>
                 <select value={this.state.filterStatus}

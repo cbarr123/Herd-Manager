@@ -42,10 +42,10 @@ class HerdTopNav extends Component {
             <div>
                 <h5>User: {this.state.firstName} {this.state.lastName} </h5> 
                 
-                <button type="button"
+                {/* <button type="button"
                     className="UserEditButton"
                     onClick={() => {this.props.history.push(`/users/${this.props.user.id}/edit`)}}
-                >Edit User</button>
+                >Edit User</button> */}
                 
                 <Link className="nav-link"
                 to="/"

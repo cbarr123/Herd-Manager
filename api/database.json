@@ -40,32 +40,6 @@
   ],
   "animals": [
     {
-      "id": 6,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "Another Goat",
-      "number": "12378",
-      "breed": "Nubian",
-      "sire": "987",
-      "dam": "8765",
-      "description": "Crazy Goat",
-      "gender": "Female",
-      "dateOfBirth": "20197006"
-    },
-    {
-      "id": 7,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "Tommy",
-      "number": "3456",
-      "breed": "American Lamancha",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Male",
-      "dateOfBirth": "20150403"
-    },
-    {
       "id": 8,
       "herdId": 1,
       "status": "Current Stock",
@@ -90,32 +64,6 @@
       "description": "",
       "gender": "Male",
       "dateOfBirth": "20130705"
-    },
-    {
-      "id": 10,
-      "herdId": 1,
-      "status": "Deceased",
-      "name": "A Dead Goat",
-      "number": "134567",
-      "breed": "Lamancha",
-      "sire": "123",
-      "dam": "567",
-      "description": "Brown and White",
-      "gender": " Male",
-      "dateOfBirth": "20170923"
-    },
-    {
-      "id": 11,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "New Goat",
-      "number": "123",
-      "breed": "Nubian",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Female",
-      "dateOfBirth": ""
     }
   ],
   "animalStatus": [
