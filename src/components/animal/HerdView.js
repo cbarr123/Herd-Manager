@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Dashboard extends Component {
     state = {
         animals: [],
-        filterStatus: "",
+        filterStatus: "Select Animal Status",
         filterGender: "",
         statusOptions: [],
         genderOptions: [],
@@ -19,15 +19,7 @@ class Dashboard extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     };
-    
-    filterAnimals = () => {
-        let animals = this.state.animals.filter(animal => {
-            return animal.status === this.state.filterStatus && animal.gender === this.state.filterGender
-        })
-        this.setState({filteredAnimals: animals})
-        console.log("const.animals from filterAnimals", animals)
-    };
-       
+   
     componentDidMount() {
         AnimalManager.getAll()
         .then((animals) => {
@@ -38,28 +30,17 @@ class Dashboard extends Component {
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            this.setState({ statusOptions: [{value: "", display: "Select Animal Status"}].concat(statusOptions) });
+            this.setState({ statusOptions: [{value: "Select Animal Status", display: "Select Animal Status"}].concat(statusOptions) });
         })
-        // AnimalManager.getGenderOptions()
-        // .then(data => {
-        //     let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-        //     this.setState({ genderOptions: [{value: "", display: "Select Animal Gender"}].concat(genderOptions) });
-        // })
         AnimalManager.getHerd(1)
         .then(herd => {
             this.setState({
                 herdName: herd.name,
                 herdNumber:  herd.number
             })
-        })
-        
+        }) 
     }
-    //* set state for filteredAnimals
-    //* watch state for filterStatus and FilterGender
-    //* if that state changes render the animals for animal.status === filterStatus and animal.gender === filterGender 
-    
-    
-    
+   
     render () {
         return (
             <React.Fragment>
@@ -75,26 +56,18 @@ class Dashboard extends Component {
                     onChange={(event)=>this.setState({filterStatus: event.target.value})}>
                     {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                 </select >
-                
-                {/* <select value={this.state.filterGender}
-                    onChange={(event)=>this.setState({filterGender: event.target.value})}>
-                    {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                </select > */}
             </div>
 
-            <div className=".container-cards">
-                
-                
+            <div className=".container-cards">                
                 {this.state.animals.filter(animal => {
-                    if(animal.status === ""){
+                    if(this.state.filterStatus === "Select Animal Status"){
                         return animal
                     }
                     else 
                         if(animal.status === this.state.filterStatus) {
                         console.log(animal.status, animal.id)
                         return animal
-                    }
-                                                             
+                    }               
                 }).map(animal => (
                     <AnimalCard
                     key={animal.id}

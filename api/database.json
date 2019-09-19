@@ -21,14 +21,14 @@
     {
       "id": 6,
       "herdId": 1,
-      "status": "",
+      "status": "Current Stock",
       "name": "Another Goat",
       "number": "12378",
       "breed": "Nubian",
       "sire": "987",
       "dam": "8765",
       "description": "Crazy Goat",
-      "gender": "Male",
+      "gender": "Female",
       "dateOfBirth": "20197006"
     },
     {
@@ -37,7 +37,7 @@
       "status": "Current Stock",
       "name": "Tommy",
       "number": "",
-      "breed": "Nubian",
+      "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
@@ -82,6 +82,19 @@
       "gender": " Male",
       "dateOfBirth": "20170923",
       "id": 10
+    },
+    {
+      "id": 11,
+      "herdId": 1,
+      "status": "Current Stock",
+      "name": "New Goat",
+      "number": "123",
+      "breed": "Nubian",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": ""
     }
   ],
   "animalStatus": [
@@ -106,6 +119,20 @@
     {
       "id": 2,
       "status": "Female"
+    }
+  ],
+  "breed": [
+    {
+      "id": 1,
+      "breed": "American Lamancha"
+    },
+    {
+      "id": 2,
+      "breed": "Nubian"
+    },
+    {
+      "id": 3,
+      "breed": "Toggenburg"
     }
   ]
 }

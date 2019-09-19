@@ -41,8 +41,11 @@ export default {
     getGenderOptions() {
        return fetch(`${remoteURL}/gender/`).then(result => result.json())
     },
+    getBreedOptions() {
+      return fetch(`${remoteURL}/breed/`).then(result => result.json())
+   },
     getAnimalByStatus(status) {
       return fetch(`${remoteURL}/animals?status=${status}`).then(result => result.json())
-  },
+    },
   }
 
