@@ -50,7 +50,7 @@
       "herdId": 2,
       "status": "External Herd",
       "name": "Tina the Goat",
-      "number": "",
+      "number": "12",
       "breed": "American Lamancha",
       "sire": "",
       "dam": "",
@@ -85,9 +85,9 @@
       "id": 12
     },
     {
-      "herdId": 1,
+      "herdId": "2",
       "status": "",
-      "name": "New AC Animal",
+      "name": "new Goat for Andy",
       "number": "",
       "breed": "",
       "sire": "",

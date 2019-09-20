@@ -69,7 +69,7 @@ class AnimalDetail extends Component {
                         >
                         Delete
                     </button>
-                    <Link to={`/herdview`}>
+                    <Link to={`/herdview/${this.state.herdId}`}>
                         <button type="button"
                         className="HerdViewButton"
                         >Return</button>

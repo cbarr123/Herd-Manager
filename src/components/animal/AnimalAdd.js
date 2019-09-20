@@ -35,7 +35,7 @@ class AnimalAdd extends Component {
         } else {
             this.setState({loadingStatus: true});
             const newAnimal = {
-                herdId: this.state.herdId,
+                herdId: this.props.match.params.herdId,
                 status: this.state.status,
                 name: this.state.name,
                 number: this.state.number,
@@ -47,10 +47,10 @@ class AnimalAdd extends Component {
                 dateOfBirth: this.state.dateOfBirth
             }
             AnimalManager.post(newAnimal)
-            .then(()=>{this.props.history.push("/herdview")});
+            .then(()=>{this.props.history.push(`/herdview/${this.props.match.params.herdId}`)});
         }
     }
-
+    
     componentDidMount() {
         AnimalManager.getStatusOptions()
         .then(data => {

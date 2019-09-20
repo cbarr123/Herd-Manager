@@ -26,7 +26,7 @@ class LoginForm extends Component {
         // this.props.history.push("/herdview");
     }
     componentDidMount() {
-        console.log(this.state)
+        // console.log(this.state)
         // console.log("from componentDidMount at loginForm")
     }
     handleLogin = (event) => {
@@ -45,7 +45,7 @@ class LoginForm extends Component {
                 const currentUser = users.find(user => {
                     return user.email === this.state.email && user.password === this.state.password
                 });
-                console.log ("Current user",currentUser);
+                // console.log ("Current user",currentUser);
                 if (currentUser !== undefined) {
                     this.setState({
                         activeUserId: currentUser.id,
@@ -54,7 +54,7 @@ class LoginForm extends Component {
                     });
                     this.setSessionStorage();
                     this.props.history.push(`/herdview/${currentUser.herdId}`);
-                    console.log("State in UsrManagrGetAll",this.state)
+                    // console.log("State in UsrManagrGetAll",this.state)
 
                 } else {
                     window.alert("something is wrong, please try again")

@@ -7,7 +7,6 @@ import HerdView from "./animal/HerdView"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
 import AnimalAdd from "./animal/AnimalAdd"
-import AnimalFilter from "./animal/AnimalFilter"
 import Manager from "./animal/Manager"
 import UserAdd from "./user/UserAdd"
 import UserEdit from "./user/UserEdit"
@@ -43,13 +42,13 @@ class ApplicationViews extends Component{
                         return <RegistrationForm {...props} loadData={this.loadData} />;
                     }}
                 />
-                <Route
+                {/* <Route
                     exact
                     path="/herdview"
                     render={props => {
                         return <HerdView {...props} loadData={this.loadData} />;
                     }}
-                />
+                /> */}
                 <Route
                 exact
                 path="/herdview/:herdId(\d+)"
@@ -100,20 +99,35 @@ class ApplicationViews extends Component{
                     )
                     }}
                 />
+                {/* Animal Add with herdId */}
                 <Route
+                    exact
+                    path="/animals/new/:herdId(\d+)"
+                    render={props => {
+                        // Pass the herdId to the AnimalAdd Component
+                    return (
+                    <AnimalAdd 
+                        herdId={parseInt(props.match.params.herdId)}
+                        {...props} 
+                    />
+                    )
+                    }}
+                />
+
+                {/* <Route
                     exact
                     path="/animals/new"
                     render={props => {
                         return <AnimalAdd {...props} loadData={this.loadData} />;
                     }}
-                />
-                <Route
+                /> */}
+                {/* <Route
                     exact
                     path="/animals/animalfilter"
                     render={props => {
                         return <AnimalFilter {...props} loadData={this.loadData} />;
                     }}
-                />
+                /> */}
                 {/* User Routes */}
                 <Route
                     exact

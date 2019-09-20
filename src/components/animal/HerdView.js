@@ -40,13 +40,13 @@ class Dashboard extends Component {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
             this.setState({ statusOptions: [{value: "Select Animal Status", display: "Select Animal Status"}].concat(statusOptions) });
         })
-        console.log(this.state)
+        // console.log(this.state)
         AnimalManager.getHerd(this.props.herdId)
         .then(herd => {
             this.setState({
                 herdName: herd.name,
                 herdNumber:  herd.number,
-                herdId: herd.id,
+              
             })
         }) 
     }
@@ -59,7 +59,7 @@ class Dashboard extends Component {
                 <h4>ADGA#: {this.state.herdNumber}</h4>
                 <button type="button"
                 className="newAnimal"
-                onClick={() => {this.props.history.push("/animals/new")}}>
+                onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>
                 Add Animal
                 </button>
                 
@@ -79,7 +79,7 @@ class Dashboard extends Component {
                     }
                     else 
                         if(animal.status === this.state.filterStatus) {
-                        console.log(animal.status, animal.id)
+                        // console.log(animal.status, animal.id)
                         return animal
                     }               
                 }).map(animal => (
