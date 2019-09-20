@@ -77,11 +77,17 @@ class UserAdd extends Component {
                             onClick={this.createNewUser}>
                             Create User
                             </button>
-                            <Link to={`/herdview`}>
+                            <Link to={`/`}>
                                 <button type="button"
-                                className="HerdView"
+                                className="Login"
                                 >Cancel</button>
                             </Link>
+                            <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={console.log(this.state)}>
+                            Create New Herd
+                            </button>
                         </div>
                     </fieldset>
                 </form>

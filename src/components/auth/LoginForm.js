@@ -36,10 +36,10 @@ class LoginForm extends Component {
             this.setState({loadingStatus: false});
         } else {
             this.setState({loadingStatus: true});
-            const user = {
-                email: this.state.email,
-                password: this.state.password
-            };
+            // const user = {
+            //     email: this.state.email,
+            //     password: this.state.password
+            // };
             UserManager.getAll()
             .then(users => {
                 const currentUser = users.find(user => {

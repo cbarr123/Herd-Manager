@@ -69,7 +69,7 @@ class AnimalAdd extends Component {
             // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         }) 
-        console.log(this.props.herdId)
+        // console.log(this.props.herdId)
     }
 
         

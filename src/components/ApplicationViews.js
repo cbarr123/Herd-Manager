@@ -1,6 +1,5 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
-import Home from "./home/Home"
 import LoginForm from "./auth/LoginForm"
 import RegistrationForm from "./auth/RegistrationForm"
 import HerdView from "./animal/HerdView"
@@ -22,7 +21,7 @@ class ApplicationViews extends Component{
                     exact path="/"
                     render={props => {
                         return this.isAuthenticated() ? (
-                          <Home {...props} />
+                          <LoginForm {...props} />
                         ) : (
                             <Redirect to="/login" />
                           );

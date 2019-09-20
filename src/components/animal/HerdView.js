@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
-import { Link } from "react-router-dom";
+
 
 class Dashboard extends Component {
     state = {
@@ -29,18 +29,13 @@ class Dashboard extends Component {
                 animals: animals
             });
         })
-        // AnimalManager.getAll()
-        // .then((animals) => {
-        //     this.setState({
-        //         animals: animals
-        //     });
-        // })
+
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            this.setState({ statusOptions: [{value: "Select Animal Status", display: "Select Animal Status"}].concat(statusOptions) });
+            this.setState({ statusOptions: [{value: "Select Animal Status", display: "Filter on Animal Status"}].concat(statusOptions) });
         })
-        // console.log(this.state)
+
         AnimalManager.getHerd(this.props.herdId)
         .then(herd => {
             this.setState({
@@ -79,7 +74,6 @@ class Dashboard extends Component {
                     }
                     else 
                         if(animal.status === this.state.filterStatus) {
-                        // console.log(animal.status, animal.id)
                         return animal
                     }               
                 }).map(animal => (

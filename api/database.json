@@ -48,7 +48,7 @@
     {
       "id": 9,
       "herdId": 2,
-      "status": "External Herd",
+      "status": "Current Stock",
       "name": "Tina the Goat",
       "number": "12",
       "breed": "American Lamancha",
@@ -56,7 +56,7 @@
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": "20130705"
+      "dateOfBirth": "20130706"
     },
     {
       "herdId": 1,
@@ -72,6 +72,7 @@
       "id": 10
     },
     {
+      "id": 12,
       "herdId": 1,
       "status": "Deceased",
       "name": "Trouble the Goat",
@@ -81,8 +82,7 @@
       "dam": "",
       "description": "",
       "gender": "Female",
-      "dateOfBirth": "",
-      "id": 12
+      "dateOfBirth": "20060203"
     },
     {
       "herdId": "2",
@@ -96,6 +96,19 @@
       "gender": "",
       "dateOfBirth": "",
       "id": 13
+    },
+    {
+      "herdId": "1",
+      "status": "External Herd",
+      "name": "Bruce the Goat",
+      "number": "56789",
+      "breed": "American Lamancha",
+      "sire": "456890",
+      "dam": "435678",
+      "description": "Crazy Goat",
+      "gender": "Male",
+      "dateOfBirth": "20140908",
+      "id": 14
     }
   ],
   "animalStatus": [

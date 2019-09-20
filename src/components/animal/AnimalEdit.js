@@ -77,7 +77,7 @@ class AnimalEdit extends Component {
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            console.log(breedOptions)
+            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         })          
     };
@@ -148,7 +148,7 @@ class AnimalEdit extends Component {
                             onClick={this.updateExistingAnimal}>
                             Submit Edit
                             </button>
-                            <Link to={`/herdview`}>
+                            <Link to={`/herdview/${this.state.herdId}`}>
                                 <button type="button"
                                 className="HerdViewButton"
                                 >Return</button>
