@@ -50,6 +50,18 @@ class ApplicationViews extends Component{
                         return <HerdView {...props} loadData={this.loadData} />;
                     }}
                 />
+                {/* <Route
+                exact
+                path="/herdview/:herdId(\d+)"
+                render={props => {
+                    return 
+                    <HerdView
+                        herdId={parseInt(props.match.params.herdId)}
+                        {...props}
+                    />
+                    
+                }}
+                /> */}
                 <Route
                     exact
                     path="/manager"

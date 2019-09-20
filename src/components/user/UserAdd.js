@@ -9,6 +9,7 @@ class UserAdd extends Component {
         lastName: "",
         email: "",
         password: "",
+        herdId: "",
         loadingStatus: false
     };
 
@@ -38,7 +39,6 @@ class UserAdd extends Component {
     render () {        
         return (
             <React.Fragment>
-                <h2>Adding User</h2>
                 <form>
                     <fieldset>
                         <div>

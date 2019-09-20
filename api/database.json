@@ -2,40 +2,33 @@
   "user": [
     {
       "id": 1,
+      "herdId": 1,
       "firstName": "Carl",
       "lastName": "Barringer",
       "email": "cb@cb.com",
       "password": "1"
     },
     {
-      "firstName": "William",
-      "lastName": "Renquist",
-      "email": "wrt@gmail.com",
-      "password": "1",
-      "id": 2
-    },
-    {
-      "firstName": "Tom",
-      "lastName": "Newman",
-      "email": "tom@gmail.com",
-      "password": "1",
-      "id": 3
-    },
-    {
-      "firstName": "Sandy",
-      "lastName": "Wood",
-      "email": "sandy@gmail.com",
-      "password": "1",
-      "id": 4
+      "id": 2,
+      "herdId": 2,
+      "firstName": "Andy",
+      "lastName": "Collins",
+      "email": "ac@ac.com",
+      "password": "1"
     }
   ],
   "herd": [
     {
       "id": 1,
-      "ownerId": 1,
       "number": "4789568",
       "name": "Goat Feather Farm",
       "tattoo": "GFF"
+    },
+    {
+      "id": 2,
+      "number": "654321",
+      "name": "Collins Caprines",
+      "tattoo": "CC"
     }
   ],
   "animals": [
@@ -54,7 +47,7 @@
     },
     {
       "id": 9,
-      "herdId": 1,
+      "herdId": 2,
       "status": "External Herd",
       "name": "Tina the Goat",
       "number": "",

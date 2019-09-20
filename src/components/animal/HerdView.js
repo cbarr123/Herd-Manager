@@ -12,6 +12,7 @@ class Dashboard extends Component {
         genderOptions: [],
         herdName: "",
         herdNumber: "",
+        herdId: "",
         filteredAnimals: []
     };
     handleFieldChange = evt => {
@@ -22,24 +23,31 @@ class Dashboard extends Component {
     
    
     componentDidMount() {
-        AnimalManager.getAll()
+        AnimalManager.getAllByHerd()
         .then((animals) => {
             this.setState({
                 animals: animals
             });
         })
+        // AnimalManager.getAll()
+        // .then((animals) => {
+        //     this.setState({
+        //         animals: animals
+        //     });
+        // })
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
             this.setState({ statusOptions: [{value: "Select Animal Status", display: "Select Animal Status"}].concat(statusOptions) });
         })
-        AnimalManager.getHerd(1)
-        .then(herd => {
-            this.setState({
-                herdName: herd.name,
-                herdNumber:  herd.number
-            })
-        }) 
+        console.log(this.state)
+        // AnimalManager.getHerd(1)
+        // .then(herd => {
+        //     this.setState({
+        //         herdName: herd.name,
+        //         herdNumber:  herd.number
+        //     })
+        // }) 
     }
    
     render () {

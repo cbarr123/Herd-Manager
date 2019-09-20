@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 
 class HerdTopNav extends Component {
-    state = {
-        userid: "",
-        firstName: "",
-        lastName: "",
-        email: ""
+    // state = {
+    //     userid: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     email: ""
         
-    }
+    // }
     handleLogout() {
         // console.log("pre-clear sessionStore", sessionStorage);
         sessionStorage.clear();
@@ -18,15 +18,15 @@ class HerdTopNav extends Component {
     }
 
     componentDidMount() {
-        UserManager.get(1)
-        .then(user =>{
-            this.setState({
-                id: user.id,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                email: user.email,
-            })
-        })
+        // UserManager.get(1)
+        // .then(user =>{
+        //     this.setState({
+        //         id: user.id,
+        //         firstName: user.firstName,
+        //         lastName: user.lastName,
+        //         email: user.email,
+        //     })
+        // })
 
 
     }
@@ -38,7 +38,7 @@ class HerdTopNav extends Component {
                 <h1>Herd Manager</h1>
             </div>
             <div>
-                <h5>User: {this.state.firstName} {this.state.lastName} </h5> 
+                {/* <h5>User: {this.state.firstName} {this.state.lastName} </h5>  */}
                 <Link className="nav-link"
                 to="/"
                 onClick={this.handleLogout} >
