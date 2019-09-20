@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class AnimalAdd extends Component {
     state = {
         id: "",
-        herdId: 1,
+        herdId: "",
         status: "",
         statusOptions: [],
         genderOptions: [],
@@ -60,15 +60,16 @@ class AnimalAdd extends Component {
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            console.log(genderOptions)
+            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            console.log(breedOptions)
+            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         }) 
+        console.log(this.props.herdId)
     }
 
         

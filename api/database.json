@@ -27,8 +27,8 @@
     {
       "id": 2,
       "number": "654321",
-      "name": "Collins Caprines",
-      "tattoo": "CC"
+      "name": "Collins Capricious Caprines",
+      "tattoo": "CCC"
     }
   ],
   "animals": [
@@ -83,6 +83,19 @@
       "gender": "Female",
       "dateOfBirth": "",
       "id": 12
+    },
+    {
+      "herdId": 1,
+      "status": "",
+      "name": "New AC Animal",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "id": 13
     }
   ],
   "animalStatus": [

@@ -50,18 +50,32 @@ class ApplicationViews extends Component{
                         return <HerdView {...props} loadData={this.loadData} />;
                     }}
                 />
-                {/* <Route
+                <Route
                 exact
                 path="/herdview/:herdId(\d+)"
                 render={props => {
-                    return 
+                    return (
                     <HerdView
                         herdId={parseInt(props.match.params.herdId)}
                         {...props}
                     />
-                    
+                    )
                 }}
-                /> */}
+                />
+                {/* Animal Routes */}
+                <Route
+                    exact
+                    path="/animals/:animalId(\d+)"
+                    render={props => {
+                        return (
+                        <AnimalDetail
+                            animalId={parseInt(props.match.params.animalId)}
+                            {...props}
+                        />
+                        )   
+                    }}
+                />
+                
                 <Route
                     exact
                     path="/manager"
@@ -70,21 +84,9 @@ class ApplicationViews extends Component{
                     }}
                 />
                 
-
-                {/* Animal Routes */}
-                <Route
-                    exact
-                    path="/animals/:animalId(\d+)"
-                    render={props => {
-                        // Pass the animalId to the AnimalDetailComponent
-                        return (
-                        <AnimalDetail
-                            animalId={parseInt(props.match.params.animalId)}
-                            {...props}
-                        />
-                        );
-                    }}
-                />
+                
+                
+                
                 <Route
                     exact
                     path="/animals/:animalId(\d+)/edit"

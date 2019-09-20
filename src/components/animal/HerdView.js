@@ -23,7 +23,7 @@ class Dashboard extends Component {
     
    
     componentDidMount() {
-        AnimalManager.getAllByHerd()
+        AnimalManager.getAllByHerd(this.props.herdId)
         .then((animals) => {
             this.setState({
                 animals: animals
@@ -41,13 +41,14 @@ class Dashboard extends Component {
             this.setState({ statusOptions: [{value: "Select Animal Status", display: "Select Animal Status"}].concat(statusOptions) });
         })
         console.log(this.state)
-        // AnimalManager.getHerd(1)
-        // .then(herd => {
-        //     this.setState({
-        //         herdName: herd.name,
-        //         herdNumber:  herd.number
-        //     })
-        // }) 
+        AnimalManager.getHerd(this.props.herdId)
+        .then(herd => {
+            this.setState({
+                herdName: herd.name,
+                herdNumber:  herd.number,
+                herdId: herd.id,
+            })
+        }) 
     }
    
     render () {
@@ -56,9 +57,12 @@ class Dashboard extends Component {
             <div>
                 <h2>{this.state.herdName}</h2>
                 <h4>ADGA#: {this.state.herdNumber}</h4>
-                <Link to={`/animals/new`}>
-                <button type="button">Add Animal</button>
-                </Link>
+                <button type="button"
+                className="newAnimal"
+                onClick={() => {this.props.history.push("/animals/new")}}>
+                Add Animal
+                </button>
+                
                 
             </div> 
             <div>
