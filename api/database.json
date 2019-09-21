@@ -15,6 +15,14 @@
       "lastName": "Collins",
       "email": "ac@ac.com",
       "password": "1"
+    },
+    {
+      "firstName": "Missy",
+      "lastName": "Barringer",
+      "email": "mb@mb.com",
+      "password": "1",
+      "herdId": "",
+      "id": 3
     }
   ],
   "herd": [
@@ -123,6 +131,10 @@
     {
       "id": 3,
       "status": "External Herd"
+    },
+    {
+      "id": 4,
+      "status": "Sold"
     }
   ],
   "gender": [

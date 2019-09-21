@@ -63,5 +63,8 @@ export default {
     getAnimalByStatus(status) {
       return fetch(`${remoteURL}/animals?status=${status}`).then(result => result.json())
     },
+    getHerdOptions() {
+      return fetch(`${remoteURL}/herd/`).then(result => result.json())
+    },
   }
 

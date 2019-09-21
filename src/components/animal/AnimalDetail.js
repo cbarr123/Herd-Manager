@@ -20,7 +20,7 @@ class AnimalDetail extends Component {
     
     deleteAnimal = id => {
         AnimalManager.delete(id)
-        .then(() => {this.props.history.push(`/herdview`)});
+        .then(() => {this.props.history.push(`/herdview/${this.state.herdId}`)});
     }
     componentDidMount() {
         //retrieve animal information based upon animalId
@@ -65,8 +65,7 @@ class AnimalDetail extends Component {
                     </button>
                     <button type="button"
                         className="DeleteButton"
-                        onClick = {() => {this.deleteAnimal(this.props.animalId)}}
-                        >
+                        onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
                         Delete
                     </button>
                     <Link to={`/herdview/${this.state.herdId}`}>
