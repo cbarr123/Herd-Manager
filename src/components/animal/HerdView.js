@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
+import { Link } from "react-router-dom";
 
 
 class Dashboard extends Component {
@@ -52,6 +53,29 @@ class Dashboard extends Component {
             <div>
                 <h2>{this.state.herdName}</h2>
                 <h4>ADGA#: {this.state.herdNumber}</h4>
+                
+                <Link className="nav-link"
+                to="/"
+                onClick={this.handleLogout}>
+                    <button type="button"      
+                        disabled={this.state.loadingStatus}
+                        // isHidden = {this.state.hidden}
+                        >
+                    Log Out</button>
+                </Link>
+                
+                <Link to={`/user/new`}>
+                    <button type="button"
+                    className="AddUserButton"
+                    disabled={this.state.loadingStatus}
+                    // isHidden = {this.state.hidden}
+                    >
+                    Add User</button>
+                </Link>
+                
+                
+                
+                
                 <button type="button"
                 className="newAnimal"
                 onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>

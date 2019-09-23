@@ -6,7 +6,9 @@ class LoginForm extends Component {
     state = {
         email: "",
         password: "",
-        activeUserId: 0
+        activeUserId: 0,
+        loadingStatus: false,
+        isHidden: false
     };
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -49,7 +51,9 @@ class LoginForm extends Component {
                 if (currentUser !== undefined) {
                     this.setState({
                         activeUserId: currentUser.id,
-                        herdId: currentUser.herdId
+                        herdId: currentUser.herdId,
+                        loadingStatus: false,
+                        isHidden: false
                     
                     });
                     this.setSessionStorage();

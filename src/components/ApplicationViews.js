@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import LoginForm from "./auth/LoginForm"
 import RegistrationForm from "./auth/RegistrationForm"
 import HerdView from "./animal/HerdView"
+import HerdAdd from "./animal/HerdAdd"
 import AnimalDetail from "./animal/AnimalDetail"
 import AnimalEdit from "./animal/AnimalEdit"
 import AnimalAdd from "./animal/AnimalAdd"
-import Manager from "./animal/Manager"
 import UserAdd from "./user/UserAdd"
 import UserEdit from "./user/UserEdit"
 
@@ -41,61 +41,60 @@ class ApplicationViews extends Component{
                         return <RegistrationForm {...props} loadData={this.loadData} />;
                     }}
                 />
-                {/* <Route
-                    exact
-                    path="/herdview"
-                    render={props => {
-                        return <HerdView {...props} loadData={this.loadData} />;
-                    }}
-                /> */}
                 <Route
                 exact
                 path="/herdview/:herdId(\d+)"
                 render={props => {
-                    return (
+                    return this.isAuthenticated() ? (
                     <HerdView
                         herdId={parseInt(props.match.params.herdId)}
-                        {...props}
-                    />
-                    )
+                        {...props} />
+                    ) : (
+                        <Redirect to="/login" />
+                    );                   
                 }}
                 />
-                {/* Animal Routes */}
+
+                <Route
+                    exact
+                    path="/herd/new"
+                    render={props => {
+                        return this.isAuthenticated() ? (
+                        <HerdAdd
+                            herdId={parseInt(props.match.params.herdId)}
+                            loadData={this.loadData}
+                            {...props}  />
+                        ) : (
+                            <Redirect to="/login" />
+                        );
+                    }}
+                />
+
                 <Route
                     exact
                     path="/animals/:animalId(\d+)"
                     render={props => {
-                        return (
+                        return this.isAuthenticated() ? (  
                         <AnimalDetail
                             animalId={parseInt(props.match.params.animalId)}
-                            {...props}
-                        />
-                        )   
+                            {...props} />
+                        ) : (
+                            <Redirect to="/login" />
+                        );  
                     }}
-                />
-                
-                <Route
-                    exact
-                    path="/manager"
-                    render={props => {
-                        return <Manager {...props} loadData={this.loadData} />;
-                    }}
-                />
-                
-                
-                
-                
+                />               
                 <Route
                     exact
                     path="/animals/:animalId(\d+)/edit"
                     render={props => {
                         // Pass the AnimalId to the AnimalEdit Component
-                    return (
+                        return this.isAuthenticated() ? (
                     <AnimalEdit 
                         animalId={parseInt(props.match.params.animalId)}
-                        {...props} 
-                    />
-                    )
+                        {...props} />
+                        ) : (
+                        <Redirect to="/login" />
+                        );
                     }}
                 />
                 {/* Animal Add with herdId */}
@@ -104,30 +103,31 @@ class ApplicationViews extends Component{
                     path="/animals/new/:herdId(\d+)"
                     render={props => {
                         // Pass the herdId to the AnimalAdd Component
-                    return (
+                    return this.isAuthenticated() ? (
                     <AnimalAdd 
                         herdId={parseInt(props.match.params.herdId)}
-                        {...props} 
-                    />
-                    )
+                        {...props}/>
+                    ) : (    
+                        <Redirect to="/login" />
+                    );
                     }}
                 />
-
-                {/* <Route
-                    exact
-                    path="/animals/new"
-                    render={props => {
-                        return <AnimalAdd {...props} loadData={this.loadData} />;
-                    }}
-                /> */}
-                {/* <Route
-                    exact
-                    path="/animals/animalfilter"
-                    render={props => {
-                        return <AnimalFilter {...props} loadData={this.loadData} />;
-                    }}
-                /> */}
                 {/* User Routes */}
+                {/* <Route
+                    exact
+                    path="/user/new"
+                    render={props => {
+                        return this.isAuthenticated() ? (
+                        <UserAdd 
+                            loadData={this.loadData}
+                            {...props}  />
+                        ) : (
+                            <Redirect to="/login" />
+                        );
+                    }}
+                /> */}
+
+
                 <Route
                     exact
                     path="/user/new"
@@ -135,17 +135,21 @@ class ApplicationViews extends Component{
                         return <UserAdd {...props} loadData={this.loadData} />;
                     }}
                 />
+
+
+
                 <Route
                     exact
                     path="/user/:userId(\d+)/edit"
                     render={props => {
                         // Pass the UserId to the UserEdit Component
-                    return (
+                    return this.isAuthenticated() ? (
                     <UserEdit 
                         userID={parseInt(props.match.params.userId)}
-                        {...props} 
-                    />
-                    )
+                        {...props}/>
+                    ) : (
+                    <Redirect to="/login" />
+                    );
                     }}
                 />
             </React.Fragment>

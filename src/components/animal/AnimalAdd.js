@@ -138,7 +138,7 @@ class AnimalAdd extends Component {
                             onClick={this.createNewAnimal}>
                             Create Animal
                             </button>
-                            <Link to={`/manager`}>
+                            <Link to={`/herdview/${this.props.match.params.herdId}`}>
                                 <button type="button"
                                 className="ManagerButton"
                                 >Cancel</button>

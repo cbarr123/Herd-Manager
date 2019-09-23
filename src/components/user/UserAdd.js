@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 class UserAdd extends Component {
     state = {
         id: "",
+        activeUsrId: 0,
         firstName: "",
         lastName: "",
         email: "",
         password: "",
         herdId: "",
+        herdName: "",
+        herdADGA: "",
+        herdTattoo: "",
         herdOptions: [],
         loadingStatus: false
     };
@@ -39,11 +43,31 @@ class UserAdd extends Component {
         }
     };
 
+    createNewHerd = evt => {
+        evt.preventDefault();
+        if (this.state.name === ""){
+            window.alert("Herd Name is a required field")
+        } else {
+            this.setState({loadingStatus: true});
+            const newHerd = {
+                number: this.state.herdADGA,
+                name: this.state.herdName,
+                tattoo: this.state.tattoo,
+            }
+            AnimalManager.post(newHerd) 
+
+        }
+    }
+
+
+
+
+
     componentDidMount () {
         AnimalManager.getHerdOptions()
         .then(data => {
             let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
-            this.setState({ herdOptions: [{value: "", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+            this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
         })
 
     }
@@ -83,21 +107,7 @@ class UserAdd extends Component {
                             id="lastName"
                             value={this.state.lastName}/>
                         </div>
-                        <div className="herdCreation">
-                        <label htmlFor="number">Herd Identification Number</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="number"
-                            value={this.state.password}/>
-                           
-                            <label htmlFor="name">Herd Name</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="name"
-                            value={this.state.firstName}/>
-                        </div>
+
                         <div>
                             <button
                             type="button"
@@ -105,22 +115,57 @@ class UserAdd extends Component {
                             onClick={this.createNewUser}>
                             Create User
                             </button>
+
                             <Link to={`/`}>
                                 <button type="button"
                                 className="Login"
                                 >Cancel</button>
                             </Link>
+                            
                             <select value={this.state.herdId}
                                 onChange={(event)=>this.setState({herdId: event.target.value})}>
-                                {this.state.herdOptions.map((options) => <option key={options.id} value={options.id}>{options.display}</option>)}
+                                {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                             </select >
+                            
+                        </div>   
+                        <div>
+                            <p></p>
+                        </div>
+                                
+                        <div className="newHerd">
+                            
+                            <label htmlFor="name">Herd Name</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="name"
+                            value={this.state.herdName}/>
+                        
+                            <label htmlFor="number">Herd ADGA Number</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="number"
+                            value={this.state.herdADGA}/>
+
+                            <label htmlFor="tattoo">Herd Tattoo</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="tattoo"
+                            value={this.state.herdTattoo}/>
+
                             <button
-                            type="button"
-                            disabled={this.state.loadingStatus}
-                            onClick={console.log(this.state)}>
-                            Create Herd
+                                type="button"
+                                disabled={this.state.loadingStatus}
+                                onClick={this.createNewHerd}>
+                                Create Herd
                             </button>
                         </div>
+                            
+                            
+                            
+                        
                     </fieldset>
                 </form>
             </React.Fragment>
