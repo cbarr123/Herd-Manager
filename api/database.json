@@ -79,6 +79,14 @@
       "password": "12",
       "herdId": "1",
       "id": 10
+    },
+    {
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "testuser",
+      "password": "1",
+      "herdId": "3",
+      "id": 11
     }
   ],
   "herd": [
@@ -93,6 +101,104 @@
       "number": "654321",
       "name": "Collins Capricious Caprines",
       "tattoo": "CCC"
+    },
+    {
+      "number": "Test567",
+      "name": "Test Herd",
+      "tattoo": "tst",
+      "id": 3
+    },
+    {
+      "number": "122",
+      "name": "Test Herd",
+      "tattoo": "edd",
+      "id": 4
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "test animal",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Male",
+      "dateOfBirth": "",
+      "id": 5
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "test animal",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Male",
+      "dateOfBirth": "",
+      "id": 6
+    },
+    {
+      "number": "qw234",
+      "name": "Andys Herd",
+      "tattoo": "ac",
+      "id": 7
+    },
+    {
+      "number": "123",
+      "name": "Another Herd",
+      "tattoo": "",
+      "id": 8
+    },
+    {
+      "number": "123",
+      "name": "a 3rd hers",
+      "tattoo": "qq",
+      "id": 9
+    },
+    {
+      "number": "123",
+      "name": "a 3rd hers",
+      "tattoo": "qq",
+      "id": 10
+    },
+    {
+      "number": "123",
+      "name": "bunchaHerds",
+      "tattoo": "",
+      "id": 11
+    },
+    {
+      "number": "test",
+      "name": "new herd again",
+      "tattoo": "",
+      "id": 12
+    },
+    {
+      "number": "ttt",
+      "name": "ttttt",
+      "tattoo": "",
+      "id": 13
+    },
+    {
+      "number": "rwsddf",
+      "name": "234er",
+      "tattoo": "",
+      "id": 14
+    },
+    {
+      "number": "asd",
+      "name": "tester123",
+      "tattoo": "",
+      "id": 15
+    },
+    {
+      "number": "rtyt",
+      "name": "ThisOne",
+      "tattoo": "",
+      "id": 16
     }
   ],
   "animals": [
@@ -149,20 +255,7 @@
       "dateOfBirth": "20060203"
     },
     {
-      "herdId": "2",
-      "status": "",
-      "name": "new Goat for Andy",
-      "number": "",
-      "breed": "",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "",
-      "dateOfBirth": "",
-      "id": 13
-    },
-    {
-      "herdId": "1",
+      "herdId": 1,
       "status": "External Herd",
       "name": "Bruce the Goat",
       "number": "56789",
@@ -173,6 +266,19 @@
       "gender": "Male",
       "dateOfBirth": "20140908",
       "id": 14
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "Test Animal",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Male",
+      "dateOfBirth": "",
+      "id": 15
     }
   ],
   "animalStatus": [

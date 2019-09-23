@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserManager from "../../modules/UserManager";
 import AnimalManager from "../../modules/AnimalManager";
+import HerdsManager from "../../modules/HerdsManager";
 import { Link } from "react-router-dom";
 
 class UserAdd extends Component {
@@ -12,9 +13,9 @@ class UserAdd extends Component {
         email: "",
         password: "",
         herdId: "",
-        herdName: "",
-        herdADGA: "",
-        herdTattoo: "",
+        name: "",
+        number: "",
+        tattoo: "",
         herdOptions: [],
         loadingStatus: false
     };
@@ -43,6 +44,12 @@ class UserAdd extends Component {
         }
     };
 
+    mapHerd = (data) => {
+        let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
+        this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+    }
+
+
     createNewHerd = evt => {
         evt.preventDefault();
         if (this.state.name === ""){
@@ -50,26 +57,28 @@ class UserAdd extends Component {
         } else {
             this.setState({loadingStatus: true});
             const newHerd = {
-                number: this.state.herdADGA,
-                name: this.state.herdName,
+                number: this.state.number,
+                name: this.state.name,
                 tattoo: this.state.tattoo,
             }
-            AnimalManager.post(newHerd) 
+            HerdsManager.post(newHerd)
+            .then(() => this.setState({loadingStatus: false}))
+            .then(AnimalManager.getHerdOptions())
+            .then(this.mapHerd)
+            
 
         }
     }
 
-
-
-
-
     componentDidMount () {
         AnimalManager.getHerdOptions()
-        .then(data => {
-            let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
-            this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
-        })
+        .then(this.mapHerd)
 
+        // AnimalManager.getHerdOptions()
+        // .then(data => {
+        //     let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
+        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+        // })
     }
 
 
@@ -126,6 +135,7 @@ class UserAdd extends Component {
                                 onChange={(event)=>this.setState({herdId: event.target.value})}>
                                 {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                             </select >
+                            
                             
                         </div>   
                         <div>

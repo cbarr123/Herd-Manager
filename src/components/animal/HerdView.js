@@ -94,20 +94,24 @@ class Dashboard extends Component {
             <div className=".container-cards">                
                 {this.state.animals.filter(animal => {
                     if(this.state.filterStatus === "Select Animal Status"){
-                        return animal
+                        return true
                     }
-                    else 
-                        if(animal.status === this.state.filterStatus) {
-                        return animal
-                    }               
+                    else if(animal.status === this.state.filterStatus) {
+                        return true
+                    }  
+                    return false
+
                 }).map(animal => (
                     <AnimalCard
                     key={animal.id}
                     animal={animal}
                     {...this.props}
+                    
                     />
-                )                    
-             )}
+                    )  
+                    
+                    )
+                }
             </div>
             </React.Fragment>
         )

@@ -23,15 +23,6 @@ export default {
           body: JSON.stringify(newAnimal)
       }).then(data => data.json())
   },
-    post(newHerd) {
-      return fetch(`${remoteURL}/herd`, {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(newHerd)
-      }).then(data => data.json())
-  },
     update(editedAnimal) {
         return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
           method: "PUT",
