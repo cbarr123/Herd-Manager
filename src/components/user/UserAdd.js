@@ -44,12 +44,19 @@ class UserAdd extends Component {
         }
     };
 
+    
+    // mapHerdOptions = (data) => {
+        //     data.map(option => {return {value: option.id, display: option.name}})
+        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+        // }
+        
+        
     mapHerd = (data) => {
+        console.log("data coming from mapHerd",data)
         let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
         this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
     }
-
-
+   
     createNewHerd = evt => {
         evt.preventDefault();
         if (this.state.name === ""){
@@ -62,17 +69,21 @@ class UserAdd extends Component {
                 tattoo: this.state.tattoo,
             }
             HerdsManager.post(newHerd)
-            .then(() => this.setState({loadingStatus: false}))
-            .then(AnimalManager.getHerdOptions())
+            .then(AnimalManager.getHerdOptions)
             .then(this.mapHerd)
-            
-
+            .then(() => this.setState({loadingStatus: false}))
         }
-    }
+    };
 
     componentDidMount () {
+        
         AnimalManager.getHerdOptions()
         .then(this.mapHerd)
+
+
+
+
+
 
         // AnimalManager.getHerdOptions()
         // .then(data => {

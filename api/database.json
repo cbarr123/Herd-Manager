@@ -87,6 +87,22 @@
       "password": "1",
       "herdId": "3",
       "id": 11
+    },
+    {
+      "firstName": "C",
+      "lastName": "B",
+      "email": "1@1.com",
+      "password": "1",
+      "herdId": "1",
+      "id": 12
+    },
+    {
+      "firstName": "Test",
+      "lastName": "Test1027",
+      "email": "test@1026",
+      "password": "1",
+      "herdId": "2",
+      "id": 13
     }
   ],
   "herd": [
@@ -109,112 +125,31 @@
       "id": 3
     },
     {
-      "number": "122",
-      "name": "Test Herd",
-      "tattoo": "edd",
+      "number": "",
+      "name": "testing1010",
+      "tattoo": "",
       "id": 4
     },
     {
-      "herdId": "2",
-      "status": "Current Stock",
-      "name": "test animal",
       "number": "",
-      "breed": "",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Male",
-      "dateOfBirth": "",
+      "name": "testing1014",
+      "tattoo": "",
       "id": 5
     },
     {
-      "herdId": "2",
-      "status": "Current Stock",
-      "name": "test animal",
       "number": "",
-      "breed": "",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Male",
-      "dateOfBirth": "",
+      "name": "testing1015",
+      "tattoo": "",
       "id": 6
     },
     {
-      "number": "qw234",
-      "name": "Andys Herd",
-      "tattoo": "ac",
+      "number": "",
+      "name": "testing1020",
+      "tattoo": "",
       "id": 7
-    },
-    {
-      "number": "123",
-      "name": "Another Herd",
-      "tattoo": "",
-      "id": 8
-    },
-    {
-      "number": "123",
-      "name": "a 3rd hers",
-      "tattoo": "qq",
-      "id": 9
-    },
-    {
-      "number": "123",
-      "name": "a 3rd hers",
-      "tattoo": "qq",
-      "id": 10
-    },
-    {
-      "number": "123",
-      "name": "bunchaHerds",
-      "tattoo": "",
-      "id": 11
-    },
-    {
-      "number": "test",
-      "name": "new herd again",
-      "tattoo": "",
-      "id": 12
-    },
-    {
-      "number": "ttt",
-      "name": "ttttt",
-      "tattoo": "",
-      "id": 13
-    },
-    {
-      "number": "rwsddf",
-      "name": "234er",
-      "tattoo": "",
-      "id": 14
-    },
-    {
-      "number": "asd",
-      "name": "tester123",
-      "tattoo": "",
-      "id": 15
-    },
-    {
-      "number": "rtyt",
-      "name": "ThisOne",
-      "tattoo": "",
-      "id": 16
     }
   ],
   "animals": [
-    {
-      "id": 8,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "MissChief",
-      "number": "12345",
-      "breed": "American Lamancha",
-      "sire": "123434",
-      "dam": "1344134",
-      "description": "Brown",
-      "gender": "Female",
-      "dateOfBirth": "20180203"
-    },
     {
       "id": 9,
       "herdId": 2,
@@ -279,6 +214,19 @@
       "gender": "Male",
       "dateOfBirth": "",
       "id": 15
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "TinaTiny",
+      "number": "123",
+      "breed": "Nubian",
+      "sire": "123",
+      "dam": "4456",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "",
+      "id": 16
     }
   ],
   "animalStatus": [
