@@ -43,7 +43,6 @@ class AnimalEdit extends Component {
         };
         AnimalManager.update(editedAnimal)
         .then(() => {this.props.history.push(`/animals/${this.props.animalId}`)});
-        // .then(() => {this.props.history.push(`/dashboard`)});
     };
     componentDidMount() {
         AnimalManager.get(this.props.match.params.animalId)
@@ -72,13 +71,13 @@ class AnimalEdit extends Component {
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(gende/rOptions)
+            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            console.log(breedOptions)
+            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         })          
     };
@@ -149,7 +148,7 @@ class AnimalEdit extends Component {
                             onClick={this.updateExistingAnimal}>
                             Submit Edit
                             </button>
-                            <Link to={`/herdview`}>
+                            <Link to={`/herdview/${this.state.herdId}`}>
                                 <button type="button"
                                 className="HerdViewButton"
                                 >Return</button>

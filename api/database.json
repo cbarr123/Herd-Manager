@@ -2,120 +2,231 @@
   "user": [
     {
       "id": 1,
+      "herdId": 1,
       "firstName": "Carl",
       "lastName": "Barringer",
       "email": "cb@cb.com",
       "password": "1"
     },
     {
-      "firstName": "William",
-      "lastName": "Renquist",
-      "email": "wrt@gmail.com",
-      "password": "1",
-      "id": 2
+      "id": 2,
+      "herdId": 2,
+      "firstName": "Andy",
+      "lastName": "Collins",
+      "email": "ac@ac.com",
+      "password": "1"
     },
     {
-      "firstName": "Tom",
-      "lastName": "Newman",
-      "email": "tom@gmail.com",
+      "firstName": "Missy",
+      "lastName": "Barringer",
+      "email": "mb@mb.com",
       "password": "1",
+      "herdId": "",
       "id": 3
     },
     {
-      "firstName": "Sandy",
-      "lastName": "Wood",
-      "email": "sandy@gmail.com",
+      "firstName": "",
+      "lastName": "",
+      "email": "test@test.com",
       "password": "1",
+      "herdId": "Goat Feather Farm",
       "id": 4
+    },
+    {
+      "firstName": "Harold",
+      "lastName": "Tester",
+      "email": "teseter@test.com",
+      "password": "1",
+      "herdId": "1",
+      "id": 5
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "1",
+      "password": "1",
+      "herdId": "2",
+      "id": 6
+    },
+    {
+      "firstName": "tom",
+      "lastName": "tom",
+      "email": "tome@tr",
+      "password": "1",
+      "herdId": "1",
+      "id": 7
+    },
+    {
+      "firstName": "sam",
+      "lastName": "sam",
+      "email": "sam",
+      "password": "sam",
+      "herdId": "3",
+      "id": 8
+    },
+    {
+      "firstName": "testging",
+      "lastName": "reasdasd",
+      "email": "testing@testing",
+      "password": "1",
+      "herdId": "1",
+      "id": 9
+    },
+    {
+      "firstName": "Fred",
+      "lastName": "fred",
+      "email": "newuswr",
+      "password": "12",
+      "herdId": "1",
+      "id": 10
+    },
+    {
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "testuser",
+      "password": "1",
+      "herdId": "3",
+      "id": 11
+    },
+    {
+      "firstName": "C",
+      "lastName": "B",
+      "email": "1@1.com",
+      "password": "1",
+      "herdId": "1",
+      "id": 12
+    },
+    {
+      "firstName": "Test",
+      "lastName": "Test1027",
+      "email": "test@1026",
+      "password": "1",
+      "herdId": "2",
+      "id": 13
     }
   ],
   "herd": [
     {
       "id": 1,
-      "ownerId": 1,
       "number": "4789568",
       "name": "Goat Feather Farm",
       "tattoo": "GFF"
+    },
+    {
+      "id": 2,
+      "number": "654321",
+      "name": "Collins Capricious Caprines",
+      "tattoo": "CCC"
+    },
+    {
+      "number": "Test567",
+      "name": "Test Herd",
+      "tattoo": "tst",
+      "id": 3
+    },
+    {
+      "number": "",
+      "name": "testing1010",
+      "tattoo": "",
+      "id": 4
+    },
+    {
+      "number": "",
+      "name": "testing1014",
+      "tattoo": "",
+      "id": 5
+    },
+    {
+      "number": "",
+      "name": "testing1015",
+      "tattoo": "",
+      "id": 6
+    },
+    {
+      "number": "",
+      "name": "testing1020",
+      "tattoo": "",
+      "id": 7
     }
   ],
   "animals": [
     {
-      "id": 6,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "Another Goat",
-      "number": "12378",
-      "breed": "Nubian",
-      "sire": "987",
-      "dam": "8765",
-      "description": "Crazy Goat",
-      "gender": "Female",
-      "dateOfBirth": "20197006"
-    },
-    {
-      "id": 7,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "Tommy",
-      "number": "3456",
-      "breed": "American Lamancha",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Male",
-      "dateOfBirth": "20150403"
-    },
-    {
-      "id": 8,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "MissChief",
-      "number": "12345",
-      "breed": "American Lamancha",
-      "sire": "123434",
-      "dam": "1344134",
-      "description": "Brown",
-      "gender": "Female",
-      "dateOfBirth": "20180203"
-    },
-    {
       "id": 9,
-      "herdId": 1,
-      "status": "External Herd",
+      "herdId": 2,
+      "status": "Current Stock",
       "name": "Tina the Goat",
-      "number": "",
+      "number": "12",
       "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": "20130705"
+      "dateOfBirth": "20130706"
     },
     {
-      "id": 10,
+      "herdId": 1,
+      "status": "Current Stock",
+      "name": "Oreo",
+      "number": "1369",
+      "breed": "American Lamancha",
+      "sire": "345",
+      "dam": "567",
+      "description": "Brown ",
+      "gender": "Female",
+      "dateOfBirth": "20190902",
+      "id": 10
+    },
+    {
+      "id": 12,
       "herdId": 1,
       "status": "Deceased",
-      "name": "A Dead Goat",
-      "number": "134567",
-      "breed": "Lamancha",
-      "sire": "123",
-      "dam": "567",
-      "description": "Brown and White",
-      "gender": " Male",
-      "dateOfBirth": "20170923"
-    },
-    {
-      "id": 11,
-      "herdId": 1,
-      "status": "Current Stock",
-      "name": "New Goat",
-      "number": "123",
-      "breed": "Nubian",
+      "name": "Trouble the Goat",
+      "number": "23456",
+      "breed": "American Lamancha",
       "sire": "",
       "dam": "",
       "description": "",
       "gender": "Female",
-      "dateOfBirth": ""
+      "dateOfBirth": "20060203"
+    },
+    {
+      "herdId": 1,
+      "status": "External Herd",
+      "name": "Bruce the Goat",
+      "number": "56789",
+      "breed": "American Lamancha",
+      "sire": "456890",
+      "dam": "435678",
+      "description": "Crazy Goat",
+      "gender": "Male",
+      "dateOfBirth": "20140908",
+      "id": 14
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "Test Animal",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Male",
+      "dateOfBirth": "",
+      "id": 15
+    },
+    {
+      "herdId": "2",
+      "status": "Current Stock",
+      "name": "TinaTiny",
+      "number": "123",
+      "breed": "Nubian",
+      "sire": "123",
+      "dam": "4456",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "",
+      "id": 16
     }
   ],
   "animalStatus": [
@@ -130,6 +241,10 @@
     {
       "id": 3,
       "status": "External Herd"
+    },
+    {
+      "id": 4,
+      "status": "Sold"
     }
   ],
   "gender": [

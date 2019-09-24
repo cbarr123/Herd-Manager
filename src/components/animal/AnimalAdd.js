@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class AnimalAdd extends Component {
     state = {
         id: "",
-        herdId: 1,
+        herdId: "",
         status: "",
         statusOptions: [],
         genderOptions: [],
@@ -35,7 +35,7 @@ class AnimalAdd extends Component {
         } else {
             this.setState({loadingStatus: true});
             const newAnimal = {
-                herdId: this.state.herdId,
+                herdId: this.props.match.params.herdId,
                 status: this.state.status,
                 name: this.state.name,
                 number: this.state.number,
@@ -47,29 +47,29 @@ class AnimalAdd extends Component {
                 dateOfBirth: this.state.dateOfBirth
             }
             AnimalManager.post(newAnimal)
-            .then(()=>{this.props.history.push("/herdview")});
+            .then(()=>{this.props.history.push(`/herdview/${this.props.match.params.herdId}`)});
         }
     }
-
+    
     componentDidMount() {
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(statusOptions)
             this.setState({ statusOptions: [{value: "", display: "Select Status"}].concat(statusOptions) });  
         })
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            console.log(genderOptions)
+            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            console.log(breedOptions)
+            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         }) 
+        // console.log(this.props.herdId)
     }
 
         
@@ -138,7 +138,7 @@ class AnimalAdd extends Component {
                             onClick={this.createNewAnimal}>
                             Create Animal
                             </button>
-                            <Link to={`/manager`}>
+                            <Link to={`/herdview/${this.props.match.params.herdId}`}>
                                 <button type="button"
                                 className="ManagerButton"
                                 >Cancel</button>

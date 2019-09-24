@@ -5,6 +5,9 @@ export default {
     getAll() {
         return fetch(`${remoteURL}/animals`).then(result => result.json())
   },
+  getAllByHerd(id) {
+    return fetch(`${remoteURL}/animals?herdId=${id}`).then(result => result.json())
+  },
     get(id) {
         return fetch(`${remoteURL}/animals/${id}`).then(result => result.json())
   },
@@ -46,6 +49,9 @@ export default {
    },
     getAnimalByStatus(status) {
       return fetch(`${remoteURL}/animals?status=${status}`).then(result => result.json())
+    },
+    getHerdOptions() {
+      return fetch(`${remoteURL}/herd/`).then(result => result.json())
     },
   }
 

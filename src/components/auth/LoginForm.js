@@ -6,7 +6,9 @@ class LoginForm extends Component {
     state = {
         email: "",
         password: "",
-        activeUserId: 0
+        activeUserId: 0,
+        loadingStatus: false,
+        isHidden: false
     };
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -23,7 +25,7 @@ class LoginForm extends Component {
             })
         )
         // this.props.loadData(this.state.activeUserId);
-        this.props.history.push("/Dashboard");
+        // this.props.history.push("/herdview");
     }
     componentDidMount() {
         // console.log(this.state)
@@ -36,20 +38,27 @@ class LoginForm extends Component {
             this.setState({loadingStatus: false});
         } else {
             this.setState({loadingStatus: true});
-            const user = {
-                email: this.state.email,
-                password: this.state.password
-            };
+            // const user = {
+            //     email: this.state.email,
+            //     password: this.state.password
+            // };
             UserManager.getAll()
             .then(users => {
                 const currentUser = users.find(user => {
                     return user.email === this.state.email && user.password === this.state.password
                 });
-                // console.log (currentUser);
+                // console.log ("Current user",currentUser);
                 if (currentUser !== undefined) {
-                    this.setState({activeUserId: currentUser.id});
+                    this.setState({
+                        activeUserId: currentUser.id,
+                        herdId: currentUser.herdId,
+                        loadingStatus: false,
+                        isHidden: false
+                    
+                    });
                     this.setSessionStorage();
-                    this.props.history.push("/herdview");
+                    this.props.history.push(`/herdview/${currentUser.herdId}`);
+                    // console.log("State in UsrManagrGetAll",this.state)
 
                 } else {
                     window.alert("something is wrong, please try again")

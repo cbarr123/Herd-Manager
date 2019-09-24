@@ -18,6 +18,10 @@ class AnimalDetail extends Component {
         loadingStatus: false
     }
     
+    deleteAnimal = id => {
+        AnimalManager.delete(id)
+        .then(() => {this.props.history.push(`/herdview/${this.state.herdId}`)});
+    }
     componentDidMount() {
         //retrieve animal information based upon animalId
         AnimalManager.get(this.props.animalId)
@@ -54,18 +58,17 @@ class AnimalDetail extends Component {
                 </div>
                 <section className="AnimalDetailButton">
                     <button type="button"
-                    className="EditButton"
-                    onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}
-                    >
-                    Edit
+                        className="EditButton"
+                        onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}
+                        >
+                        Edit
                     </button>
                     <button type="button"
-                    className="DeleteButton"
-                    onClick = {() => {this.props.history.push(`${this.props.animalId}/delete`)}}
-                    >
-                    Delete
+                        className="DeleteButton"
+                        onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
+                        Delete
                     </button>
-                    <Link to={`/herdview`}>
+                    <Link to={`/herdview/${this.state.herdId}`}>
                         <button type="button"
                         className="HerdViewButton"
                         >Return</button>
@@ -74,5 +77,7 @@ class AnimalDetail extends Component {
             </React.Fragment>
         )
     }
+
 }
+
 export default AnimalDetail

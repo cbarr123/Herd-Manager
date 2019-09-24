@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import UserManager from "../../modules/UserManager";
+import AnimalManager from "../../modules/AnimalManager";
+import HerdsManager from "../../modules/HerdsManager";
 import { Link } from "react-router-dom";
 
 class UserAdd extends Component {
     state = {
         id: "",
+        activeUsrId: 0,
         firstName: "",
         lastName: "",
         email: "",
         password: "",
+        herdId: "",
+        name: "",
+        number: "",
+        tattoo: "",
+        herdOptions: [],
         loadingStatus: false
     };
 
@@ -20,25 +28,74 @@ class UserAdd extends Component {
 
     createNewUser = evt => {
         evt.preventDefault();
-        if (this.state.email === "" || this.state.password === "") {
-            window.alert("Email and Password are required fields");
+        if (this.state.email === "" || this.state.password === "" || this.state.herdId === "") {
+            window.alert("Email, Password and Herd are required fields");
         } else {
             this.setState({loadingStatus: true});
             const newUser = {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 email: this.state.email,
-                password: this.state.password
+                password: this.state.password,
+                herdId: this.state.herdId
             }
             UserManager.post(newUser)
-            .then(() => this.props.history.push("/herdview"))
+            .then(() => this.props.history.push(`/herdview/${this.state.herdId}`))
         }
     };
+
+    
+    // mapHerdOptions = (data) => {
+        //     data.map(option => {return {value: option.id, display: option.name}})
+        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+        // }
+        
+        
+    mapHerd = (data) => {
+        console.log("data coming from mapHerd",data)
+        let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
+        this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+    }
+   
+    createNewHerd = evt => {
+        evt.preventDefault();
+        if (this.state.name === ""){
+            window.alert("Herd Name is a required field")
+        } else {
+            this.setState({loadingStatus: true});
+            const newHerd = {
+                number: this.state.number,
+                name: this.state.name,
+                tattoo: this.state.tattoo,
+            }
+            HerdsManager.post(newHerd)
+            .then(AnimalManager.getHerdOptions)
+            .then(this.mapHerd)
+            .then(() => this.setState({loadingStatus: false}))
+        }
+    };
+
+    componentDidMount () {
+        
+        AnimalManager.getHerdOptions()
+        .then(this.mapHerd)
+
+
+
+
+
+
+        // AnimalManager.getHerdOptions()
+        // .then(data => {
+        //     let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
+        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
+        // })
+    }
+
 
     render () {        
         return (
             <React.Fragment>
-                <h2>Adding User</h2>
                 <form>
                     <fieldset>
                         <div>
@@ -70,6 +127,7 @@ class UserAdd extends Component {
                             id="lastName"
                             value={this.state.lastName}/>
                         </div>
+
                         <div>
                             <button
                             type="button"
@@ -77,12 +135,58 @@ class UserAdd extends Component {
                             onClick={this.createNewUser}>
                             Create User
                             </button>
-                            <Link to={`/herdview`}>
+
+                            <Link to={`/`}>
                                 <button type="button"
-                                className="HerdView"
+                                className="Login"
                                 >Cancel</button>
                             </Link>
+                            
+                            <select value={this.state.herdId}
+                                onChange={(event)=>this.setState({herdId: event.target.value})}>
+                                {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                            </select >
+                            
+                            
+                        </div>   
+                        <div>
+                            <p></p>
                         </div>
+                                
+                        <div className="newHerd">
+                            
+                            <label htmlFor="name">Herd Name</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="name"
+                            value={this.state.herdName}/>
+                        
+                            <label htmlFor="number">Herd ADGA Number</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="number"
+                            value={this.state.herdADGA}/>
+
+                            <label htmlFor="tattoo">Herd Tattoo</label>
+                            <input
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="tattoo"
+                            value={this.state.herdTattoo}/>
+
+                            <button
+                                type="button"
+                                disabled={this.state.loadingStatus}
+                                onClick={this.createNewHerd}>
+                                Create Herd
+                            </button>
+                        </div>
+                            
+                            
+                            
+                        
                     </fieldset>
                 </form>
             </React.Fragment>
