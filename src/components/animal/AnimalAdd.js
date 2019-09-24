@@ -60,16 +60,13 @@ class AnimalAdd extends Component {
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         }) 
-        // console.log(this.props.herdId)
     }
 
         

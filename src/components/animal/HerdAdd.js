@@ -37,7 +37,7 @@ class HerdAdd extends Component {
     
     componentDidMount() {
         
-        // console.log(this.props.herdId)
+
     }
 
         

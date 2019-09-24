@@ -43,16 +43,8 @@ class UserAdd extends Component {
             .then(() => this.props.history.push(`/herdview/${this.state.herdId}`))
         }
     };
-
-    
-    // mapHerdOptions = (data) => {
-        //     data.map(option => {return {value: option.id, display: option.name}})
-        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
-        // }
-        
         
     mapHerd = (data) => {
-        console.log("data coming from mapHerd",data)
         let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
         this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
     }
@@ -79,19 +71,7 @@ class UserAdd extends Component {
         
         AnimalManager.getHerdOptions()
         .then(this.mapHerd)
-
-
-
-
-
-
-        // AnimalManager.getHerdOptions()
-        // .then(data => {
-        //     let herdOptions = data.map(option => {return {value: option.id, display: option.name}})
-        //     this.setState({ herdOptions: [{value: " ", display: "Select An Existing Herd"}].concat(herdOptions) }); 
-        // })
     }
-
 
     render () {        
         return (
@@ -127,7 +107,6 @@ class UserAdd extends Component {
                             id="lastName"
                             value={this.state.lastName}/>
                         </div>
-
                         <div>
                             <button
                             type="button"
@@ -145,9 +124,7 @@ class UserAdd extends Component {
                             <select value={this.state.herdId}
                                 onChange={(event)=>this.setState({herdId: event.target.value})}>
                                 {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                            </select >
-                            
-                            
+                            </select >                           
                         </div>   
                         <div>
                             <p></p>
@@ -182,11 +159,7 @@ class UserAdd extends Component {
                                 onClick={this.createNewHerd}>
                                 Create Herd
                             </button>
-                        </div>
-                            
-                            
-                            
-                        
+                        </div>                       
                     </fieldset>
                 </form>
             </React.Fragment>

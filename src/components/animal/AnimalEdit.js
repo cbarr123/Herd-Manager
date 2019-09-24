@@ -65,19 +65,16 @@ class AnimalEdit extends Component {
         AnimalManager.getStatusOptions()
         .then(data => {
             let statusOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(statusOptions)
             this.setState({ statusOptions: [{value: "", display: "Select Status"}].concat(statusOptions) }); 
         })
         AnimalManager.getGenderOptions()
         .then(data => {
             let genderOptions = data.map(option => {return {value: option.status, display: option.status}})
-            // console.log(genderOptions)
             this.setState({ genderOptions: [{value: "", display: "Select Gender"}].concat(genderOptions) }); 
         })
         AnimalManager.getBreedOptions()
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
-            // console.log(breedOptions)
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
         })          
     };
