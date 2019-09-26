@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 
 class LoginForm extends Component {
     state = {
@@ -24,12 +26,8 @@ class LoginForm extends Component {
                 id: this.state.activeUserId
             })
         )
-        // this.props.loadData(this.state.activeUserId);
-        // this.props.history.push("/herdview");
     }
     componentDidMount() {
-        // console.log(this.state)
-        // console.log("from componentDidMount at loginForm")
     }
     handleLogin = (event) => {
         event.preventDefault();
@@ -38,16 +36,11 @@ class LoginForm extends Component {
             this.setState({loadingStatus: false});
         } else {
             this.setState({loadingStatus: true});
-            // const user = {
-            //     email: this.state.email,
-            //     password: this.state.password
-            // };
             UserManager.getAll()
             .then(users => {
                 const currentUser = users.find(user => {
                     return user.email === this.state.email && user.password === this.state.password
                 });
-                // console.log ("Current user",currentUser);
                 if (currentUser !== undefined) {
                     this.setState({
                         activeUserId: currentUser.id,
@@ -58,10 +51,8 @@ class LoginForm extends Component {
                     });
                     this.setSessionStorage();
                     this.props.history.push(`/herdview/${currentUser.herdId}`);
-                    // console.log("State in UsrManagrGetAll",this.state)
-
                 } else {
-                    window.alert("something is wrong, please try again")
+                    window.Alert("something is wrong, please try again")
                 }
             })
         }
@@ -70,41 +61,46 @@ class LoginForm extends Component {
     render() {
         return(
             <React.Fragment>
-                <form>
-                    <fieldset>
-                        <div className="loginForm">
-                        <input
-                            type="email"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="email"
-                            placeholder="Email Address"
-                        />
-                        <input
-                            type="password"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="password"
-                            placeholder="Enter Password"
-                        />
+                <Form>
+                    <div className="loginForm">
+                        <FormGroup>
+                            <Label for="email" sm={2}>Email Address</Label>
+                            <Col md={4}>
+                                <Input
+                                    type="email"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="email">
+                                </Input>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="password" sm={1}>Password</Label>
+                            <Col md={4}>
+                                <Input
+                                    type="password"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="password">
+                                </Input>
+                            </Col>
+                            </FormGroup>
                         </div>
                         <div>
-                        <button
+                        <Button
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.handleLogin}
-                        >Login</button>
+                        >Login</Button>
                         </div>
                         <div>
                             <h4>Please register if you are not a current user</h4>
                             <Link className="nav-link"
                                 to="/user/new">
-                                <button type="button">User Registration</button>
+                                <Button type="button">User Registration</Button>
                             </Link> 
                         </div>
-                    </fieldset>
-                </form>
-
+                </Form>
             </React.Fragment>
         )
     }

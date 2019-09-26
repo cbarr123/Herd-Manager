@@ -161,20 +161,20 @@
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": "20130706"
+      "dateOfBirth": "2013-07-06"
     },
     {
+      "id": 10,
       "herdId": 1,
       "status": "Current Stock",
       "name": "Oreo",
       "number": "1369",
       "breed": "American Lamancha",
       "sire": "345",
-      "dam": "567",
+      "dam": "5678",
       "description": "Brown ",
       "gender": "Female",
-      "dateOfBirth": "20190902",
-      "id": 10
+      "dateOfBirth": "2019-09-26"
     },
     {
       "id": 12,
@@ -187,7 +187,7 @@
       "dam": "",
       "description": "",
       "gender": "Female",
-      "dateOfBirth": "20060203"
+      "dateOfBirth": "2006-02-03"
     },
     {
       "herdId": 1,
@@ -199,7 +199,7 @@
       "dam": "435678",
       "description": "Crazy Goat",
       "gender": "Male",
-      "dateOfBirth": "20140908",
+      "dateOfBirth": "2014-09-08",
       "id": 14
     },
     {
@@ -212,7 +212,7 @@
       "dam": "",
       "description": "",
       "gender": "Male",
-      "dateOfBirth": "",
+      "dateOfBirth": "2015-05-04",
       "id": 15
     },
     {
@@ -225,7 +225,7 @@
       "dam": "4456",
       "description": "",
       "gender": "Female",
-      "dateOfBirth": "",
+      "dateOfBirth": "2017-03-02",
       "id": 16
     }
   ],

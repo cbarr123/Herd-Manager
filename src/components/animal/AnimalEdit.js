@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
+import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class AnimalEdit extends Component {
     state = {
@@ -82,77 +83,110 @@ class AnimalEdit extends Component {
     render () {
         return (
             <React.Fragment>
-                <form>
-                    <fieldset>
-                        <div className="AnimalEdit">
-                            <label htmlFor="name">Name</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="name"
-                            value={this.state.name}/>
-
-                            <select value={this.state.status}
-                                onChange={(event)=>this.setState({status: event.target.value})}>
-                                {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                            </select >
-                            <select value={this.state.gender}
-                                onChange={(event)=>this.setState({gender: event.target.value})}>
-                                {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                            </select >
-
-                            <label htmlFor="number">Number</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="number"
-                            value={this.state.number}/>
-
-                            <select value={this.state.breed}
-                                onChange={(event)=>this.setState({breed: event.target.value})}>
-                                {this.state.breedOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                            </select >
-
-                            <label htmlFor="sire">Sire</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="sire"
-                            value={this.state.sire}/>
-                            <label htmlFor="dam">Dam</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="dam"
-                            value={this.state.dam}/>
-                            <label htmlFor="description">Description</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="description"
-                            value={this.state.description}/>
-                            <label htmlFor="dateOfBirth">Date Of Birth</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="dateOfBirth"
-                            value={this.state.dateOfBirth}/>
+                <Form>
+                    <div className="AnimalEdit">
+                        <Row form>
+                            <Col md={12}>                    
+                                <Label htmlFor="name">Name</Label>
+                                <Input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="name"
+                                value={this.state.name}/>
+                            </Col>
+                        </Row>
+                        <Row form>
+                            <Col md={4}>
+                                <FormGroup>
+                                        <Label for="Current-Status">Select Current Status</Label>
+                                        <Input  type={"select"} value={this.state.status} id={"Current-Status"}
+                                            onChange={(event)=>this.setState({status: event.target.value})}>
+                                            {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                        </Input >
+                                </FormGroup>
+                            </Col>
+                            <Col md={4}>
+                                <Label for="gender">Select Gender</Label>
+                                <Input type={"select"} value={this.state.gender} id={"gender"}
+                                    onChange={(event)=>this.setState({gender: event.target.value})}>
+                                    {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                </Input>
+                            </Col>
+                            <Col md={4}>
+                                <Label htmlFor="number">Enter ADGA Identification</Label>
+                                <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="number"
+                                    value={this.state.number}>
+                                </Input>
+                            </Col>
+                        </Row>
+                        <Row form>
+                            <Col md={4}>
+                                    <Label htmlFor="breed">Breed</Label>    
+                                    <Input type={"select"} value={this.state.breed} id={"breed"}
+                                        onChange={(event)=>this.setState({breed: event.target.value})}>
+                                        {this.state.breedOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                    </Input>
+                            </Col>
+                            <Col md={8}>
+                                <label htmlFor="description">Description</label>
+                                <Input
+                                    type="textarea"
+                                    onChange={this.handleFieldChange}
+                                    id="description"
+                                    value={this.state.description}>
+                                </Input>
+                            </Col>    
+                        </Row>
+                            <Col md={8}>
+                                <FormGroup>     
+                                    <Label htmlFor="dateOfBirth">Date Of Birth</Label>
+                                    <Input
+                                        type="date"
+                                        onChange={this.handleFieldChange}
+                                        id="dateOfBirth"
+                                        value={this.state.dateOfBirth}>
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                        <Row form>
+                            <Col md={8}>
+                                    <Label htmlFor="sire">Sire</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="sire"
+                                    value={this.state.sire}>
+                                    </Input>
+                            </Col>
+                            <Col md={8}>
+                                    <Label htmlFor="dam">Dam</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="dam"
+                                    value={this.state.dam}>
+                                    </Input>
+                            </Col>
+                        </Row>
                         </div>
                         <div>
-                            <button
+                            <Button
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.updateExistingAnimal}>
                             Submit Edit
-                            </button>
+                            </Button>
                             <Link to={`/herdview/${this.state.herdId}`}>
-                                <button type="button"
+                                <Button type="button"
                                 className="HerdViewButton"
-                                >Return</button>
+                                >Return</Button>
                             </Link>
                         </div>
-                    </fieldset>
-                </form>
+                    
+                </Form>
             </React.Fragment>
         )
     };

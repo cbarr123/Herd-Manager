@@ -3,6 +3,7 @@ import UserManager from "../../modules/UserManager";
 import AnimalManager from "../../modules/AnimalManager";
 import HerdsManager from "../../modules/HerdsManager";
 import { Link } from "react-router-dom";
+import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class UserAdd extends Component {
     state = {
@@ -76,92 +77,132 @@ class UserAdd extends Component {
     render () {        
         return (
             <React.Fragment>
-                <form>
-                    <fieldset>
-                        <div>
-                            <label htmlFor="email">Email</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="email"
-                            value={this.state.email}/>
-
-                            <label htmlFor="password">Password</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="password"
-                            value={this.state.password}/>
-                           
-                            <label htmlFor="firstName">First Name</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="firstName"
-                            value={this.state.firstName}/>
-
-                            <label htmlFor="lastName">Last Name</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="lastName"
-                            value={this.state.lastName}/>
+                <Form>
+                    <div className="User-Add">
+                        <Row form>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label htmlFor="email">Email</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="email"
+                                    value={this.state.email}>
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label htmlFor="password">Password</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="password"
+                                    value={this.state.password}>
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Row form> 
+                            <Col md={6}>
+                                <FormGroup>                                 
+                                    <Label htmlFor="firstName">First Name</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="firstName"
+                                    value={this.state.firstName}>
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>      
+                                    <Label htmlFor="lastName">Last Name</Label>
+                                    <Input
+                                    type="text"
+                                    onChange={this.handleFieldChange}
+                                    id="lastName"
+                                    value={this.state.lastName}>
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                        </Row>    
                         </div>
-                        <div>
-                            <button
+
+                        <div className="Create-User">
+                            <Button
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.createNewUser}>
                             Create User
-                            </button>
+                            </Button>
 
                             <Link to={`/`}>
-                                <button type="button"
+                                <Button type="button"
                                 className="Login"
-                                >Cancel</button>
+                                >Cancel</Button>
                             </Link>
-                            
-                            <select value={this.state.herdId}
+                        </div>
+                </Form>
+                                
+                <Form>
+                    <div className="Select-Herd">    
+                    <FormGroup row> 
+                            <Label for="herd" sm={1}>Herd</Label>  
+                            <Col sm={10}>
+                                <Input type={"select"} value={this.state.herdId}
+                                id="herd"
                                 onChange={(event)=>this.setState({herdId: event.target.value})}>
                                 {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                            </select >                           
-                        </div>   
-                        <div>
-                            <p></p>
-                        </div>
+                                </Input>
+                            </Col>
+                    </FormGroup>
+                    </div>   
+                       
                                 
-                        <div className="newHerd">
-                            
-                            <label htmlFor="name">Herd Name</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="name"
-                            value={this.state.herdName}/>
-                        
-                            <label htmlFor="number">Herd ADGA Number</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="number"
-                            value={this.state.herdADGA}/>
-
-                            <label htmlFor="tattoo">Herd Tattoo</label>
-                            <input
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="tattoo"
-                            value={this.state.herdTattoo}/>
-
-                            <button
+                    <div className="New-Herd">
+                    <FormGroup row>    
+                            <Label htmlFor="name" sm={3}>Herd Name</Label>
+                            <Col sm={8}>
+                                <Input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="name"
+                                value={this.state.herdName}>
+                                </Input>
+                            </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                            <Label htmlFor="number" sm={3}>Herd ADGA Number</Label>
+                            <Col sm={8}>
+                                <Input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="number"
+                                value={this.state.herdADGA}>
+                                </Input>
+                                </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                            <Label htmlFor="tattoo" sm={3}>Herd Tattoo</Label>
+                            <Col sm={8}>
+                                <Input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="tattoo"
+                                value={this.state.herdTattoo}>
+                                </Input>
+                                </Col>
+                    </FormGroup>
+                            <Button
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.createNewHerd}>
                                 Create Herd
-                            </button>
-                        </div>                       
-                    </fieldset>
-                </form>
+                            </Button>
+                    </div>                       
+                    
+                </Form>
             </React.Fragment>
         )
     }
