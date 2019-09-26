@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
 import { Link } from "react-router-dom";
+import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 class Dashboard extends Component {
@@ -53,44 +54,41 @@ class Dashboard extends Component {
             <div>
                 <h2>{this.state.herdName}</h2>
                 <h4>ADGA#: {this.state.herdNumber}</h4>
-                
                 <Link className="nav-link"
                 to="/"
                 onClick={this.handleLogout}>
-                    <button type="button"      
+                    <Button type="button"      
                         disabled={this.state.loadingStatus}
                         // isHidden = {this.state.hidden}
                         >
-                    Log Out</button>
+                    Log Out</Button>
                 </Link>
-                
                 <Link to={`/user/new`}>
-                    <button type="button"
+                    <Button type="button"
                     className="AddUserButton"
                     disabled={this.state.loadingStatus}
                     // isHidden = {this.state.hidden}
                     >
-                    Add User</button>
+                    Add User</Button>
                 </Link>
-                
-                
-                
-                
-                <button type="button"
+                <Button type="button"
                 className="newAnimal"
                 onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>
                 Add Animal
-                </button>
-                
-                
+                </Button>
             </div> 
             <div>
-                <select value={this.state.filterStatus}
-                    onChange={(event)=>this.setState({filterStatus: event.target.value})}>
-                    {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
-                </select >
+            <FormGroup row>
+                <Label for="AnimalStatus" sm={2}>Animal Status</Label> 
+                <Col sm={8}>
+                    <Input type={"select"} value={this.state.filterStatus}
+                        id={"AnimalStatus"}
+                        onChange={(event)=>this.setState({filterStatus: event.target.value})}>
+                        {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                    </Input>
+                </Col>
+            </FormGroup>
             </div>
-
             <div className=".container-cards">                
                 {this.state.animals.filter(animal => {
                     if(this.state.filterStatus === "Select Animal Status"){
@@ -100,16 +98,12 @@ class Dashboard extends Component {
                         return true
                     }  
                     return false
-
                 }).map(animal => (
                     <AnimalCard
                     key={animal.id}
                     animal={animal}
-                    {...this.props}
-                    
-                    />
+                    {...this.props}/>
                     )  
-                    
                     )
                 }
             </div>
