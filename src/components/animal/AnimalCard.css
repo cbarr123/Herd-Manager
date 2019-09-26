@@ -6,9 +6,14 @@
     background: aliceblue;
     margin-bottom: 2em;
     flex: 0 1 24%;
+    color: #3A4A51;
 }
 .container-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+}
+.card-button {
+    
+}
+

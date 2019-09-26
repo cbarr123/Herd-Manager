@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "./LoginForm.css"
 
 
 class LoginForm extends Component {

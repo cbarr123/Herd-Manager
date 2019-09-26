@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
+import "./HerdView.css"
 import { Link } from "react-router-dom";
-import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Button, FormGroup, Label, Input } from 'reactstrap';
 
 
 class Dashboard extends Component {

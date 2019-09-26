@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./AnimalCard.css"
+import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
 
 class AnimalCard extends Component {
     
@@ -8,10 +9,15 @@ class AnimalCard extends Component {
         
         return (
             <div className="animal-card" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
-                <h3>Name: <span>{this.props.animal.name}</span></h3>
-                <h3>Breed: <span>{this.props.animal.breed}</span></h3>
-                <h3>DOB:<span>{this.props.animal.dateOfBirth}</span></h3>
-                <button>View Detail</button>
+                <Card>
+                    <CardBody>
+                        {/* <CardImg></CardImg> */}
+                        <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>
+                        <CardSubtitle><span>{this.props.animal.breed}</span></CardSubtitle>
+                        <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
+                        <Button className="card-button">View Detail</Button>
+                    </CardBody>
+                </Card>
             </div>            
         )
     }
