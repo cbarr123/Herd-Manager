@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 
+
 class LoginForm extends Component {
     state = {
         email: "",
@@ -61,7 +62,7 @@ class LoginForm extends Component {
                     // console.log("State in UsrManagrGetAll",this.state)
 
                 } else {
-                    window.alert("something is wrong, please try again")
+                    window.Alert("something is wrong, please try again")
                 }
             })
         }
