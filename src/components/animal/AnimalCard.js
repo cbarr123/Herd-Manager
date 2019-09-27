@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./AnimalCard.css"
-import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
+import {Col, Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
 
 class AnimalCard extends Component {
     
@@ -8,6 +8,7 @@ class AnimalCard extends Component {
     render () {
         
         return (
+            <Col sm="4">
                 <Card className="animal-card" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
                     <CardBody>
                         {/* <CardImg></CardImg> */}
@@ -16,7 +17,8 @@ class AnimalCard extends Component {
                         <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
                         <Button className="card-button">View Detail</Button>
                     </CardBody>
-                </Card>       
+                </Card>
+            </Col>       
         )
     }
 }

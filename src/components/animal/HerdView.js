@@ -3,7 +3,7 @@ import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
 import "./HerdView.css"
 import { Link } from "react-router-dom";
-import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
+import { Container, CardDeck, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 
 class Dashboard extends Component {
@@ -80,19 +80,21 @@ class Dashboard extends Component {
             </Container> 
             <div>
             <FormGroup row>
+                <Col sm="2"></Col>
                 {/* <Label for="AnimalStatus" sm={2}>Animal Status</Label>  */}
                 <Col sm={8}>
                     <Input type={"select"} value={this.state.filterStatus}
                         id={"AnimalStatus"}
-                        onChange={(event)=>this.setState({filterStatus: event.target.value})}>
+                        onChange={(event)=>this.setState({filterStatus: event.target.value})}
+                        className="HerdView-FormField">
                         {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                     </Input>
                 </Col>
             </FormGroup>
             </div>
             <Container>
+                <CardDeck>
                 <Row className="container-cards">
-                    <Col sm="4">
                         {this.state.animals.filter(animal => {
                             if(this.state.filterStatus === "Select Animal Status"){
                                 return true
@@ -109,8 +111,8 @@ class Dashboard extends Component {
                             )  
                             )
                         }
-                    </Col>
                 </Row>
+                </CardDeck>
             </Container>
             </React.Fragment>
         )
