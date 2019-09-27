@@ -13,7 +13,7 @@ class AnimalCard extends Component {
                     <CardBody>
                         {/* <CardImg></CardImg> */}
                         <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>
-                        <CardSubtitle><span>{this.props.animal.breed}</span></CardSubtitle>
+                        <CardSubtitle>Breed: <span>{this.props.animal.breed}</span></CardSubtitle>
                         <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
                         <Button className="Button-Input">View Detail</Button>
                     </CardBody>

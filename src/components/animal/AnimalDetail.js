@@ -73,7 +73,7 @@ class AnimalDetail extends Component {
                         <Link to={`/herdview/${this.state.herdId}`}>
                             <Button type="button"
                             className="Button-Input"
-                            >Return</Button>
+                            >Cancel</Button>
                         </Link>
                     </section>
                 </Container>
