@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
+import { Button } from 'reactstrap';
+import "./AnimalDetail.css"
 
 class AnimalDetail extends Component {
     state = {
@@ -57,21 +59,20 @@ class AnimalDetail extends Component {
                     <h3>Dam: <span>{this.state.dam}</span></h3>
                 </div>
                 <section className="AnimalDetailButton">
-                    <button type="button"
+                    <Button type="button"
                         className="EditButton"
-                        onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}
-                        >
+                        onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
                         Edit
-                    </button>
-                    <button type="button"
+                    </Button>
+                    <Button type="button"
                         className="DeleteButton"
                         onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
                         Delete
-                    </button>
+                    </Button>
                     <Link to={`/herdview/${this.state.herdId}`}>
-                        <button type="button"
+                        <Button type="button"
                         className="HerdViewButton"
-                        >Return</button>
+                        >Return</Button>
                     </Link>
                 </section>
             </React.Fragment>

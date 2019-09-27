@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
 import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "./AnimalAdd.css"
 
 class AnimalAdd extends Component {
     state = {

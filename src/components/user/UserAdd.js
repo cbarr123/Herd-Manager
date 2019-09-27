@@ -4,6 +4,7 @@ import AnimalManager from "../../modules/AnimalManager";
 import HerdsManager from "../../modules/HerdsManager";
 import { Link } from "react-router-dom";
 import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "./UserAdd.css"
 
 class UserAdd extends Component {
     state = {
