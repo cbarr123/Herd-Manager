@@ -4,7 +4,7 @@ import AnimalManager from "../../modules/AnimalManager";
 import HerdsManager from "../../modules/HerdsManager";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import "./UserAdd.css"
+import "../../styles/Main.css"
 
 class UserAdd extends Component {
     state = {
@@ -90,7 +90,7 @@ class UserAdd extends Component {
                                     onChange={this.handleFieldChange}
                                     id="email"
                                     value={this.state.email}
-                                    className="UserAdd-FormField">
+                                    className="Form-Field">
                                     </Input>
                                 </FormGroup>
                             </Col>
@@ -102,7 +102,7 @@ class UserAdd extends Component {
                                     onChange={this.handleFieldChange}
                                     id="password"
                                     value={this.state.password}
-                                    className="UserAdd-FormField">
+                                    className="Form-Field">
                                     </Input>
                                 </FormGroup>
                             </Col>
@@ -116,7 +116,7 @@ class UserAdd extends Component {
                                     onChange={this.handleFieldChange}
                                     id="firstName"
                                     value={this.state.firstName}
-                                    className="UserAdd-FormField">
+                                    className="Form-Field">
                                     </Input>
                                 </FormGroup>
                             </Col>
@@ -128,7 +128,7 @@ class UserAdd extends Component {
                                     onChange={this.handleFieldChange}
                                     id="lastName"
                                     value={this.state.lastName}
-                                    className="UserAdd-FormField">
+                                    className="Form-Field">
                                     </Input>
                                 </FormGroup>
                             </Col>
@@ -141,7 +141,7 @@ class UserAdd extends Component {
                                     <Input type={"select"} value={this.state.herdId}
                                     id="herd"
                                     onChange={(event)=>this.setState({herdId: event.target.value})}
-                                    className="UserAdd-FormField">
+                                    className="Form-Field">
                                     {this.state.herdOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                     </Input>
                                 </Col>
@@ -152,13 +152,14 @@ class UserAdd extends Component {
                             <Button
                             type="button"
                             disabled={this.state.loadingStatus}
-                            onClick={this.createNewUser}>
+                            onClick={this.createNewUser}
+                            className="Button-Input">
                             Create User
                             </Button>
 
                             <Link to={`/`}>
                                 <Button type="button"
-                                className="Login"
+                                className="Button-Input"
                                 >Cancel</Button>
                             </Link>
                         </div>  
@@ -176,7 +177,7 @@ class UserAdd extends Component {
                                 onChange={this.handleFieldChange}
                                 id="name"
                                 value={this.state.herdName}
-                                className="HerdAdd-FormField">
+                                className="Herd-Form-Field">
                                 </Input>
                             </Col>
                     </FormGroup>
@@ -188,7 +189,7 @@ class UserAdd extends Component {
                                 onChange={this.handleFieldChange}
                                 id="number"
                                 value={this.state.herdADGA}
-                                className="HerdAdd-FormField">
+                                className="Herd-Form-Field">
                                 </Input>
                                 </Col>
                     </FormGroup>
@@ -200,14 +201,15 @@ class UserAdd extends Component {
                                 onChange={this.handleFieldChange}
                                 id="tattoo"
                                 value={this.state.herdTattoo}
-                                className="HerdAdd-FormField">
+                                className="Herd-Form-Field">
                                 </Input>
                                 </Col>
                     </FormGroup>
                             <Button
                                 type="button"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.createNewHerd}>
+                                onClick={this.createNewHerd}
+                                className="Button-Input">
                                 Create Herd
                             </Button>
                     </div>                       

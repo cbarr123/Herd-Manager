@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import "./AnimalEdit.css"
+import "../../styles/Main.css"
 
 class AnimalEdit extends Component {
     state = {
@@ -95,7 +95,7 @@ class AnimalEdit extends Component {
                                 onChange={this.handleFieldChange}
                                 id="name"
                                 value={this.state.name}
-                                className="AnimalEdit-FormField"/>
+                                className="Form-Field"/>
                             </Col>
                         </Row>
                         <Row form>
@@ -104,7 +104,7 @@ class AnimalEdit extends Component {
                                         <Label for="Current-Status">Select Current Status</Label>
                                         <Input  type={"select"} value={this.state.status} id={"Current-Status"}
                                             onChange={(event)=>this.setState({status: event.target.value})}
-                                            className="AnimalEdit-FormField">
+                                            className="Form-Field">
                                             {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                         </Input >
                                 </FormGroup>
@@ -113,7 +113,7 @@ class AnimalEdit extends Component {
                                 <Label for="gender">Select Gender</Label>
                                 <Input type={"select"} value={this.state.gender} id={"gender"}
                                     onChange={(event)=>this.setState({gender: event.target.value})}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                     {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                 </Input>
                             </Col>
@@ -124,7 +124,7 @@ class AnimalEdit extends Component {
                                     onChange={this.handleFieldChange}
                                     id="number"
                                     value={this.state.number}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                 </Input>
                             </Col>
                         </Row>
@@ -133,7 +133,7 @@ class AnimalEdit extends Component {
                                     <Label htmlFor="breed">Breed</Label>    
                                     <Input type={"select"} value={this.state.breed} id={"breed"}
                                         onChange={(event)=>this.setState({breed: event.target.value})}
-                                        className="AnimalEdit-FormField">
+                                        className="Form-Field">
                                         {this.state.breedOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                     </Input>
                             </Col>
@@ -144,7 +144,7 @@ class AnimalEdit extends Component {
                                     onChange={this.handleFieldChange}
                                     id="description"
                                     value={this.state.description}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                 </Input>
                             </Col>    
                         </Row>
@@ -155,7 +155,7 @@ class AnimalEdit extends Component {
                                     onChange={this.handleFieldChange}
                                     id="dateOfBirth"
                                     value={this.state.dateOfBirth}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                 </Input>
                             </Col>
                         <Row form>
@@ -166,7 +166,7 @@ class AnimalEdit extends Component {
                                     onChange={this.handleFieldChange}
                                     id="sire"
                                     value={this.state.sire}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                     </Input>
                             </Col>
                             <Col md={8}>
@@ -176,7 +176,7 @@ class AnimalEdit extends Component {
                                     onChange={this.handleFieldChange}
                                     id="dam"
                                     value={this.state.dam}
-                                    className="AnimalEdit-FormField">
+                                    className="Form-Field">
                                     </Input>
                             </Col>
                         </Row>
@@ -185,12 +185,13 @@ class AnimalEdit extends Component {
                             <Button
                             type="button"
                             disabled={this.state.loadingStatus}
-                            onClick={this.updateExistingAnimal}>
+                            onClick={this.updateExistingAnimal}
+                            className="Button-Input">
                             Submit Edit
                             </Button>
                             <Link to={`/herdview/${this.state.herdId}`}>
                                 <Button type="button"
-                                className="HerdViewButton"
+                                className="Button-Input"
                                 >Return</Button>
                             </Link>
                         </div>

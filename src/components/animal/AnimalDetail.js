@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
-import "./AnimalDetail.css"
+import "../../styles/Main.css"
 import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 class AnimalDetail extends Component {
@@ -61,18 +61,18 @@ class AnimalDetail extends Component {
                     </div>
                     <section className="AnimalDetailButton">
                         <Button type="button"
-                            className="EditButton"
+                            className="Button-Input"
                             onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
                             Edit
                         </Button>
                         <Button type="button"
-                            className="DeleteButton"
+                            className="Button-Input"
                             onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
                             Delete
                         </Button>
                         <Link to={`/herdview/${this.state.herdId}`}>
                             <Button type="button"
-                            className="HerdViewButton"
+                            className="Button-Input"
                             >Return</Button>
                         </Link>
                     </section>

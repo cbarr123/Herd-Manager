@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import "./LoginForm.css"
+import "../../styles/Main.css"
 
 
 class LoginForm extends Component {
@@ -71,7 +71,8 @@ class LoginForm extends Component {
                                     type="email"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="email">
+                                    id="email"
+                                    className="Form-Field">
                                 </Input>
                             </Col>
                         </FormGroup>
@@ -82,7 +83,8 @@ class LoginForm extends Component {
                                     type="password"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="password">
+                                    id="password"
+                                    className="Form-Field">
                                 </Input>
                             </Col>
                             </FormGroup>
@@ -92,13 +94,15 @@ class LoginForm extends Component {
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.handleLogin}
+                            className="Button-Input"
                         >Login</Button>
                         </div>
                         <div>
                             <h4>Please register if you are not a current user</h4>
                             <Link className="nav-link"
                                 to="/user/new">
-                                <Button type="button">User Registration</Button>
+                                <Button type="button"
+                                className="Button-Input">User Registration</Button>
                             </Link> 
                         </div>
                 </Form>

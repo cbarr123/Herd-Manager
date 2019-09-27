@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
-import "./HerdView.css"
+import "../../styles/Main.css"
 import { Link } from "react-router-dom";
 import { Container, CardDeck, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
@@ -57,22 +57,24 @@ class Dashboard extends Component {
                     <Col>
                         <h2>{this.state.herdName}</h2>
                         <h4>ADGA#: {this.state.herdNumber}</h4>
-                        <Link className="nav-link"
+                        <Link className="Button-Input"
                         to="/"
                         onClick={this.handleLogout}>
                             <Button type="button"      
-                                disabled={this.state.loadingStatus}>
+                                disabled={this.state.loadingStatus}
+                                className="Button-Input">
                             Log Out</Button>
                         </Link>
                         <Link to={`/user/new`}>
                             <Button type="button"
-                            className="AddUserButton"
+                            className="Button-Input"
                             disabled={this.state.loadingStatus}>
                             Add User</Button>
                         </Link>
                         <Button type="button"
                         className="newAnimal"
-                        onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>
+                        onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}
+                        className="Button-Input">
                         Add Animal
                         </Button>
                     </Col>
@@ -86,7 +88,7 @@ class Dashboard extends Component {
                     <Input type={"select"} value={this.state.filterStatus}
                         id={"AnimalStatus"}
                         onChange={(event)=>this.setState({filterStatus: event.target.value})}
-                        className="HerdView-FormField">
+                        className="Form-Field">
                         {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                     </Input>
                 </Col>

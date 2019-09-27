@@ -15,6 +15,14 @@
       "lastName": "Collins",
       "email": "ac@ac.com",
       "password": "1"
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "2",
+      "password": "2",
+      "herdId": "1",
+      "id": 3
     }
   ],
   "herd": [

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./AnimalCard.css"
+import "../../styles/Main.css"
 import {Col, Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
 
 class AnimalCard extends Component {
@@ -15,7 +15,7 @@ class AnimalCard extends Component {
                         <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>
                         <CardSubtitle><span>{this.props.animal.breed}</span></CardSubtitle>
                         <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
-                        <Button className="card-button">View Detail</Button>
+                        <Button className="Button-Input">View Detail</Button>
                     </CardBody>
                 </Card>
             </Col>       
