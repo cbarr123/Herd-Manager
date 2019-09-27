@@ -8,12 +8,12 @@
     /* flex: 0 1 24%; */
     color: #3A4A51;
     width: 18rem;
-    position: relative;
+    
     
 }
 .container-cards {
-    display: inline-flex;
-    flex-direction: row;
+    /* display: inline-flex;
+    flex-direction: row; */
     
 }
 .card-button {

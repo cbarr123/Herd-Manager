@@ -8,8 +8,7 @@ class AnimalCard extends Component {
     render () {
         
         return (
-            <div   onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
-                <Card className="animal-card">
+                <Card className="animal-card" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
                     <CardBody>
                         {/* <CardImg></CardImg> */}
                         <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>
@@ -17,8 +16,7 @@ class AnimalCard extends Component {
                         <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
                         <Button className="card-button">View Detail</Button>
                     </CardBody>
-                </Card>
-            </div>            
+                </Card>       
         )
     }
 }

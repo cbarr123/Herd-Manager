@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 
 class HerdTopNav extends Component {
@@ -22,12 +23,13 @@ class HerdTopNav extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className="HerdTopNav">
-                <h1>Herd Manager</h1>
-            </div>
-            <div>
-                
-            </div>
+            <Container className="HerdTopNav">
+                <Row>
+                    <Col>
+                        <h1>Herd Manager</h1>
+                    </Col>
+                </Row>        
+            </Container>
             </React.Fragment>
         );
     }

@@ -52,35 +52,35 @@ class Dashboard extends Component {
     render () {
         return (
             <React.Fragment>
-            <div>
-                <h2>{this.state.herdName}</h2>
-                <h4>ADGA#: {this.state.herdNumber}</h4>
-                <Link className="nav-link"
-                to="/"
-                onClick={this.handleLogout}>
-                    <Button type="button"      
-                        disabled={this.state.loadingStatus}
-                        // isHidden = {this.state.hidden}
-                        >
-                    Log Out</Button>
-                </Link>
-                <Link to={`/user/new`}>
-                    <Button type="button"
-                    className="AddUserButton"
-                    disabled={this.state.loadingStatus}
-                    // isHidden = {this.state.hidden}
-                    >
-                    Add User</Button>
-                </Link>
-                <Button type="button"
-                className="newAnimal"
-                onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>
-                Add Animal
-                </Button>
-            </div> 
+            <Container>
+                <Row>
+                    <Col>
+                        <h2>{this.state.herdName}</h2>
+                        <h4>ADGA#: {this.state.herdNumber}</h4>
+                        <Link className="nav-link"
+                        to="/"
+                        onClick={this.handleLogout}>
+                            <Button type="button"      
+                                disabled={this.state.loadingStatus}>
+                            Log Out</Button>
+                        </Link>
+                        <Link to={`/user/new`}>
+                            <Button type="button"
+                            className="AddUserButton"
+                            disabled={this.state.loadingStatus}>
+                            Add User</Button>
+                        </Link>
+                        <Button type="button"
+                        className="newAnimal"
+                        onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}>
+                        Add Animal
+                        </Button>
+                    </Col>
+                </Row>
+            </Container> 
             <div>
             <FormGroup row>
-                <Label for="AnimalStatus" sm={2}>Animal Status</Label> 
+                {/* <Label for="AnimalStatus" sm={2}>Animal Status</Label>  */}
                 <Col sm={8}>
                     <Input type={"select"} value={this.state.filterStatus}
                         id={"AnimalStatus"}
@@ -90,24 +90,28 @@ class Dashboard extends Component {
                 </Col>
             </FormGroup>
             </div>
-            {/* <div className=".container-cards">                 */}
-                {this.state.animals.filter(animal => {
-                    if(this.state.filterStatus === "Select Animal Status"){
-                        return true
-                    }
-                    else if(animal.status === this.state.filterStatus) {
-                        return true
-                    }  
-                    return false
-                }).map(animal => (
-                    <AnimalCard
-                    key={animal.id}
-                    animal={animal}
-                    {...this.props}/>
-                    )  
-                    )
-                }
-            {/* </div> */}
+            <Container>
+                <Row className="container-cards">
+                    <Col sm="4">
+                        {this.state.animals.filter(animal => {
+                            if(this.state.filterStatus === "Select Animal Status"){
+                                return true
+                            }
+                            else if(animal.status === this.state.filterStatus) {
+                                return true
+                            }  
+                            return false
+                        }).map(animal => (
+                            <AnimalCard
+                            key={animal.id}
+                            animal={animal}
+                            {...this.props}/>
+                            )  
+                            )
+                        }
+                    </Col>
+                </Row>
+            </Container>
             </React.Fragment>
         )
     }
