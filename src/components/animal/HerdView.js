@@ -3,7 +3,7 @@ import AnimalManager from "../../modules/AnimalManager";
 import AnimalCard from "./AnimalCard"
 import "./HerdView.css"
 import { Link } from "react-router-dom";
-import { Col, Button, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 
 class Dashboard extends Component {
@@ -90,7 +90,7 @@ class Dashboard extends Component {
                 </Col>
             </FormGroup>
             </div>
-            <div className=".container-cards">                
+            {/* <div className=".container-cards">                 */}
                 {this.state.animals.filter(animal => {
                     if(this.state.filterStatus === "Select Animal Status"){
                         return true
@@ -107,7 +107,7 @@ class Dashboard extends Component {
                     )  
                     )
                 }
-            </div>
+            {/* </div> */}
             </React.Fragment>
         )
     }

@@ -8,8 +8,8 @@ class AnimalCard extends Component {
     render () {
         
         return (
-            <div className="animal-card" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
-                <Card>
+            <div   onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
+                <Card className="animal-card">
                     <CardBody>
                         {/* <CardImg></CardImg> */}
                         <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>

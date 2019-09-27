@@ -15,94 +15,6 @@
       "lastName": "Collins",
       "email": "ac@ac.com",
       "password": "1"
-    },
-    {
-      "firstName": "Missy",
-      "lastName": "Barringer",
-      "email": "mb@mb.com",
-      "password": "1",
-      "herdId": "",
-      "id": 3
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "test@test.com",
-      "password": "1",
-      "herdId": "Goat Feather Farm",
-      "id": 4
-    },
-    {
-      "firstName": "Harold",
-      "lastName": "Tester",
-      "email": "teseter@test.com",
-      "password": "1",
-      "herdId": "1",
-      "id": 5
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "1",
-      "password": "1",
-      "herdId": "2",
-      "id": 6
-    },
-    {
-      "firstName": "tom",
-      "lastName": "tom",
-      "email": "tome@tr",
-      "password": "1",
-      "herdId": "1",
-      "id": 7
-    },
-    {
-      "firstName": "sam",
-      "lastName": "sam",
-      "email": "sam",
-      "password": "sam",
-      "herdId": "3",
-      "id": 8
-    },
-    {
-      "firstName": "testging",
-      "lastName": "reasdasd",
-      "email": "testing@testing",
-      "password": "1",
-      "herdId": "1",
-      "id": 9
-    },
-    {
-      "firstName": "Fred",
-      "lastName": "fred",
-      "email": "newuswr",
-      "password": "12",
-      "herdId": "1",
-      "id": 10
-    },
-    {
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "testuser",
-      "password": "1",
-      "herdId": "3",
-      "id": 11
-    },
-    {
-      "firstName": "C",
-      "lastName": "B",
-      "email": "1@1.com",
-      "password": "1",
-      "herdId": "1",
-      "id": 12
-    },
-    {
-      "firstName": "Test",
-      "lastName": "Test1027",
-      "email": "test@1026",
-      "password": "1",
-      "herdId": "2",
-      "id": 13
     }
   ],
   "herd": [
@@ -117,36 +29,6 @@
       "number": "654321",
       "name": "Collins Capricious Caprines",
       "tattoo": "CCC"
-    },
-    {
-      "number": "Test567",
-      "name": "Test Herd",
-      "tattoo": "tst",
-      "id": 3
-    },
-    {
-      "number": "",
-      "name": "testing1010",
-      "tattoo": "",
-      "id": 4
-    },
-    {
-      "number": "",
-      "name": "testing1014",
-      "tattoo": "",
-      "id": 5
-    },
-    {
-      "number": "",
-      "name": "testing1015",
-      "tattoo": "",
-      "id": 6
-    },
-    {
-      "number": "",
-      "name": "testing1020",
-      "tattoo": "",
-      "id": 7
     }
   ],
   "animals": [
@@ -201,32 +83,6 @@
       "gender": "Male",
       "dateOfBirth": "2014-09-08",
       "id": 14
-    },
-    {
-      "herdId": "2",
-      "status": "Current Stock",
-      "name": "Test Animal",
-      "number": "",
-      "breed": "",
-      "sire": "",
-      "dam": "",
-      "description": "",
-      "gender": "Male",
-      "dateOfBirth": "2015-05-04",
-      "id": 15
-    },
-    {
-      "herdId": "2",
-      "status": "Current Stock",
-      "name": "TinaTiny",
-      "number": "123",
-      "breed": "Nubian",
-      "sire": "123",
-      "dam": "4456",
-      "description": "",
-      "gender": "Female",
-      "dateOfBirth": "2017-03-02",
-      "id": 16
     }
   ],
   "animalStatus": [
