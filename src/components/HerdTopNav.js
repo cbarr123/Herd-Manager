@@ -26,7 +26,7 @@ class HerdTopNav extends Component {
             <Container className="HerdTopNav">
                 <Row>
                     <Col>
-                        <h1>Herd Manager</h1>
+                    <div class="image"></div><nobr /><h1>Herd Manager</h1>
                     </Col>
                 </Row>        
             </Container>

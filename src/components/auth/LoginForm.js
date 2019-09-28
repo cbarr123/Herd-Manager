@@ -94,7 +94,7 @@ class LoginForm extends Component {
                             type="button"
                             disabled={this.state.loadingStatus}
                             onClick={this.handleLogin}
-                            className="Button-Input"
+                            className="Button-Input login"
                         >Login</Button>
                         </div>
                         <div>
