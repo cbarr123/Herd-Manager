@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
-import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import "./AnimalEdit.css"
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "../../styles/Main.css"
 
 class AnimalEdit extends Component {
     state = {
@@ -85,6 +85,7 @@ class AnimalEdit extends Component {
         return (
             <React.Fragment>
                 <Form>
+                <Container>
                     <div className="AnimalEdit">
                         <Row form>
                             <Col md={12}>                    
@@ -93,7 +94,8 @@ class AnimalEdit extends Component {
                                 type="text"
                                 onChange={this.handleFieldChange}
                                 id="name"
-                                value={this.state.name}/>
+                                value={this.state.name}
+                                className="Form-Field"/>
                             </Col>
                         </Row>
                         <Row form>
@@ -101,7 +103,8 @@ class AnimalEdit extends Component {
                                 <FormGroup>
                                         <Label for="Current-Status">Select Current Status</Label>
                                         <Input  type={"select"} value={this.state.status} id={"Current-Status"}
-                                            onChange={(event)=>this.setState({status: event.target.value})}>
+                                            onChange={(event)=>this.setState({status: event.target.value})}
+                                            className="Form-Field">
                                             {this.state.statusOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                         </Input >
                                 </FormGroup>
@@ -109,7 +112,8 @@ class AnimalEdit extends Component {
                             <Col md={4}>
                                 <Label for="gender">Select Gender</Label>
                                 <Input type={"select"} value={this.state.gender} id={"gender"}
-                                    onChange={(event)=>this.setState({gender: event.target.value})}>
+                                    onChange={(event)=>this.setState({gender: event.target.value})}
+                                    className="Form-Field">
                                     {this.state.genderOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                 </Input>
                             </Col>
@@ -119,7 +123,8 @@ class AnimalEdit extends Component {
                                     type="text"
                                     onChange={this.handleFieldChange}
                                     id="number"
-                                    value={this.state.number}>
+                                    value={this.state.number}
+                                    className="Form-Field">
                                 </Input>
                             </Col>
                         </Row>
@@ -127,7 +132,8 @@ class AnimalEdit extends Component {
                             <Col md={4}>
                                     <Label htmlFor="breed">Breed</Label>    
                                     <Input type={"select"} value={this.state.breed} id={"breed"}
-                                        onChange={(event)=>this.setState({breed: event.target.value})}>
+                                        onChange={(event)=>this.setState({breed: event.target.value})}
+                                        className="Form-Field">
                                         {this.state.breedOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
                                     </Input>
                             </Col>
@@ -137,20 +143,20 @@ class AnimalEdit extends Component {
                                     type="textarea"
                                     onChange={this.handleFieldChange}
                                     id="description"
-                                    value={this.state.description}>
+                                    value={this.state.description}
+                                    className="Form-Field">
                                 </Input>
                             </Col>    
                         </Row>
                             <Col md={8}>
-                                <FormGroup>     
-                                    <Label htmlFor="dateOfBirth">Date Of Birth</Label>
-                                    <Input
-                                        type="date"
-                                        onChange={this.handleFieldChange}
-                                        id="dateOfBirth"
-                                        value={this.state.dateOfBirth}>
-                                    </Input>
-                                </FormGroup>
+                                <Label htmlFor="dateOfBirth">Date Of Birth</Label>
+                                <Input
+                                    type="date"
+                                    onChange={this.handleFieldChange}
+                                    id="dateOfBirth"
+                                    value={this.state.dateOfBirth}
+                                    className="Form-Field">
+                                </Input>
                             </Col>
                         <Row form>
                             <Col md={8}>
@@ -159,7 +165,8 @@ class AnimalEdit extends Component {
                                     type="text"
                                     onChange={this.handleFieldChange}
                                     id="sire"
-                                    value={this.state.sire}>
+                                    value={this.state.sire}
+                                    className="Form-Field">
                                     </Input>
                             </Col>
                             <Col md={8}>
@@ -168,7 +175,8 @@ class AnimalEdit extends Component {
                                     type="text"
                                     onChange={this.handleFieldChange}
                                     id="dam"
-                                    value={this.state.dam}>
+                                    value={this.state.dam}
+                                    className="Form-Field">
                                     </Input>
                             </Col>
                         </Row>
@@ -177,16 +185,17 @@ class AnimalEdit extends Component {
                             <Button
                             type="button"
                             disabled={this.state.loadingStatus}
-                            onClick={this.updateExistingAnimal}>
+                            onClick={this.updateExistingAnimal}
+                            className="Button-Input">
                             Submit Edit
                             </Button>
                             <Link to={`/herdview/${this.state.herdId}`}>
                                 <Button type="button"
-                                className="HerdViewButton"
+                                className="Button-Input"
                                 >Return</Button>
                             </Link>
                         </div>
-                    
+                </Container>       
                 </Form>
             </React.Fragment>
         )

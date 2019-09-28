@@ -15,6 +15,14 @@
       "lastName": "Collins",
       "email": "ac@ac.com",
       "password": "1"
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "2",
+      "password": "2",
+      "herdId": "1",
+      "id": 3
     }
   ],
   "herd": [
@@ -83,6 +91,32 @@
       "gender": "Male",
       "dateOfBirth": "2014-09-08",
       "id": 14
+    },
+    {
+      "herdId": "1",
+      "status": "",
+      "name": "New Goat",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "id": 15
+    },
+    {
+      "herdId": "1",
+      "status": "Current Stock",
+      "name": "This is a new goat",
+      "number": "LSA123456",
+      "breed": "Nubian",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "2009-06-16",
+      "id": 16
     }
   ],
   "animalStatus": [

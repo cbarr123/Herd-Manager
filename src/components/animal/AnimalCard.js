@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import "./AnimalCard.css"
-import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
+import "../../styles/Main.css"
+import {Col, Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from 'reactstrap';
 
 class AnimalCard extends Component {
     
@@ -8,17 +8,17 @@ class AnimalCard extends Component {
     render () {
         
         return (
-            <div   onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
-                <Card className="animal-card">
+            <Col sm="4">
+                <Card className="animal-card" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}`)}}>
                     <CardBody>
                         {/* <CardImg></CardImg> */}
                         <CardTitle>Name: <span>{this.props.animal.name}</span></CardTitle>
-                        <CardSubtitle><span>{this.props.animal.breed}</span></CardSubtitle>
-                        <CardText><span>{this.props.animal.dateOfBirth}</span></CardText>
-                        <Button className="card-button">View Detail</Button>
+                        <CardSubtitle>Breed: <span>{this.props.animal.breed}</span></CardSubtitle>
+                        <CardText>DOB: <span>{this.props.animal.dateOfBirth}</span></CardText>
+                        <Button className="Button-Input">View Detail</Button>
                     </CardBody>
                 </Card>
-            </div>            
+            </Col>       
         )
     }
 }

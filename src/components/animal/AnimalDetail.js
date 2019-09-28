@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AnimalManager from "../../modules/AnimalManager";
 import { Link } from "react-router-dom";
-import { Button } from 'reactstrap';
-import "./AnimalDetail.css"
+import "../../styles/Main.css"
+import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 class AnimalDetail extends Component {
     state = {
@@ -46,35 +46,37 @@ class AnimalDetail extends Component {
     render () {
         return (
             <React.Fragment>
-                <h2>Animal Detail</h2>
-                <div>
-                    <h3>Name: <span>{this.state.name}</span></h3>
-                    <h3>Breed: <span>{this.state.breed}</span></h3>
-                    <h3>Status: <span>{this.state.status}</span></h3>
-                    <h3>ADGA Number: <span>{this.state.number}</span></h3>
-                    <h3>Gender: <span>{this.state.gender}</span></h3>
-                    <h3>DOB: <span>{this.state.dateOfBirth}</span></h3>
-                    <h3>Description: <span>{this.state.description}</span></h3>
-                    <h3>Sire: <span>{this.state.sire}</span></h3>
-                    <h3>Dam: <span>{this.state.dam}</span></h3>
-                </div>
-                <section className="AnimalDetailButton">
-                    <Button type="button"
-                        className="EditButton"
-                        onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
-                        Edit
-                    </Button>
-                    <Button type="button"
-                        className="DeleteButton"
-                        onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
-                        Delete
-                    </Button>
-                    <Link to={`/herdview/${this.state.herdId}`}>
+                <Container>
+                    <h2>Animal Detail</h2>
+                    <div>
+                        <h3>Name: <span>{this.state.name}</span></h3>
+                        <h3>Breed: <span>{this.state.breed}</span></h3>
+                        <h3>Status: <span>{this.state.status}</span></h3>
+                        <h3>ADGA Number: <span>{this.state.number}</span></h3>
+                        <h3>Gender: <span>{this.state.gender}</span></h3>
+                        <h3>DOB: <span>{this.state.dateOfBirth}</span></h3>
+                        <h3>Description: <span>{this.state.description}</span></h3>
+                        <h3>Sire: <span>{this.state.sire}</span></h3>
+                        <h3>Dam: <span>{this.state.dam}</span></h3>
+                    </div>
+                    <section className="AnimalDetailButton">
                         <Button type="button"
-                        className="HerdViewButton"
-                        >Return</Button>
-                    </Link>
-                </section>
+                            className="Button-Input"
+                            onClick = {() => {this.props.history.push(`${this.props.animalId}/edit`)}}>
+                            Edit
+                        </Button>
+                        <Button type="button"
+                            className="Button-Input"
+                            onClick = {() => {this.deleteAnimal(this.props.animalId)}}>
+                            Delete
+                        </Button>
+                        <Link to={`/herdview/${this.state.herdId}`}>
+                            <Button type="button"
+                            className="Button-Input"
+                            >Cancel</Button>
+                        </Link>
+                    </section>
+                </Container>
             </React.Fragment>
         )
     }
