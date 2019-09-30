@@ -42,12 +42,12 @@
   "animals": [
     {
       "id": 9,
-      "herdId": 2,
+      "herdId": 1,
       "status": "Current Stock",
       "name": "Tina the Goat",
       "number": "12",
       "breed": "American Lamancha",
-      "sire": "",
+      "sire": "Bruce the Goat",
       "dam": "",
       "description": "",
       "gender": "Male",
@@ -80,17 +80,17 @@
       "dateOfBirth": "2006-02-03"
     },
     {
+      "id": 14,
       "herdId": 1,
       "status": "External Herd",
       "name": "Bruce the Goat",
       "number": "56789",
       "breed": "American Lamancha",
-      "sire": "456890",
-      "dam": "435678",
+      "sire": "Tina the Goat",
+      "dam": "Trouble the Goat",
       "description": "Crazy Goat",
       "gender": "Male",
-      "dateOfBirth": "2014-09-08",
-      "id": 14
+      "dateOfBirth": "2014-09-08"
     },
     {
       "herdId": "1",
@@ -117,6 +117,19 @@
       "gender": "Female",
       "dateOfBirth": "2009-06-16",
       "id": 16
+    },
+    {
+      "id": 17,
+      "herdId": "1",
+      "status": "Current Stock",
+      "name": "A new Goat",
+      "number": "",
+      "breed": "American Lamancha",
+      "sire": "Tina the Goat",
+      "dam": "Oreo",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "2019-09-02"
     }
   ],
   "animalStatus": [

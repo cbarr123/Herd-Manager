@@ -12,6 +12,8 @@ class AnimalEdit extends Component {
         statusOptions: [],
         genderOptions: [],
         breedOptions: [],
+        sireOptions: [],
+        damOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -78,7 +80,17 @@ class AnimalEdit extends Component {
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
-        })          
+        })
+        AnimalManager.getSire()
+        .then(data => {
+            let sireOptions = data.map(option => {return {value: option.name, display: option.name}})
+            this.setState({ sireOptions: [{value: "", display: "Select Sire"}].concat(sireOptions) }); 
+        })
+        AnimalManager.getDam()
+        .then(data => {
+            let damOptions = data.map(option => {return {value: option.name, display: option.name}})
+            this.setState({ damOptions: [{value: "", display: "Select Dam"}].concat(damOptions) }); 
+        })           
     };
     
     render () {
@@ -159,7 +171,18 @@ class AnimalEdit extends Component {
                                 </Input>
                             </Col>
                         <Row form>
+                            
+                            
                             <Col md={8}>
+                                    <Label htmlFor="sire">Sire</Label>    
+                                    <Input type={"select"} value={this.state.sire} id={"sire"}
+                                        onChange={(event)=>this.setState({sire: event.target.value})}
+                                        className="Form-Field">
+                                        {this.state.sireOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                    </Input>
+                            </Col>                           
+                            
+                            {/* <Col md={8}>
                                     <Label htmlFor="sire">Sire</Label>
                                     <Input
                                     type="text"
@@ -168,8 +191,19 @@ class AnimalEdit extends Component {
                                     value={this.state.sire}
                                     className="Form-Field">
                                     </Input>
-                            </Col>
+                            </Col> */}
+
                             <Col md={8}>
+                                    <Label htmlFor="dam">Dam</Label>    
+                                    <Input type={"select"} value={this.state.dam} id={"dam"}
+                                        onChange={(event)=>this.setState({dam: event.target.value})}
+                                        className="Form-Field">
+                                        {this.state.damOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                    </Input>
+                            </Col>  
+
+
+                            {/* <Col md={8}>
                                     <Label htmlFor="dam">Dam</Label>
                                     <Input
                                     type="text"
@@ -178,7 +212,7 @@ class AnimalEdit extends Component {
                                     value={this.state.dam}
                                     className="Form-Field">
                                     </Input>
-                            </Col>
+                            </Col> */}
                         </Row>
                         </div>
                         <div>
@@ -192,7 +226,7 @@ class AnimalEdit extends Component {
                             <Link to={`/herdview/${this.state.herdId}`}>
                                 <Button type="button"
                                 className="Button-Input"
-                                >Return</Button>
+                                >Cancel</Button>
                             </Link>
                         </div>
                 </Container>       

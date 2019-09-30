@@ -12,6 +12,8 @@ class AnimalAdd extends Component {
         statusOptions: [],
         genderOptions: [],
         breedOptions: [],
+        sireOptions: [],
+        damOptions: [],
         name: "",
         number: "",
         breed: "",
@@ -68,7 +70,17 @@ class AnimalAdd extends Component {
         .then(data => {
             let breedOptions = data.map(option => {return {value: option.breed, display: option.breed}})
             this.setState({ breedOptions: [{value: "", display: "Select Breed"}].concat(breedOptions) }); 
-        }) 
+        })
+        AnimalManager.getSire()
+        .then(data => {
+            let sireOptions = data.map(option => {return {value: option.name, display: option.name}})
+            this.setState({ sireOptions: [{value: "", display: "Select Sire"}].concat(sireOptions) }); 
+        })
+        AnimalManager.getDam()
+        .then(data => {
+            let damOptions = data.map(option => {return {value: option.name, display: option.name}})
+            this.setState({ damOptions: [{value: "", display: "Select Dam"}].concat(damOptions) }); 
+        })  
     }
 
         
@@ -154,6 +166,27 @@ class AnimalAdd extends Component {
                             </Col>
                         <Row form>
                             <Col md={8}>
+                                    <Label htmlFor="sire">Sire</Label>    
+                                    <Input type={"select"} value={this.state.sire} id={"sire"}
+                                        onChange={(event)=>this.setState({sire: event.target.value})}
+                                        className="Form-Field">
+                                        {this.state.sireOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                    </Input>
+                            </Col> 
+                            <Col md={8}>
+                                    <Label htmlFor="dam">Dam</Label>    
+                                    <Input type={"select"} value={this.state.dam} id={"dam"}
+                                        onChange={(event)=>this.setState({dam: event.target.value})}
+                                        className="Form-Field">
+                                        {this.state.damOptions.map((options) => <option key={options.value} value={options.value}>{options.display}</option>)}
+                                    </Input>
+                            </Col>  
+
+
+
+
+
+                            {/* <Col md={8}>
                                     <Label htmlFor="sire">Sire</Label>
                                     <Input
                                     type="text"
@@ -172,7 +205,7 @@ class AnimalAdd extends Component {
                                     value={this.state.dam}
                                     className="Form-Field">
                                     </Input>
-                            </Col>
+                            </Col> */}
                         </Row>
                         </div>
 
