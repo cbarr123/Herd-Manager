@@ -21,6 +21,13 @@ div.image {
     content:url("../Images/herdManager.png");
     position: absolute;
     margin-top: 10px;
+
+}
+.image {
+    font-size: 45px;
+}
+.CardTitle {
+    font-size: 25px;
 }
 option { 
     background-color: #D8E1D3;
