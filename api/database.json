@@ -48,7 +48,7 @@
       "number": "12",
       "breed": "American Lamancha",
       "sire": "Bruce the Goat",
-      "dam": "",
+      "dam": "Trouble the Goat",
       "description": "",
       "gender": "Male",
       "dateOfBirth": "2013-07-06"
@@ -130,6 +130,19 @@
       "description": "",
       "gender": "Female",
       "dateOfBirth": "2019-09-02"
+    },
+    {
+      "herdId": "2",
+      "status": "",
+      "name": "New Goat",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "id": 15
     }
   ],
   "animalStatus": [
