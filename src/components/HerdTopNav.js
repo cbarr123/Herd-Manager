@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
+import "../styles/Main.css"
 
 
 class HerdTopNav extends Component {

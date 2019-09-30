@@ -46,9 +46,9 @@
       "status": "Current Stock",
       "name": "Tina the Goat",
       "number": "12",
-      "breed": "American Lamancha",
+      "breed": "Toggenburg",
       "sire": "Bruce the Goat",
-      "dam": "",
+      "dam": "Trouble the Goat",
       "description": "",
       "gender": "Male",
       "dateOfBirth": "2013-07-06"
@@ -60,8 +60,8 @@
       "name": "Oreo",
       "number": "1369",
       "breed": "American Lamancha",
-      "sire": "345",
-      "dam": "5678",
+      "sire": "Tina the Goat",
+      "dam": "A new Goat",
       "description": "Brown ",
       "gender": "Female",
       "dateOfBirth": "2019-09-26"
@@ -93,17 +93,17 @@
       "dateOfBirth": "2014-09-08"
     },
     {
+      "id": 15,
       "herdId": "1",
-      "status": "",
+      "status": "Current Stock",
       "name": "New Goat",
       "number": "",
-      "breed": "",
-      "sire": "",
-      "dam": "",
+      "breed": "American Lamancha",
+      "sire": "Tina the Goat",
+      "dam": "Oreo",
       "description": "",
-      "gender": "",
-      "dateOfBirth": "",
-      "id": 15
+      "gender": "Male",
+      "dateOfBirth": "2019-09-09"
     },
     {
       "herdId": "1",
@@ -130,6 +130,45 @@
       "description": "",
       "gender": "Female",
       "dateOfBirth": "2019-09-02"
+    },
+    {
+      "herdId": "2",
+      "status": "",
+      "name": "New Goat",
+      "number": "",
+      "breed": "",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "id": 15
+    },
+    {
+      "herdId": "1",
+      "status": "Deceased",
+      "name": "Lucy",
+      "number": "",
+      "breed": "American Lamancha",
+      "sire": "",
+      "dam": "",
+      "description": "",
+      "gender": "Female",
+      "dateOfBirth": "",
+      "id": 18
+    },
+    {
+      "herdId": "1",
+      "status": "Deceased",
+      "name": "New Animal",
+      "number": "",
+      "breed": "",
+      "sire": "Tina the Goat",
+      "dam": "Trouble the Goat",
+      "description": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "id": 19
     }
   ],
   "animalStatus": [
