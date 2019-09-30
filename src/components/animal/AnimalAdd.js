@@ -78,7 +78,7 @@ class AnimalAdd extends Component {
                 <Form>
                 <Container>
                     <div className="AnimalAdd">
-                        <h3>Adding Animal</h3>
+                        <h2>Adding Animal</h2>
                         <Row form>
                             <Col md={12}>                    
                                 <Label htmlFor="name">Name</Label>
@@ -178,7 +178,7 @@ class AnimalAdd extends Component {
 
 
                         <div>
-                            <Button
+                            <Button className="Button-Input"
                             type="Button"
                             disabled={this.state.loadingStatus}
                             onClick={this.createNewAnimal}>
@@ -186,7 +186,7 @@ class AnimalAdd extends Component {
                             </Button>
                             <Link to={`/herdview/${this.props.match.params.herdId}`}>
                                 <Button type="button"
-                                className="ManagerButton"
+                                className="ManagerButton Button-Input"
                                 >Cancel</Button>
                             </Link>
                         </div>

@@ -57,7 +57,7 @@ class Dashboard extends Component {
                     <Col>
                         <h2>{this.state.herdName}</h2>
                         <h4>ADGA#: {this.state.herdNumber}</h4>
-                        <Link className="Button-Input"
+                        <Link
                         to="/"
                         onClick={this.handleLogout}>
                             <Button type="button"      
@@ -72,7 +72,6 @@ class Dashboard extends Component {
                             Add User</Button>
                         </Link>
                         <Button type="button"
-                        className="newAnimal"
                         onClick={() => {this.props.history.push(`/animals/new/${this.props.herdId}`)}}
                         className="Button-Input">
                         Add Animal
@@ -84,7 +83,7 @@ class Dashboard extends Component {
             <FormGroup row>
                 <Col sm="2"></Col>
                 {/* <Label for="AnimalStatus" sm={2}>Animal Status</Label>  */}
-                <Col sm={8}>
+                <Col sm={10}>
                     <Input type={"select"} value={this.state.filterStatus}
                         id={"AnimalStatus"}
                         onChange={(event)=>this.setState({filterStatus: event.target.value})}

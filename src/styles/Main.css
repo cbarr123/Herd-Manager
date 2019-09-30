@@ -1,11 +1,42 @@
 body {
     background-image: url("../Images/baby goats on rocksECB1-01.png");
 }
+h1 {
+    color: #3A4A51;
+    text-align: center;
+    margin-top: 40px;
+}
+h2 {
+    color: #3A4A51;
+    margin-top:40px;
+}
+h3 {
+    color: #4A675A;
+}
+h4 {
+    color: #3A4A51;
+    margin-left: 15px;
+}
+div.image {
+    content:url("../Images/herdManager.png");
+    position: absolute;
+    margin-top: 10px;
+}
+.login {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
 .Form-Field {
     background-color: #D8E1D3;
+    width: 250px;
+    margin-left: 25px;
+    margin-top: 10px;
 }
 .Button-Input {
     background-color: #4A675A;
+    color: #D8E1D3;
+    margin-top: 10px;
+    margin-right: 4px;
 }
 .Herd-Form-Field {
     background-color: #D8E1D3;
@@ -17,7 +48,6 @@ body {
     border-radius: 10px; /* 5px rounded corners */
     background-color: #ACB5A0;
     margin-bottom: 2em;
-    /* flex: 0 1 24%; */
     color: #3A4A51;
     width: 18rem;
     margin: 25px 
