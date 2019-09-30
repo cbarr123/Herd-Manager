@@ -53,5 +53,11 @@ export default {
     getHerdOptions() {
       return fetch(`${remoteURL}/herd/`).then(result => result.json())
     },
+    getSire() {
+      return fetch(`${remoteURL}/animals?gender=Male`).then(result => result.json())
+    },
+    getDam() {
+      return fetch(`${remoteURL}/animals?gender=Female`).then(result => result.json())
+    },
   }
 
